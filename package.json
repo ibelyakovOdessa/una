@@ -1,0 +1,28 @@
+{
+  "name": "una_tspl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@playwright/test": "^1.51.1",
+    "dotenv": "^16.4.7",
+    "es6-shim": "^0.35.8",
+    "pino": "^9.6.0",
+    "pino-prettier": "^3.0.1-dev"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "class-transformer": "^0.5.1",
+    "playwright": "^1.51.1",
+    "reflect-metadata": "^0.2.2",
+    "tap": "^21.1.0",
+    "typescript": "^5.8.2"
+  }
+}
