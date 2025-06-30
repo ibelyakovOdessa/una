@@ -32,5 +32,5 @@ export class FeatureFlags<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       FeatureFlagModel,
-    );
+    ) as FeatureFlagModel;
 }

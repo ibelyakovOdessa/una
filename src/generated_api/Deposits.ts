@@ -69,7 +69,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Adds an attachment to a deposit.
@@ -91,7 +91,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve a deposited document of a deposit by id.
@@ -111,7 +111,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositedDocumentModel,
-    );
+    ) as DepositedDocumentModel;
 
   /**
    * @description Include a customer payment into the specified deposit.
@@ -165,7 +165,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of details for a deposit.
@@ -206,7 +206,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositDetailPagedResponse,
-    );
+    ) as DepositDetailPagedResponse;
 
   /**
    * @description Creates an expense line item for a deposit
@@ -228,7 +228,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a Deposit summary by its id.
@@ -248,7 +248,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositSummaryModel,
-    );
+    ) as DepositSummaryModel;
 
   /**
    * @description Updates a Deposit by its id.
@@ -302,7 +302,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an attachment for on given deposit.
@@ -338,7 +338,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositDetailModel,
-    );
+    ) as DepositDetailModel;
 
   /**
    * @description Updates a deposit detail line item by its id.
@@ -413,7 +413,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositedDocumentPagedResponse,
-    );
+    ) as DepositedDocumentPagedResponse;
 
   /**
    * @description Retrieve a list of customer payment documents included in a deposit.
@@ -454,7 +454,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositedDocumentPagedResponse,
-    );
+    ) as DepositedDocumentPagedResponse;
 
   /**
    * @description Posts a deposit to the general ledger.
@@ -520,7 +520,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DepositPagedResponse,
-    );
+    ) as DepositPagedResponse;
 
   /**
    * @description Submits a deposit.
@@ -564,7 +564,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a deposit for posting to the general ledger.
@@ -584,7 +584,7 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a deposit for submit.
@@ -604,5 +604,5 @@ export class Deposits<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 }

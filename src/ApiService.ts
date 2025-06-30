@@ -1,8 +1,10 @@
+import { injectable } from "tsyringe";
 import { ApiConfig, HttpClient } from "./generated_api/http-client";
 import { PaymentTerms } from "./generated_api/PaymentTerms";
 // import { PaymentTerms } from "./generated_api/PaymentTerms";
 import { People } from "./generated_api/People";
 
+@injectable()
 export class ApiService {
   private apiConfig: ApiConfig;
 

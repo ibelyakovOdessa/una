@@ -62,7 +62,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       InvoiceModel,
-    );
+    ) as InvoiceModel;
 
   /**
    * @description Retrieves an attachment for a given invoice.
@@ -82,7 +82,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Retrieves a paged list of attachments for a given invoice.
@@ -123,7 +123,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Retrieves status history list for an invoice.
@@ -164,7 +164,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       InvoiceStatusHistoryPagedResponse,
-    );
+    ) as InvoiceStatusHistoryPagedResponse;
 
   /**
    * @description Retrieves the summary of transaction details for an invoice.
@@ -184,7 +184,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       InvoiceTransactionSummaryModel,
-    );
+    ) as InvoiceTransactionSummaryModel;
 
   /**
    * @description Creates a payment document for an invoice via a payment provider integration.
@@ -265,7 +265,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       InvoicePagedResponse,
-    );
+    ) as InvoicePagedResponse;
 
   /**
    * @description Send an invoice to payers and returns a unique id for the email.
@@ -287,7 +287,7 @@ export class Invoices<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       MailResponseModel,
-    );
+    ) as MailResponseModel;
 
   /**
    * @description Retrieves an attachment for a given invoice in HTTP response format.

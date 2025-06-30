@@ -43,7 +43,7 @@ export class Calendar<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CalendarRangeModel,
-    );
+    ) as CalendarRangeModel;
 
   /**
    * @description Retrieves the breakdown of a fiscal year into its components.
@@ -63,7 +63,7 @@ export class Calendar<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FiscalYearBreakdownModel,
-    );
+    ) as FiscalYearBreakdownModel;
 
   /**
    * @description Retrieves list of configured fiscal years.
@@ -103,5 +103,5 @@ export class Calendar<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FiscalYearPagedResponse,
-    );
+    ) as FiscalYearPagedResponse;
 }

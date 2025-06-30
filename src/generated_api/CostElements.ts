@@ -52,5 +52,5 @@ export class CostElements<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CostElementPagedResponse,
-    );
+    ) as CostElementPagedResponse;
 }

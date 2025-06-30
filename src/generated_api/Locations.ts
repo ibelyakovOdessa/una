@@ -60,7 +60,7 @@ export class Locations<SecurityDataType = unknown> extends HttpClient<SecurityDa
         ...params,
       },
       LocationPagedResponse,
-    );
+    ) as LocationPagedResponse;
 
   /**
    * @description Creates a new location.
@@ -82,7 +82,7 @@ export class Locations<SecurityDataType = unknown> extends HttpClient<SecurityDa
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of location.
@@ -102,5 +102,5 @@ export class Locations<SecurityDataType = unknown> extends HttpClient<SecurityDa
         ...params,
       },
       LocationModel,
-    );
+    ) as LocationModel;
 }

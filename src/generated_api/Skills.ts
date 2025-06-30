@@ -50,7 +50,7 @@ export class Skills<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       SkillModel,
-    );
+    ) as SkillModel;
 
   /**
    * @description Update the attributes of a skill.
@@ -127,5 +127,5 @@ export class Skills<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       SkillPagedResponse,
-    );
+    ) as SkillPagedResponse;
 }

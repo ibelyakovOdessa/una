@@ -59,7 +59,7 @@ export class PerDiems<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PerDiemLocationPagedResponse,
-    );
+    ) as PerDiemLocationPagedResponse;
 
   /**
    * @description Retrieves a paged list of country/states for per diem rates.
@@ -99,7 +99,7 @@ export class PerDiems<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PerDiemRegionPagedResponse,
-    );
+    ) as PerDiemRegionPagedResponse;
 
   /**
    * @description Retrieves a paged list of  per diem meals and incidental expense rates.
@@ -139,5 +139,5 @@ export class PerDiems<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PerDiemMIEBreakdownPagedResponse,
-    );
+    ) as PerDiemMIEBreakdownPagedResponse;
 }

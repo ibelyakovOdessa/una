@@ -89,7 +89,7 @@ const model = type.match(/\((.*?)\)/) ? type.match(/\((.*?)\)/)[1] : type
 
 <%~ routeDocs.lines %>
  */
- <% if (type !== 'void' && route.namespace !== 'assigning' && route.namespace !== 'audit') { %>
+ <% if (type !== 'void' && route.namespace !== 'assigning111' && route.namespace !== 'audit11') { %>
     <%~ route.routeName.usage %> = (<%~ wrapperArgs %>)<%~ config.toJS ? `: ${describeReturnType()}` : "" %> =>
     <%~ config.singleHttpClient ? 'this.http.request' : 'this.request' %><<%~ type %>, <%~ errorType %>>({
         path: `<%~ path %>`,
@@ -102,7 +102,7 @@ const model = type.match(/\((.*?)\)/) ? type.match(/\((.*?)\)/)[1] : type
         ...<%~ _.get(requestConfigParam, "name") %>,
     },
      <%~ model %>
-     );
+     ) as <%~ model %> ;
 <% } else { %>
     <%~ route.routeName.usage %> = (<%~ wrapperArgs %>)<%~ config.toJS ? `: ${describeReturnType()}` : "" %> =>
     <%~ config.singleHttpClient ? 'this.http.request' : 'this.request' %><<%~ type %>, <%~ errorType %>>({

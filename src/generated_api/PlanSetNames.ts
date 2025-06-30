@@ -58,7 +58,7 @@ export class PlanSetNames<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       PlanSetNamePagedResponse,
-    );
+    ) as PlanSetNamePagedResponse;
 
   /**
    * @description Create a new plan set name
@@ -80,7 +80,7 @@ export class PlanSetNames<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a plan set name by key
@@ -100,7 +100,7 @@ export class PlanSetNames<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       PlanSetNameModel,
-    );
+    ) as PlanSetNameModel;
 
   /**
    * @description Update an existing plan set name

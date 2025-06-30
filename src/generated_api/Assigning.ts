@@ -42,15 +42,18 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request POST:/rest/assigning/matrix
    * @secure */
   assignmentMatrix = (data: AssigningMatrixSearchModel, params: RequestParams = {}) =>
-    this.request<AssigningMatrixModel, ErrorResponse>({
-      path: `/rest/assigning/matrix`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
+    this.request<AssigningMatrixModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      AssigningMatrixModel,
+    ) as AssigningMatrixModel;
 
   /**
    * @description Retrieves a paged list of filter sets saved by the authenticated user.
@@ -61,13 +64,16 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request GET:/rest/assigning/matrix/criteria
    * @secure */
   getAssigningListCriteria = (params: RequestParams = {}) =>
-    this.request<AssigningMatrixSearchPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/matrix/criteria`,
-      method: "GET",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<AssigningMatrixSearchPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix/criteria`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      AssigningMatrixSearchPagedResponse,
+    ) as AssigningMatrixSearchPagedResponse;
 
   /**
    * @description Saves a filter set for later use.
@@ -85,16 +91,19 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
     },
     params: RequestParams = {},
   ) =>
-    this.request<CreatedResponseModel, ErrorResponse>({
-      path: `/rest/assigning/matrix/criteria`,
-      method: "POST",
-      query: query,
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
+    this.request<CreatedResponseModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix/criteria`,
+        method: "POST",
+        query: query,
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      CreatedResponseModel,
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of filter sets shared by the authenticated user.
@@ -105,13 +114,16 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request GET:/rest/assigning/matrix/criteria/share
    * @secure */
   getAssigningSharedCriteria = (params: RequestParams = {}) =>
-    this.request<AssigningMatrixSearchPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/matrix/criteria/share`,
-      method: "GET",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<AssigningMatrixSearchPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix/criteria/share`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      AssigningMatrixSearchPagedResponse,
+    ) as AssigningMatrixSearchPagedResponse;
 
   /**
    * @description Saves a shared filter set for later use.
@@ -122,15 +134,18 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request POST:/rest/assigning/matrix/criteria/share
    * @secure */
   createAssigningSharedCriteria = (data: AssigningMatrixSearchCriteriaModel, params: RequestParams = {}) =>
-    this.request<CreatedResponseModel, ErrorResponse>({
-      path: `/rest/assigning/matrix/criteria/share`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
+    this.request<CreatedResponseModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix/criteria/share`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      CreatedResponseModel,
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a saved filter set by id.
@@ -141,13 +156,16 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request GET:/rest/assigning/matrix/criteria/{id}
    * @secure */
   getAssigningListCriteriaByKey = (id: number, params: RequestParams = {}) =>
-    this.request<AssigningMatrixSearchCriteriaModel, ErrorResponse>({
-      path: `/rest/assigning/matrix/criteria/${id}`,
-      method: "GET",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<AssigningMatrixSearchCriteriaModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix/criteria/${id}`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      AssigningMatrixSearchCriteriaModel,
+    ) as AssigningMatrixSearchCriteriaModel;
 
   /**
    * @description Updates a saved filter set by id.
@@ -222,6 +240,7 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
          * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
          */
         lastModified?: string;
+        headers?: Record<string, object[]>;
         metadata?: Record<string, object[]>;
         mediaType?: {
           type?: string;
@@ -230,14 +249,14 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
           wildcardType?: boolean;
           wildcardSubtype?: boolean;
         };
+        /** @format int32 */
+        status?: number;
         statusInfo?: {
           family?: DeleteAssigningListCriteriaFamilyEnum;
           /** @format int32 */
           statusCode?: number;
           reasonPhrase?: string;
         };
-        /** @format int32 */
-        status?: number;
         stringHeaders?: Record<string, string[]>;
         entity?: object;
         /** @uniqueItems true */
@@ -279,16 +298,18 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
           title?: string;
           params?: Record<string, string>;
         }[];
-        headers?: Record<string, object[]>;
       },
       ErrorResponse
-    >({
-      path: `/rest/assigning/matrix/criteria/${id}`,
-      method: "DELETE",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    >(
+      {
+        path: `/rest/assigning/matrix/criteria/${id}`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      string,
+    ) as string;
 
   /**
    * @description Retrieves a saved shared filter set by id.
@@ -299,13 +320,16 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request GET:/rest/assigning/matrix/criteria/{id}/share
    * @secure */
   getAssigningSharedCriteriaByKey = (id: number, params: RequestParams = {}) =>
-    this.request<AssigningMatrixSearchModel, ErrorResponse>({
-      path: `/rest/assigning/matrix/criteria/${id}/share`,
-      method: "GET",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<AssigningMatrixSearchModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/matrix/criteria/${id}/share`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      AssigningMatrixSearchModel,
+    ) as AssigningMatrixSearchModel;
 
   /**
    * @description Updates a saved shared filter set by id.
@@ -375,6 +399,7 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
          * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
          */
         lastModified?: string;
+        headers?: Record<string, object[]>;
         metadata?: Record<string, object[]>;
         mediaType?: {
           type?: string;
@@ -383,14 +408,14 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
           wildcardType?: boolean;
           wildcardSubtype?: boolean;
         };
+        /** @format int32 */
+        status?: number;
         statusInfo?: {
           family?: DeleteAssigningSharedCriteriaFamilyEnum;
           /** @format int32 */
           statusCode?: number;
           reasonPhrase?: string;
         };
-        /** @format int32 */
-        status?: number;
         stringHeaders?: Record<string, string[]>;
         entity?: object;
         /** @uniqueItems true */
@@ -432,16 +457,18 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
           title?: string;
           params?: Record<string, string>;
         }[];
-        headers?: Record<string, object[]>;
       },
       ErrorResponse
-    >({
-      path: `/rest/assigning/matrix/criteria/${id}/share`,
-      method: "DELETE",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    >(
+      {
+        path: `/rest/assigning/matrix/criteria/${id}/share`,
+        method: "DELETE",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      string,
+    ) as string;
 
   /**
    * @description Retrieves list of available person orgs for assigning, optionally filterable by org code (using a double-ended wildcard search) and project key. If project key is provided, and unanet.financials.use_financial_orgs is true, and the project has an owning org, the list of available person orgs will be further limited to those users whose person org's legal entity is the same as the legal entity of the project's owning org. An exception to this is that person orgs that are not marked as financial orgs will not be filtered out. Additionally, if unanet.multi_entity.enabled is true and the project has supporting orgs defined, person orgs from the supporting orgs will also appear (resource planners will need to have person org access to the support orgs).
@@ -478,14 +505,17 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
     },
     params: RequestParams = {},
   ) =>
-    this.request<KeyNameCodeModelPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/person/organizations`,
-      method: "GET",
-      query: query,
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<KeyNameCodeModelPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/person/organizations`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      KeyNameCodeModelPagedResponse,
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves list of available project orgs for assigning, optionally filterable by org code using a double-ended wildcard search
@@ -516,14 +546,17 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
     },
     params: RequestParams = {},
   ) =>
-    this.request<KeyNameCodeModelPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/projects/organizations`,
-      method: "GET",
-      query: query,
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<KeyNameCodeModelPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/projects/organizations`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      KeyNameCodeModelPagedResponse,
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves list of available project owning orgs for assigning, optionally filterable by org code using a double-ended wildcard search
@@ -554,14 +587,17 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
     },
     params: RequestParams = {},
   ) =>
-    this.request<KeyNameCodeModelPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/projects/owning-organizations`,
-      method: "GET",
-      query: query,
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<KeyNameCodeModelPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/projects/owning-organizations`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      KeyNameCodeModelPagedResponse,
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves default assignment values given a project, person, date
@@ -572,13 +608,16 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request GET:/rest/assigning/defaults/project/{id}/person/{personId}/{date}
    * @secure */
   getDefaults = (id: number, personId: number, date: string, params: RequestParams = {}) =>
-    this.request<AssignmentDefaultsModel, ErrorResponse>({
-      path: `/rest/assigning/defaults/project/${id}/person/${personId}/${date}`,
-      method: "GET",
-      secure: true,
-      format: "json",
-      ...params,
-    });
+    this.request<AssignmentDefaultsModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/defaults/project/${id}/person/${personId}/${date}`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      AssignmentDefaultsModel,
+    ) as AssignmentDefaultsModel;
 
   /**
    * @description Retrieves assignment allocation percentages for people within the given period(s).
@@ -589,15 +628,18 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
    * @request POST:/rest/assigning/people/allocation
    * @secure */
   personAllocation = (data: PeopleAllocationSearchModel, params: RequestParams = {}) =>
-    this.request<SchedulingPersonAllocationModel, ErrorResponse>({
-      path: `/rest/assigning/people/allocation`,
-      method: "POST",
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
+    this.request<SchedulingPersonAllocationModel, ErrorResponse>(
+      {
+        path: `/rest/assigning/people/allocation`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      SchedulingPersonAllocationModel,
+    ) as SchedulingPersonAllocationModel;
 
   /**
    * @description Search for a list of people based on resource assignment criteria
@@ -628,16 +670,19 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
     },
     params: RequestParams = {},
   ) =>
-    this.request<SchedulingPersonSummaryPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/people`,
-      method: "POST",
-      query: query,
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
+    this.request<SchedulingPersonSummaryPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/people`,
+        method: "POST",
+        query: query,
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      SchedulingPersonSummaryPagedResponse,
+    ) as SchedulingPersonSummaryPagedResponse;
 
   /**
    * @description Search for a list of eligible projects based on resource assign criteria
@@ -668,14 +713,17 @@ export class Assigning<SecurityDataType = unknown> extends HttpClient<SecurityDa
     },
     params: RequestParams = {},
   ) =>
-    this.request<SchedulingProjectSummaryPagedResponse, ErrorResponse>({
-      path: `/rest/assigning/projects`,
-      method: "POST",
-      query: query,
-      body: data,
-      secure: true,
-      type: ContentType.Json,
-      format: "json",
-      ...params,
-    });
+    this.request<SchedulingProjectSummaryPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/assigning/projects`,
+        method: "POST",
+        query: query,
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      SchedulingProjectSummaryPagedResponse,
+    ) as SchedulingProjectSummaryPagedResponse;
 }

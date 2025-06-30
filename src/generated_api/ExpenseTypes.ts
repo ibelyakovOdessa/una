@@ -68,7 +68,7 @@ export class ExpenseTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseTypeSummaryModelPagedResponse,
-    );
+    ) as ExpenseTypeSummaryModelPagedResponse;
 
   /**
    * @description Retrieves details of an expense type
@@ -88,7 +88,7 @@ export class ExpenseTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseTypeModel,
-    );
+    ) as ExpenseTypeModel;
 
   /**
    * @description Retrieves cost accounts for an expense type
@@ -129,5 +129,5 @@ export class ExpenseTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ProjectTypeAccountPagedResponse,
-    );
+    ) as ProjectTypeAccountPagedResponse;
 }

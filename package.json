@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test",
+    "test": "npx playwright test | npx pino-pretty",
     "build": "tsc"
   },
   "keywords": [],
@@ -15,7 +15,8 @@
     "dotenv": "^16.4.7",
     "es6-shim": "^0.35.8",
     "pino": "^9.6.0",
-    "pino-prettier": "^3.0.1-dev"
+    "pino-prettier": "^3.0.1-dev",
+    "tsyringe": "^4.10.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",

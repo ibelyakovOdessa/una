@@ -52,7 +52,7 @@ export class NaicsCodes<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       NaicsCodePagedResponse,
-    );
+    ) as NaicsCodePagedResponse;
 
   /**
    * @description Retrieves a NAICS code by key.
@@ -72,5 +72,5 @@ export class NaicsCodes<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       NaicsCodeModel,
-    );
+    ) as NaicsCodeModel;
 }

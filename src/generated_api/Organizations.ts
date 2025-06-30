@@ -57,7 +57,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationLogoModel,
-    );
+    ) as OrganizationLogoModel;
 
   /**
    * @description Create or Update a logo for an organization.
@@ -132,7 +132,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 
   /**
    * @description Creates a new organization.
@@ -154,7 +154,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves the addresses associated with an organization.
@@ -174,7 +174,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationAddressModel,
-    );
+    ) as OrganizationAddressModel;
 
   /**
    * @description Creates a new organization address.
@@ -233,7 +233,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationContactSummaryPagedResponse,
-    );
+    ) as OrganizationContactSummaryPagedResponse;
 
   /**
    * @description Creates a new organization contact.
@@ -292,7 +292,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CustomerProfilePagedResponse,
-    );
+    ) as CustomerProfilePagedResponse;
 
   /**
    * @description Adds a customer profile to an organization.
@@ -314,7 +314,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of vendor profiles for an Organization.
@@ -355,7 +355,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       VendorProfilePagedResponse,
-    );
+    ) as VendorProfilePagedResponse;
 
   /**
    * @description Adds a vendor profile to an existing organization.
@@ -377,7 +377,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an organization by id.
@@ -397,7 +397,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationModel,
-    );
+    ) as OrganizationModel;
 
   /**
    * @description Updates an existing organization matching id. 'id' parameter must match the 'organization' model 'key' field.
@@ -451,7 +451,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationAddressModel,
-    );
+    ) as OrganizationAddressModel;
 
   /**
    * @description Updates an existing organization address matching addressId. 'id' parameter must match the 'organization' key field and 'addressId' parameter must match the 'Organizationaddress' model 'key' field
@@ -505,7 +505,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ContactModel,
-    );
+    ) as ContactModel;
 
   /**
    * @description Updates an existing organization contact matching contactId. 'id' parameter must match the 'organization' key field and 'contactId' parameter must match the 'contact' model 'key' field
@@ -559,7 +559,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CustomerProfileModel,
-    );
+    ) as CustomerProfileModel;
 
   /**
    * @description Updates an existing customer profile.
@@ -613,7 +613,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       VendorProfileModel,
-    );
+    ) as VendorProfileModel;
 
   /**
    * @description Updates an existing vendor profile for an organization.
@@ -672,7 +672,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description This route has been deprecated in favor of /rest/organizations/account-categories. Retrieves a list of available account categories for an organization.
@@ -693,7 +693,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description Retrieves a list of the accounts associated with an organization (summarized data).
@@ -720,7 +720,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CategoryAccountModel,
-    );
+    ) as CategoryAccountModel;
 
   /**
    * @description Retrieves a list of activation approvers for all vendor profiles of an organization.
@@ -740,7 +740,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Retrieves a list of simple organization data filtered by active status.
@@ -767,7 +767,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       KeyNameCodeModel,
-    );
+    ) as KeyNameCodeModel;
 
   /**
    * @description Retrieves a list of simple contact data filtered by active status.
@@ -794,7 +794,7 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ContactBaseModel,
-    );
+    ) as ContactBaseModel;
 
   /**
    * @description Retrieves a paged list of organizations filtered by optional search criteria
@@ -837,5 +837,5 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 }

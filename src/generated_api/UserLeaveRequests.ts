@@ -97,7 +97,7 @@ export class UserLeaveRequests<SecurityDataType = unknown> extends HttpClient<Se
         ...params,
       },
       LeaveRequestPagedResponse,
-    );
+    ) as LeaveRequestPagedResponse;
 
   /**
    * @description Creates a new leave request for the user referenced in the supplied auth token.
@@ -119,7 +119,7 @@ export class UserLeaveRequests<SecurityDataType = unknown> extends HttpClient<Se
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Updates a leave request for the user referenced in the supplied auth token.
@@ -194,7 +194,7 @@ export class UserLeaveRequests<SecurityDataType = unknown> extends HttpClient<Se
         ...params,
       },
       LeaveStatusHistoryPagedResponse,
-    );
+    ) as LeaveStatusHistoryPagedResponse;
 
   /**
    * @description Submit a leave request for the user referenced in the supplied auth token.

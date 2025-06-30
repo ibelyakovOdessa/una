@@ -68,7 +68,7 @@ export class LaborCategories<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       LaborCategoryPagedResponse,
-    );
+    ) as LaborCategoryPagedResponse;
 
   /**
    * @description Creates a new labor category.
@@ -90,7 +90,7 @@ export class LaborCategories<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a list of rates for a labor category.
@@ -131,7 +131,7 @@ export class LaborCategories<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       LaborCategoryRatePagedResponse,
-    );
+    ) as LaborCategoryRatePagedResponse;
 
   /**
    * @description Updates a labor category rate.
@@ -203,7 +203,7 @@ export class LaborCategories<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       LaborCategoryModel,
-    );
+    ) as LaborCategoryModel;
 
   /**
    * @description Updates a labor category and its rates. All existing rates will be replaced with the supplied rates.

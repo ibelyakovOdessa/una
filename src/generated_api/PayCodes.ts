@@ -53,5 +53,5 @@ export class PayCodes<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PayCodePagedResponse,
-    );
+    ) as PayCodePagedResponse;
 }

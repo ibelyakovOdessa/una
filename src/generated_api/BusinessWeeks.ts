@@ -59,7 +59,7 @@ export class BusinessWeeks<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       BusinessWeekPagedResponse,
-    );
+    ) as BusinessWeekPagedResponse;
 
   /**
    * @description Create a new business week
@@ -81,7 +81,7 @@ export class BusinessWeeks<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a business week
@@ -101,7 +101,7 @@ export class BusinessWeeks<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       BusinessWeekModel,
-    );
+    ) as BusinessWeekModel;
 
   /**
    * @description Update an existing business week
@@ -123,7 +123,7 @@ export class BusinessWeeks<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Delete an existing business week

@@ -76,7 +76,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseDetailAttachmentListPagedResponse,
-    );
+    ) as ExpenseDetailAttachmentListPagedResponse;
 
   /**
    * @description Adds an attachment to an expense owned by the authenticated user or a user for which they are an expense alternate. Optionally associate the attachment with an expense detail item.
@@ -111,7 +111,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of expenses owned by the authenticated user, or optionally owned by a user for which they are an expense alternate. Filter the results by optional list of expense statuses and/or a voucher type.
@@ -160,7 +160,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpensePagedResponse,
-    );
+    ) as ExpensePagedResponse;
 
   /**
    * @description Creates an expense owned by the authenticated user or a user for which they are an expense alternate.
@@ -195,7 +195,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates an expense detail for an expense owned by the authenticated user or a user for which they are an expense alternate.
@@ -217,7 +217,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves the details of an expense owned by the authenticated user or a user for which they are a expense alternate.
@@ -237,7 +237,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseModel,
-    );
+    ) as ExpenseModel;
 
   /**
    * @description Updates an expense owned by the authenticated user or a user for which they are an expense alternate.
@@ -291,7 +291,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an expense attachment and its associations from an expense owned by the authenticated user or a user for which they are an expense alternate.
@@ -327,7 +327,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseDetailModel,
-    );
+    ) as ExpenseDetailModel;
 
   /**
    * @description Updates an expense detail for an expense owned by the authenticated user or a user for which they are an expense alternate.
@@ -381,7 +381,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseRequestModel,
-    );
+    ) as ExpenseRequestModel;
 
   /**
    * @description Retrieves a list of imported expenses for the authenticated user or a user for which they are an expense alternate.
@@ -424,7 +424,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ImportedExpensePagedResponseModel,
-    );
+    ) as ImportedExpensePagedResponseModel;
 
   /**
    * @description Retrieves meal caps for an expense
@@ -444,7 +444,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseMealsCapModel,
-    );
+    ) as ExpenseMealsCapModel;
 
   /**
    * @description Retrieves a paged list of status history for a given expense owned by the authenticated user or a user for which they are an expense alternate
@@ -485,7 +485,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseStatusHistoryPagedResponse,
-    );
+    ) as ExpenseStatusHistoryPagedResponse;
 
   /**
    * @description Save an imported credit card expense to an expense report owned by the authenticated user or a user for which they are an expense alternate.
@@ -529,7 +529,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of approved expense requests owned by the authenticated user, or optionally owned by a user for which they are an expense alternate.
@@ -576,7 +576,7 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseRequestPagedResponse,
-    );
+    ) as ExpenseRequestPagedResponse;
 
   /**
    * @description Submits for approval an expense owned by the authenticated user or a user for which they are an expense alternate.
@@ -640,5 +640,5 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseValidationModel,
-    );
+    ) as ExpenseValidationModel;
 }

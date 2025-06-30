@@ -57,7 +57,7 @@ export class UserDeviceTokens<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       DeviceTokenPagedResponseModel,
-    );
+    ) as DeviceTokenPagedResponseModel;
 
   /**
    * @description Registers a new device token to the user.
@@ -79,7 +79,7 @@ export class UserDeviceTokens<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Removes a device token registered to the user.

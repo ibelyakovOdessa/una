@@ -53,7 +53,7 @@ export class SkillLevels<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       SkillLevelPagedResponse,
-    );
+    ) as SkillLevelPagedResponse;
 
   /**
    * @description Creates a new Skill Level
@@ -91,7 +91,7 @@ export class SkillLevels<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       SkillLevelModel,
-    );
+    ) as SkillLevelModel;
 
   /**
    * @description Update the attributes of a skill level.

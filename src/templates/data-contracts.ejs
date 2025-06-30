@@ -20,26 +20,15 @@ const dataContractTemplates = {
     return `enum ${contract.name} {\r\n${contract.content} \r\n }`;
   },
   interface: (contract) => {
-    const properties = contract.content.replace(/,(?=\n)/g,';')
-    .split('\n')
-    .map(line => {
-      const match = line.match(/(\w+)\??:\s*([^;]+);/);
-      if (!match) return line; 
-      const [, propName, propType] = match;
-      const isOptional = line.includes('?');
-      return isOptional
-        ? `  ${propName}?: ${propType};`
-        : `  ${propName}: ${propType} | null = null`;
-    })
-    .join('\n');
-
-    return `class ${contract.name}${buildGenerics(contract)} {\r\n
-        ${properties}\r\n
-        public constructor(init?: Partial<${contract.name}>) {
-          Object.assign(this, init);
-        }
-      }`;
-    
+    const content = contract.content.replace(
+      /^(\s*)([a-zA-Z0-9_]+)(\??):\s([^,]+),/gm,
+      (_match, indent, name, optional, type) => {
+        const newType = type.includes('null') ? type : `${type} | null`;
+        // Добавляем | null к каждому полю
+        return `${indent}${name}${optional}: ${newType},`;
+      }
+    );
+    return `interface ${contract.name}${buildGenerics(contract)} {\r\n${content}}`;
   },
   type: (contract) => {
     return `type ${contract.name}${buildGenerics(contract)} = ${contract.content}`;

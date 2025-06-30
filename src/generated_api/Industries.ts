@@ -52,7 +52,7 @@ export class Industries<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       IndustryPagedResponse,
-    );
+    ) as IndustryPagedResponse;
 
   /**
    * @description Retrieves an industry by key.
@@ -72,5 +72,5 @@ export class Industries<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       IndustryModel,
-    );
+    ) as IndustryModel;
 }

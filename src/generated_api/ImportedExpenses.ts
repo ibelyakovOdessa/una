@@ -42,5 +42,5 @@ export class ImportedExpenses<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 }

@@ -117,7 +117,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderAttachmentListPagedResponse,
-    );
+    ) as PurchaseOrderAttachmentListPagedResponse;
 
   /**
    * @description Add an attachment to a purchase order
@@ -139,7 +139,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Associates a Contract Clause with a PO.
@@ -159,7 +159,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POContractClauseModel,
-    );
+    ) as POContractClauseModel;
 
   /**
    * @description Associates a Contract Clause with a PO.
@@ -235,7 +235,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Create an expense assignment
@@ -262,7 +262,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves purchase order expenses
@@ -310,7 +310,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POExpenseLinePagedResponse,
-    );
+    ) as POExpenseLinePagedResponse;
 
   /**
    * @description Creates an expenses line for an original purchase order
@@ -332,7 +332,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates an expense line for a purchase order mod from an approved PO line on an original PO, using the approved line's descriptorId as the identifier.
@@ -359,7 +359,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves purchase order items
@@ -407,7 +407,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POItemLinePagedResponse,
-    );
+    ) as POItemLinePagedResponse;
 
   /**
    * @description Creates a new item line for a purchase order (i.e., not created as a modification to a previously approved item line)
@@ -429,7 +429,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * No description
@@ -456,7 +456,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Create a labor assignment. Optionally, send an email notification to the project manager and resource assigner of the project on the assignment by setting the 'notify' flag. For the email to be sent, the 'PO Assignment Added/Modified' email notification template must be set to active and the person must be enabled to receive assignment notification emails
@@ -488,7 +488,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves purchase order labor details
@@ -536,7 +536,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POLaborLinePagedResponse,
-    );
+    ) as POLaborLinePagedResponse;
 
   /**
    * @description Creates an labor line for an original purchase order
@@ -558,7 +558,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates a labor line for a purchase order mod from an approved PO line on an original PO, using the approved line's descriptorId as the identifier.
@@ -585,7 +585,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates a purchase order mod from an original purchase order
@@ -607,7 +607,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a purchase order
@@ -635,7 +635,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderModel,
-    );
+    ) as PurchaseOrderModel;
 
   /**
    * @description Updates an existing (original) purchase order given its key.
@@ -698,7 +698,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Updates attachment details on a purchase order
@@ -797,7 +797,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POExpenseLineModel,
-    );
+    ) as POExpenseLineModel;
 
   /**
    * @description Updates an expenses line for a purchase order
@@ -912,7 +912,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POLaborLineModel,
-    );
+    ) as POLaborLineModel;
 
   /**
    * @description Updates an labor line for a purchase order
@@ -966,7 +966,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POAlertPreferencesModel,
-    );
+    ) as POAlertPreferencesModel;
 
   /**
    * @description Update alert preferences for a purchase order
@@ -1020,7 +1020,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POFormatOptionsModel,
-    );
+    ) as POFormatOptionsModel;
 
   /**
    * @description Updates details of a purchase order's format options
@@ -1098,7 +1098,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 
   /**
    * @description Retrieves approved or in progress purchase order balances.
@@ -1126,7 +1126,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderBalancesModel,
-    );
+    ) as PurchaseOrderBalancesModel;
 
   /**
    * @description Retrieves purchase order expense assignments
@@ -1169,7 +1169,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderExpenseAssignmentPagedResponse,
-    );
+    ) as PurchaseOrderExpenseAssignmentPagedResponse;
 
   /**
    * @description Retrieves purchase order expense history
@@ -1213,7 +1213,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POExpenseLinePagedResponse,
-    );
+    ) as POExpenseLinePagedResponse;
 
   /**
    * @description Retrieves a purchase order's status history
@@ -1254,7 +1254,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchasingApprovalHistoryPagedResponse,
-    );
+    ) as PurchasingApprovalHistoryPagedResponse;
 
   /**
    * @description Retrieves purchase order item by the specified key
@@ -1274,7 +1274,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POItemLinePagedResponse,
-    );
+    ) as POItemLinePagedResponse;
 
   /**
    * @description Retrieves purchase order item history
@@ -1318,7 +1318,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POItemLinePagedResponse,
-    );
+    ) as POItemLinePagedResponse;
 
   /**
    * @description Retrieves purchase order labor assignments
@@ -1361,7 +1361,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderLaborAssignmentPagedResponse,
-    );
+    ) as PurchaseOrderLaborAssignmentPagedResponse;
 
   /**
    * @description Retrieves purchase order labor detail history
@@ -1405,7 +1405,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       POLaborLinePagedResponse,
-    );
+    ) as POLaborLinePagedResponse;
 
   /**
    * @description Retrieves a paged list of legal entities available to the tokened user for purchase orders, filtered by an optional active flag
@@ -1447,7 +1447,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 
   /**
    * @description Retrieves balances for posted vendor invoices on the purchase order
@@ -1467,7 +1467,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceBalancesModel,
-    );
+    ) as VendorInvoiceBalancesModel;
 
   /**
    * @description Retrieves purchase order details
@@ -1508,7 +1508,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PODetailPagedResponse,
-    );
+    ) as PODetailPagedResponse;
 
   /**
    * @description Retrieves details of a purchase order in report format.
@@ -1538,7 +1538,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ReportGenerationServiceResponse,
-    );
+    ) as ReportGenerationServiceResponse;
 
   /**
    * @description Open a purchase order
@@ -1631,7 +1631,7 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderPagedResponse,
-    );
+    ) as PurchaseOrderPagedResponse;
 
   /**
    * @description Send an email notification of a labor assignment change to a project's resource assigner and project manager. By default, the labor line item's project info will be used for notification. If the line does not contain a project, the project key must be included in the request. For the email to be sent, the 'PO Assignment Added/Modified' email notification template must be set to active and the person must be enabled to receive assignment notification emails

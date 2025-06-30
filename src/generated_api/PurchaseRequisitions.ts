@@ -89,7 +89,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PurchaseRequisitionAttachmentListPagedResponse,
-    );
+    ) as PurchaseRequisitionAttachmentListPagedResponse;
 
   /**
    * @description Add an attachment to a purchase requisition
@@ -111,7 +111,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Close a purchase requisition.
@@ -149,7 +149,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves purchase requisition expense details, filtered by optional query parameters. Defaults to showing CONSOLIDATED APPROVED details for the PR family.
@@ -196,7 +196,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PRExpenseLinePagedResponse,
-    );
+    ) as PRExpenseLinePagedResponse;
 
   /**
    * @description Creates an expense line for a purchase requisition
@@ -218,7 +218,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates an expense line for a purchase requisition mod from an approved PR line on an original PR, using the approved line's descriptorId as the identifier.
@@ -245,7 +245,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves purchase requisition item details, filtered by optional query parameters. Defaults to showing CONSOLIDATED APPROVED details for the PR family.
@@ -292,7 +292,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PRItemLinePagedResponse,
-    );
+    ) as PRItemLinePagedResponse;
 
   /**
    * @description Creates an item line for a purchase requisition
@@ -314,7 +314,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates an item line for a purchase requisition mod from an approved PR line on an original PR, using the approved line's descriptorId as the identifier.
@@ -341,7 +341,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves purchase requisition labor details, filtered by optional query parameters. Defaults to showing CONSOLIDATED APPROVED details for the PR family.
@@ -388,7 +388,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PRLaborLinePagedResponse,
-    );
+    ) as PRLaborLinePagedResponse;
 
   /**
    * @description Creates a labor line for a purchase requisition
@@ -410,7 +410,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates a labor line for a purchase requisition mod from an approved PR line on an original PR, using the approved line's descriptorId as the identifier.
@@ -437,7 +437,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates a purchase requisition mod from an original purchase requisition
@@ -459,7 +459,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a purchase requisition, filtered by optional 'type' query parameter. Defaults to CONSOLIDATED_APPROVED.
@@ -487,7 +487,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PurchaseRequisitionModel,
-    );
+    ) as PurchaseRequisitionModel;
 
   /**
    * @description Updates an existing (original) purchase requisition given its key. Changes to the mod number field is ignored.
@@ -550,7 +550,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Updates attachment details on a purchase requisition
@@ -609,7 +609,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PRExpenseLineModel,
-    );
+    ) as PRExpenseLineModel;
 
   /**
    * @description Updates an expense line for a purchase requisition
@@ -663,7 +663,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PRItemLineModel,
-    );
+    ) as PRItemLineModel;
 
   /**
    * @description Updates an item line for a purchase requisition
@@ -717,7 +717,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PRLaborLineModel,
-    );
+    ) as PRLaborLineModel;
 
   /**
    * @description Updates an labor line for a purchase requisition
@@ -792,7 +792,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PurchasingApprovalHistoryPagedResponse,
-    );
+    ) as PurchasingApprovalHistoryPagedResponse;
 
   /**
    * @description Open a purchase requisition
@@ -867,7 +867,7 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PurchaseRequisitionPagedResponse,
-    );
+    ) as PurchaseRequisitionPagedResponse;
 
   /**
    * @description Submits a purchase requisition for approval.

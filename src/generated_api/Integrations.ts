@@ -70,7 +70,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationPagedResponse,
-    );
+    ) as IntegrationPagedResponse;
 
   /**
    * @description Creates a new integration.
@@ -92,7 +92,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Create a new integration user
@@ -114,7 +114,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationUserModel,
-    );
+    ) as IntegrationUserModel;
 
   /**
    * @description Retrieves a paged list of integration values for a given type.
@@ -163,7 +163,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationPagedResponse,
-    );
+    ) as IntegrationPagedResponse;
 
   /**
    * @description Creates a new integration value.
@@ -190,7 +190,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of an integration.
@@ -210,7 +210,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationModel,
-    );
+    ) as IntegrationModel;
 
   /**
    * @description Updates an existing integration given its key.
@@ -287,7 +287,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationPagedResponse,
-    );
+    ) as IntegrationPagedResponse;
 
   /**
    * @description Deletes an existing integration value given its key.
@@ -328,7 +328,7 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationUserModel,
-    );
+    ) as IntegrationUserModel;
 
   /**
    * @description Search for available integration users
@@ -349,5 +349,5 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       IntegrationUserPagedResponse,
-    );
+    ) as IntegrationUserPagedResponse;
 }

@@ -60,7 +60,7 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DataLakeCriteriaPagedResponse,
-    );
+    ) as DataLakeCriteriaPagedResponse;
 
   /**
    * @description Creates a data lake criteria set.
@@ -82,7 +82,7 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a data lake criteria set by key.
@@ -102,7 +102,7 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DataLakeCriteriaModel,
-    );
+    ) as DataLakeCriteriaModel;
 
   /**
    * @description Updates a data lake criteria set by id.
@@ -168,6 +168,7 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
          * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
          */
         lastModified?: string;
+        headers?: Record<string, object[]>;
         metadata?: Record<string, object[]>;
         mediaType?: {
           type?: string;
@@ -176,14 +177,14 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
           wildcardType?: boolean;
           wildcardSubtype?: boolean;
         };
+        /** @format int32 */
+        status?: number;
         statusInfo?: {
           family?: Delete7FamilyEnum;
           /** @format int32 */
           statusCode?: number;
           reasonPhrase?: string;
         };
-        /** @format int32 */
-        status?: number;
         stringHeaders?: Record<string, string[]>;
         entity?: object;
         /** @uniqueItems true */
@@ -225,7 +226,6 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
           title?: string;
           params?: Record<string, string>;
         }[];
-        headers?: Record<string, object[]>;
       },
       ErrorResponse
     >(
@@ -237,7 +237,7 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       string,
-    );
+    ) as string;
 
   /**
    * @description Retrieves a paged list of data lake views filtered by optional query parameters.
@@ -278,5 +278,5 @@ export class DataLake<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       DataCriteriaTypePagedResponse,
-    );
+    ) as DataCriteriaTypePagedResponse;
 }

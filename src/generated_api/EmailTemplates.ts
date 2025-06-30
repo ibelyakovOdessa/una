@@ -54,5 +54,5 @@ export class EmailTemplates<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       EmailTemplatePagedResponse,
-    );
+    ) as EmailTemplatePagedResponse;
 }

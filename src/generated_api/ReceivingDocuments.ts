@@ -76,7 +76,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ReceivingDocumentItemPagedResponse,
-    );
+    ) as ReceivingDocumentItemPagedResponse;
 
   /**
    * @description Create a new receiving document item.
@@ -98,7 +98,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve a receiving document item
@@ -118,7 +118,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ReceivingDocumentItemModel,
-    );
+    ) as ReceivingDocumentItemModel;
 
   /**
    * @description Update an existing receiving document item.
@@ -193,7 +193,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Uploads an attachment to a receiving document.
@@ -215,7 +215,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve a list of eligible purchase order items by purchase order
@@ -256,7 +256,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ReceivingPurchaseOrderItemModelPagedResponse,
-    );
+    ) as ReceivingPurchaseOrderItemModelPagedResponse;
 
   /**
    * @description Search for a list of eligible purchase orders filtered by provided criteria
@@ -299,7 +299,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ReceivingPurchaseOrderModelPagedResponse,
-    );
+    ) as ReceivingPurchaseOrderModelPagedResponse;
 
   /**
    * @description Moves a receiving document to the completed status and prevents further edits.
@@ -337,7 +337,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve a receiving document by id
@@ -357,7 +357,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ReceivingDocumentModel,
-    );
+    ) as ReceivingDocumentModel;
 
   /**
    * @description Update an existing receiving document.
@@ -411,7 +411,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Deletes a receiving document attachment and its associations.
@@ -447,7 +447,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ImportDefinitionModel,
-    );
+    ) as ImportDefinitionModel;
 
   /**
    * @description Retrieves a paged list of legal entities available to the tokened user for receiving documents.
@@ -489,7 +489,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves a paged list of owning organizations available to the tokened user for receiving documents.
@@ -529,7 +529,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves a paged list of projects available to the tokened user for receiving documents.
@@ -569,7 +569,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ProjectSummaryPagedResponse,
-    );
+    ) as ProjectSummaryPagedResponse;
 
   /**
    * @description Retrieves a paged list of vendors available to the tokened user for receiving documents.
@@ -610,7 +610,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Imports receiving documents file, using an HTTP multipart form post, in order to create new, or update existing receiving documents. * Form post must include a **file** form key/value specifying the file being uploaded* Feedback will be provided through a server push technology Server Send Events (SSE) - https://en.wikipedia.org/wiki/Server-sent_events * The import request consists of two stages: * File upload stage * Imported data processing stage * Client can request that in-progress feedback be sent by including a **enableProgressFeedback** query string parameter with the request. * If **enableProgressFeedback** = false, then all feedback information will be returned in a single SSE feedback event at the completion of the import. * During the file upload process, there will be no progress feedback. Clients can track the progress of the file upload on their end. * If the file upload fails, an HTTP 500 response is returned. * The first progress feedback will begin upon completion of the file upload. * Set query param '**dryrun**=true' in order to test the validity of an import file without performing any of the add or update operations. Example request via curl: ``` curl --request POST 'http://localhost/unanet/rest/receiving-documents/import?enableProgressFeedback=true' --header 'Accept: text/event-stream' --header 'Authorization: Bearer xxx' --form 'file=@"rd_import.csv"' ``` ### Import File Contents The following fields are supported: ``` *receipt_number, po_number, po_lin_id, quantity, comment ``` * The first non-comment row of an import file can include an optional header definition row that starts with an asterix '*' * If no header row is included in an import file, then the expected rows default to the above header definition. Comment lines are allowed provided they begin with '#'. * If an import file provides a header definition row, the fields supplied by the import file can be in any order desired provided that the field order of the rows in the file all match the order of the fields in the header definition row. * Leading and trailing whitespace is allowed on fields and trimmed during import processing. * To clear (set to null) the value of a field during update, include '!BLANK!' as the field value. This is only supported for optional fields. * To see which fields can be blank or are required for additions and update, see the results of the **GET /import/definition** request.
@@ -650,7 +650,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ImportProgressModel | ImportErrorModel,
-    );
+    ) as ImportProgressModel | ImportErrorModel;
 
   /**
    * @description Moves a receiving document to the retracted status.
@@ -709,7 +709,7 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       ReceivingDocumentPagedResponse,
-    );
+    ) as ReceivingDocumentPagedResponse;
 
   /**
    * @description Retrieves a paged list of receiving document people
@@ -752,5 +752,5 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       PersonSummaryPagedResponse,
-    );
+    ) as PersonSummaryPagedResponse;
 }

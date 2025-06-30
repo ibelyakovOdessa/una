@@ -77,7 +77,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of manager level expense approvals for the user referenced in the supplied auth token.
@@ -129,7 +129,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a manager level expense approval by key for the user referenced in the supplied auth token.
@@ -164,7 +164,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExpenseApprovalQueueModel,
-    );
+    ) as ExpenseApprovalQueueModel;
 
   /**
    * @description Retrieves a paged list of project-level expense approvals for the user referenced in the supplied auth token.
@@ -216,7 +216,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Approves an expense, as the customer, for the user referenced in the supplied auth token.
@@ -371,7 +371,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       InvoiceApprovalQueuePagedResponse,
-    );
+    ) as InvoiceApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a manager level customer invoice approvals for the user referenced in the supplied auth token.
@@ -418,7 +418,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       InvoiceApprovalQueuePagedResponse,
-    );
+    ) as InvoiceApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of project-level invoice approvals for the user referenced in the supplied auth token.
@@ -465,7 +465,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       InvoiceApprovalQueuePagedResponse,
-    );
+    ) as InvoiceApprovalQueuePagedResponse;
 
   /**
    * @description Approves an invoice, as the customer, for the user referenced in the supplied auth token.
@@ -620,7 +620,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       LeaveApprovalQueuePagedResponse,
-    );
+    ) as LeaveApprovalQueuePagedResponse;
 
   /**
    * @description Approves leave request as the manager for the user referenced in the supplied auth token.
@@ -696,7 +696,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ApproverAlternatePagedResponse,
-    );
+    ) as ApproverAlternatePagedResponse;
 
   /**
    * @description Retrieves a list of people with pending approvals for which the authenticated user is an alternate project approver.
@@ -736,7 +736,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ApproverAlternatePagedResponse,
-    );
+    ) as ApproverAlternatePagedResponse;
 
   /**
    * @description Retrieves a paged list of project-level timesheet approvals for the user referenced in the supplied auth token.
@@ -783,7 +783,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Retrieve manager level timesheet approvals for the user referenced in the supplied auth token.
@@ -830,7 +830,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves manager level timesheet approval by key for the user referenced in the supplied auth token.
@@ -863,7 +863,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       TimeApprovalQueueModel,
-    );
+    ) as TimeApprovalQueueModel;
 
   /**
    * @description Retrieves a paged list of project-level timesheet approvals for the user referenced in the supplied auth token.
@@ -910,7 +910,7 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Approves a timesheet, as the customer, for the user referenced in the supplied auth token.
@@ -1038,5 +1038,5 @@ export class UserApprovals<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ApprovalStoredProcResponseModel,
-    );
+    ) as ApprovalStoredProcResponseModel;
 }

@@ -58,7 +58,7 @@ export class Contacts<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ContactAddressTypePagedResponse,
-    );
+    ) as ContactAddressTypePagedResponse;
 
   /**
    * @description Retrieves a paged list of contact categories
@@ -100,7 +100,7 @@ export class Contacts<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ContactCategoryPagedResponse,
-    );
+    ) as ContactCategoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of contact email types
@@ -140,7 +140,7 @@ export class Contacts<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ContactEmailTypePagedResponse,
-    );
+    ) as ContactEmailTypePagedResponse;
 
   /**
    * @description Retrieves a paged list of contact phone types
@@ -180,5 +180,5 @@ export class Contacts<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ContactPhoneTypePagedResponse,
-    );
+    ) as ContactPhoneTypePagedResponse;
 }

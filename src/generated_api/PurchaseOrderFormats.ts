@@ -58,7 +58,7 @@ export class PurchaseOrderFormats<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PurchaseOrderFormatSummaryPagedResponse,
-    );
+    ) as PurchaseOrderFormatSummaryPagedResponse;
 
   /**
    * @description Creates details of a purchase order format.
@@ -80,7 +80,7 @@ export class PurchaseOrderFormats<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a purchase order format.
@@ -100,7 +100,7 @@ export class PurchaseOrderFormats<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       PurchaseOrderFormatModel,
-    );
+    ) as PurchaseOrderFormatModel;
 
   /**
    * @description Update details of an existing purchase order format.

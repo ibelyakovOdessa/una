@@ -129,7 +129,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of expense approval reviews for the user referenced in the supplied auth token.
@@ -169,7 +169,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of project-level expense approval reviews for the user referenced in the supplied auth token.
@@ -209,7 +209,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of expense submission reviews for the user referenced in the supplied auth token.
@@ -249,7 +249,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       ExpenseApprovalQueuePagedResponse,
-    );
+    ) as ExpenseApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of project-level time approval reviews for the user referenced in the supplied auth token.
@@ -289,7 +289,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of time approval reviews for the user referenced in the supplied auth token.
@@ -329,7 +329,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of project-level time approval reviews for the user referenced in the supplied auth token.
@@ -369,7 +369,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Retrieves a paged list of time submission reviews for the user referenced in the supplied auth token.
@@ -409,7 +409,7 @@ export class UserReviews<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       TimeApprovalQueuePagedResponse,
-    );
+    ) as TimeApprovalQueuePagedResponse;
 
   /**
    * @description Completes the review of a customer invoice approval performed on behlaf of the user referenced in the supplied auth token.

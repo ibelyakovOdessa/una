@@ -65,7 +65,7 @@ export class PostingGroups<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PostingGroupPagedResponse,
-    );
+    ) as PostingGroupPagedResponse;
 
   /**
    * @description Create a new custom posting group
@@ -87,7 +87,7 @@ export class PostingGroups<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PostingGroupCreateModel,
-    );
+    ) as PostingGroupCreateModel;
 
   /**
    * @description Retrieves details of a posting group
@@ -107,7 +107,7 @@ export class PostingGroups<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PostingGroupModel,
-    );
+    ) as PostingGroupModel;
 
   /**
    * @description Update a custom posting group
@@ -161,7 +161,7 @@ export class PostingGroups<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PostingGroupSourceModel,
-    );
+    ) as PostingGroupSourceModel;
 
   /**
    * @description Update default account sources for a posting group

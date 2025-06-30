@@ -54,5 +54,5 @@ export class BankAccounts<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       BankAccountPagedResponse,
-    );
+    ) as BankAccountPagedResponse;
 }

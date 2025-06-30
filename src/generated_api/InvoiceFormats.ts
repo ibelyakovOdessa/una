@@ -57,7 +57,7 @@ export class InvoiceFormats<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       InvoiceFormatPagedResponse,
-    );
+    ) as InvoiceFormatPagedResponse;
 
   /**
    * @description Creates a new Invoice Format
@@ -95,7 +95,7 @@ export class InvoiceFormats<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       InvoiceFormatModel,
-    );
+    ) as InvoiceFormatModel;
 
   /**
    * @description Update the attributes of an Invoice Format.

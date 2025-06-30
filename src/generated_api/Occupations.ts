@@ -63,7 +63,7 @@ export class Occupations<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       OccupationPagedResponse,
-    );
+    ) as OccupationPagedResponse;
 
   /**
    * @description Creates a new occupation.
@@ -85,7 +85,7 @@ export class Occupations<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of an occupation.
@@ -105,7 +105,7 @@ export class Occupations<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       OccupationModel,
-    );
+    ) as OccupationModel;
 
   /**
    * @description Updates an existing occupation given its key. The occupation name and active flag are updateable fields, but code is not.

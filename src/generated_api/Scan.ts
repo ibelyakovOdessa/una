@@ -34,5 +34,5 @@ export class Scan<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       ScanResult,
-    );
+    ) as ScanResult;
 }

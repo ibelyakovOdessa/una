@@ -79,7 +79,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseDetailAttachmentListPagedResponse,
-    );
+    ) as ExpenseDetailAttachmentListPagedResponse;
 
   /**
    * @description Uploads an attachment to an expense and optionally associates it with a specific expense detail.
@@ -114,7 +114,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Associates existing attachments with an expense detail.
@@ -167,7 +167,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates an expense detail for provided expense ID.
@@ -189,7 +189,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a list of Value-Added Tax locations.
@@ -216,7 +216,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       VatLocationPagedResponse,
-    );
+    ) as VatLocationPagedResponse;
 
   /**
    * @description Creates a new Value-Added Tax location.
@@ -238,7 +238,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       VatLocationCreateModel,
-    );
+    ) as VatLocationCreateModel;
 
   /**
    * @description Retrieves details of an expense by its id.
@@ -258,7 +258,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseModel,
-    );
+    ) as ExpenseModel;
 
   /**
    * @description Updates an existing expense given its key.
@@ -312,7 +312,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Deletes an expense attachment and its associations.
@@ -348,7 +348,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseDetailModel,
-    );
+    ) as ExpenseDetailModel;
 
   /**
    * @description Updates an expense detail given its expense ID and expense detail ID.
@@ -402,7 +402,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       VatLocationModel,
-    );
+    ) as VatLocationModel;
 
   /**
    * @description Update an existing Value-Added Tax location by id.
@@ -495,7 +495,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseTypePagedResponse,
-    );
+    ) as ExpenseTypePagedResponse;
 
   /**
    * @description Retrieve Meal Caps for an expense
@@ -552,7 +552,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PaymentMethodPagedResponse,
-    );
+    ) as PaymentMethodPagedResponse;
 
   /**
    * @description Retrieves a paged list of project types available for an expense
@@ -593,7 +593,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectTypePagedResponse,
-    );
+    ) as ProjectTypePagedResponse;
 
   /**
    * @description Retrieves a paged list of projects available for a specific expense
@@ -634,7 +634,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseProjectPagedResponse,
-    );
+    ) as ExpenseProjectPagedResponse;
 
   /**
    * @description Retrieves a paged list of projects available for all expenses associated with either an optionally specified ownerKey or the authenticated user.
@@ -686,7 +686,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseProjectPagedResponse,
-    );
+    ) as ExpenseProjectPagedResponse;
 
   /**
    * @description Retrieves a paged list of status history for a given expense.
@@ -727,7 +727,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseStatusHistoryPagedResponse,
-    );
+    ) as ExpenseStatusHistoryPagedResponse;
 
   /**
    * @description Delete an attachment association from an expense detail.
@@ -791,7 +791,7 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpensePagedResponse,
-    );
+    ) as ExpensePagedResponse;
 
   /**
    * @description Submits an expense for approval.
@@ -855,5 +855,5 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseValidationModel,
-    );
+    ) as ExpenseValidationModel;
 }

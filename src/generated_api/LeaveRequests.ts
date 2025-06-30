@@ -58,7 +58,7 @@ export class LeaveRequests<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       LeaveStatusHistoryPagedResponse,
-    );
+    ) as LeaveStatusHistoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of leave requests, filtering the results by optional criteria.
@@ -126,5 +126,5 @@ export class LeaveRequests<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       LeaveRequestPagedResponse,
-    );
+    ) as LeaveRequestPagedResponse;
 }

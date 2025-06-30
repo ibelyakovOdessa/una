@@ -68,7 +68,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Add an attachment for the user referenced in the supplied auth token.
@@ -90,7 +90,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves the timesheet user's assigned project list
@@ -130,7 +130,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       MyProjectPagedResponseModel,
-    );
+    ) as MyProjectPagedResponseModel;
 
   /**
    * @description Adds projects to the user's My Projects list.
@@ -191,7 +191,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       MyProjectPagedResponseModel,
-    );
+    ) as MyProjectPagedResponseModel;
 
   /**
    * @description Retrieves an attachment for the user referenced in the supplied auth token. The response contains the full bytes of the attachment.
@@ -211,7 +211,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Deletes an attachment for the user referenced in the supplied auth token.
@@ -267,7 +267,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       AlternatePagedResponse,
-    );
+    ) as AlternatePagedResponse;
 
   /**
    * @description Update alternate approvers for the user.
@@ -327,7 +327,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       AlternatePagedResponse,
-    );
+    ) as AlternatePagedResponse;
 
   /**
    * @description Retrieves the timesheet user's Leave Balance
@@ -370,7 +370,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       LeaveBalancePagedResponseModel,
-    );
+    ) as LeaveBalancePagedResponseModel;
 
   /**
    * @description Retrieves details of the user referenced in the supplied auth token.
@@ -390,7 +390,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       PersonModel,
-    );
+    ) as PersonModel;
 
   /**
    * @description Updates the set of editable values for the user referenced in the supplied auth token.
@@ -428,7 +428,7 @@ export class User<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       PersonRateBaseModel,
-    );
+    ) as PersonRateBaseModel;
 
   /**
    * @description Deletes a project from the user's My Projects list.

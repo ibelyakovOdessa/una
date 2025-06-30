@@ -17,7 +17,6 @@ import {
   PaymentTermModel,
   PaymentTermPagedResponse,
 } from "./data-contracts";
-
 import { ContentType, HttpClient, RequestParams } from "./http-client";
 
 export class PaymentTerms<SecurityDataType = unknown> extends HttpClient<SecurityDataType> {
@@ -61,7 +60,7 @@ export class PaymentTerms<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       PaymentTermPagedResponse,
-    );
+    ) as PaymentTermPagedResponse;
 
   /**
    * @description Creates a new payment term.
@@ -83,7 +82,7 @@ export class PaymentTerms<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve a payment term.
@@ -103,7 +102,7 @@ export class PaymentTerms<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       PaymentTermModel,
-    );
+    ) as PaymentTermModel;
 
   /**
    * @description Updates a payment term.

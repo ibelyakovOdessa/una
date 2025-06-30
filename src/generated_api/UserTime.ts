@@ -86,7 +86,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TimesheetPagedResponse,
-    );
+    ) as TimesheetPagedResponse;
 
   /**
    * @description Adds a new timesheet owned by the authenticated user or a user for which they are a time alternate.
@@ -121,7 +121,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Saves timesheet attachment and associate it with a timesheet
@@ -142,7 +142,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves adjustments for a given timesheet owned by the authenticated user or a user for which they are a time alternate. * Optional parameter __type__ allows requesting only specific adjustment variants.
@@ -175,7 +175,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AdjustmentsModel,
-    );
+    ) as AdjustmentsModel;
 
   /**
    * @description Retrieves attachment details for a timesheet
@@ -216,7 +216,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Retrieves specified attachment for a timesheet
@@ -236,7 +236,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an attachment associated with a give timesheet
@@ -272,7 +272,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TimesheetModel,
-    );
+    ) as TimesheetModel;
 
   /**
    * @description Updates the details of a timesheet that is owned by the authenticated user or a user for which they are a time alternate.
@@ -294,7 +294,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TimesheetUpdateResponseModel,
-    );
+    ) as TimesheetUpdateResponseModel;
 
   /**
    * @description Removes a timesheet owned by the authenticated user or a user for which they are a time alternate.
@@ -351,7 +351,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TimeStatusHistoryPagedResponse,
-    );
+    ) as TimeStatusHistoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of timesheets, filtered by the search criteria, owned by the authenticated user, or optionally owned by a user for which they are a time alternate. * Search for active timesheets, by setting __active__ flag to _true_. * Search for historical timesheets (not active), by setting __active__ flag to _false_, * Omit the __active__ flag and alternatively specify a list of timesheet __statuses__ or __adjustmentStatus__ to include in list. * Search for timesheets owned by users for which the authenticated user is a time alternate by providing a value for __ownerKey__. * If search criteria include both __statuses__ and __adjustmentStatuses__, the result is an OR of the two criteria. For example, if criteria include a status of _EXTRACTED_ and adjustmentStatus of _SUBMITTED_, then search will look for timesheets that include either a status of _EXTRACTED_ or an adjustmentStatus of _SUBMITTED_. * Regardless of the above criteria settings, __beginDateStart__ and __beginDateEnd__ can be used to filter timesheets by their beginDate. If beginDateStart is not specified, search will be limited to the last 30 days.Alternatively, __workDate__ can be used to match any timesheet where workDate is within the timesheet's designated time period. If both __beginDateStart__ and __workDate__ are not specified, search will be limited to the last 30 days. If both the __active__ flag is specified and either __statuses__ or __adjustmentStatuses__ contains entries, an HTTP 400 (BAD REQUEST) will be returned.
@@ -394,7 +394,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TimesheetPagedResponse,
-    );
+    ) as TimesheetPagedResponse;
 
   /**
    * @description Submits a timesheet for approval that is owned by the authenticated user or a user for which they are a time alternate.
@@ -476,5 +476,5 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TimeValidationModel,
-    );
+    ) as TimeValidationModel;
 }

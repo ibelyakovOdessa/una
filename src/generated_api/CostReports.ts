@@ -40,7 +40,7 @@ export class CostReports<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CostReportElementModel,
-    );
+    ) as CostReportElementModel;
 
   /**
    * @description Retrieves a paged list of cost report elements
@@ -81,7 +81,7 @@ export class CostReports<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CostReportElementPagedResponse,
-    );
+    ) as CostReportElementPagedResponse;
 
   /**
    * @description Retrieves a paged list of cost reports
@@ -121,7 +121,7 @@ export class CostReports<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CostReportPagedResponse,
-    );
+    ) as CostReportPagedResponse;
 
   /**
    * @description Create a new cost report
@@ -143,7 +143,7 @@ export class CostReports<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a cost report by key
@@ -163,7 +163,7 @@ export class CostReports<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CostReportModel,
-    );
+    ) as CostReportModel;
 
   /**
    * @description Update an existing cost report

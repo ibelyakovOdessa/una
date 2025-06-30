@@ -1,5 +1,6 @@
 /* eslint-disable */
 /* tslint:disable */
+// @ts-nocheck
 /*
  * ---------------------------------------------------------------
  * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
@@ -66,7 +67,6 @@ export enum ContentType {
 
 export class HttpClient<SecurityDataType = unknown> {
   private static requestNum = 0
-
   public baseUrl: string = "https://autoaur254.int.unanet.io/platform";
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
@@ -181,8 +181,7 @@ export class HttpClient<SecurityDataType = unknown> {
     baseUrl,
     cancelToken,
     ...params
-  }: FullRequestParams,
-    dto?: new () => T): Promise<ErrorResponse | T | void> => {
+  }: FullRequestParams): Promise<HttpResponse<T, E>> => {
     HttpClient.requestNum++;
     const secureParams =
       ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
@@ -235,15 +234,10 @@ export class HttpClient<SecurityDataType = unknown> {
 
       if (!response.ok) {
         logger.info(`[${HttpClient.requestNum}] Response: ${data.status} \n` + JSON.stringify(data, null, 2))
-        return plainToInstance(ErrorResponse, data.error)
+        return data.error as ErrorResponse
       } else {
         logger.info(`[${HttpClient.requestNum}] Response: ${data.status}`)
-        if (dto) {
-          return plainToInstance(dto, data.data,
-             { exposeDefaultValues: true, enableImplicitConversion: true }
-            )
-        }
-        
+        return data.data as T
       }
       
       // return data;

@@ -44,5 +44,5 @@ export class Ping<SecurityDataType = unknown> extends HttpClient<SecurityDataTyp
         ...params,
       },
       VersionModel,
-    );
+    ) as VersionModel;
 }

@@ -111,7 +111,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Adds attachment to a vendor invoice.
@@ -133,7 +133,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves matched expense items for the vendor invoice.
@@ -195,7 +195,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceMatchedExpensePagedResponse,
-    );
+    ) as VendorInvoiceMatchedExpensePagedResponse;
 
   /**
    * @description Add all unmatched expenses in the date range.
@@ -272,7 +272,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceMatchedItemPagedResponse,
-    );
+    ) as VendorInvoiceMatchedItemPagedResponse;
 
   /**
    * @description Add all unmatched items in the date range.
@@ -352,7 +352,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceMatchedLaborPagedResponse,
-    );
+    ) as VendorInvoiceMatchedLaborPagedResponse;
 
   /**
    * @description Add all unmatched labor in the date range.
@@ -414,7 +414,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       BasePurchasingDocumentPagedResponse,
-    );
+    ) as BasePurchasingDocumentPagedResponse;
 
   /**
    * @description Retrieves PO funding cap adjustments for a VI that is matched to a PO.
@@ -455,7 +455,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceFCAElementPagedResponse,
-    );
+    ) as VendorInvoiceFCAElementPagedResponse;
 
   /**
    * @description First removes any existing funding cap adjustments and then calculates the difference between the amount from the aggregate approved PO and its Mods and the aggregate VI amount posted against the PO (including the amounts from the current VI).
@@ -496,7 +496,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceFCAElementPagedResponse,
-    );
+    ) as VendorInvoiceFCAElementPagedResponse;
 
   /**
    * @description Create a new vendor invoice.
@@ -518,7 +518,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of expense details for a vendor invoice.
@@ -559,7 +559,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceExpensePagedResponse,
-    );
+    ) as VendorInvoiceExpensePagedResponse;
 
   /**
    * @description Creates a expense detail line for a vendor invoice
@@ -581,7 +581,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of configured vendor invoice formats.
@@ -621,7 +621,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceFormatPagedResponse,
-    );
+    ) as VendorInvoiceFormatPagedResponse;
 
   /**
    * @description Add a new vendor invoice format.
@@ -643,7 +643,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves configured vendor invoice format sections for an existing format.
@@ -663,7 +663,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceFormatSectionModel,
-    );
+    ) as VendorInvoiceFormatSectionModel;
 
   /**
    * @description Add a new vendor invoice format section to an existing format.
@@ -685,7 +685,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of item details for a vendor invoice.
@@ -726,7 +726,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceItemPagedResponse,
-    );
+    ) as VendorInvoiceItemPagedResponse;
 
   /**
    * @description Creates a item detail line for a vendor invoice
@@ -748,7 +748,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of labor details for a vendor invoice.
@@ -789,7 +789,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceLaborPagedResponse,
-    );
+    ) as VendorInvoiceLaborPagedResponse;
 
   /**
    * @description Creates a labor detail line for a vendor invoice
@@ -811,7 +811,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Defer matched expenses for a given set of expense data allocation keys.
@@ -885,7 +885,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceSummaryModel,
-    );
+    ) as VendorInvoiceSummaryModel;
 
   /**
    * @description Updates a vendor invoice by its id.
@@ -939,7 +939,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an attachment for on given vendor invoice.
@@ -975,7 +975,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceExpenseModel,
-    );
+    ) as VendorInvoiceExpenseModel;
 
   /**
    * @description Updates an expense detail line for a vendor invoice
@@ -1029,7 +1029,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceFormatModel,
-    );
+    ) as VendorInvoiceFormatModel;
 
   /**
    * @description Modifies an existing vendor invoice format.
@@ -1083,7 +1083,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceFormatSectionModel,
-    );
+    ) as VendorInvoiceFormatSectionModel;
 
   /**
    * @description Modifies an existing vendor invoice format section for an existing format.
@@ -1158,7 +1158,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceItemModel,
-    );
+    ) as VendorInvoiceItemModel;
 
   /**
    * @description Updates an item detail line for a vendor invoice
@@ -1212,7 +1212,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceLaborModel,
-    );
+    ) as VendorInvoiceLaborModel;
 
   /**
    * @description Updates an labor detail line for a vendor invoice
@@ -1287,7 +1287,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AccountPagedResponse,
-    );
+    ) as AccountPagedResponse;
 
   /**
    * @description Preview Vendor Invoices that may be generated from PO matched transactions
@@ -1330,7 +1330,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VIMatchedSummaryPagedResponse,
-    );
+    ) as VIMatchedSummaryPagedResponse;
 
   /**
    * @description Retrieves details of multiple vendor invoices in report format.
@@ -1352,7 +1352,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ReportGenerationServiceResponse,
-    );
+    ) as ReportGenerationServiceResponse;
 
   /**
    * @description Retrieves purchase order balances on a vendor invoice.
@@ -1372,7 +1372,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PurchaseOrderBalancesModel,
-    );
+    ) as PurchaseOrderBalancesModel;
 
   /**
    * @description Retrieves a paged list of accounts associated with the given LE, organization key and expense type key, if provided, whose account code or description contains the given name
@@ -1449,7 +1449,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AccountExpenseTypePagedResponse,
-    );
+    ) as AccountExpenseTypePagedResponse;
 
   /**
    * @description Retrieves a paged list of expense line projects.
@@ -1503,7 +1503,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceExpenseProjectPagedResponse,
-    );
+    ) as VendorInvoiceExpenseProjectPagedResponse;
 
   /**
    * @description Retrieves a paged list of expense line tasks.
@@ -1552,7 +1552,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceExpenseTaskPagedResponse,
-    );
+    ) as VendorInvoiceExpenseTaskPagedResponse;
 
   /**
    * @description Retrieves a paged list of expense types.
@@ -1611,7 +1611,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ExpenseTypePagedResponse,
-    );
+    ) as ExpenseTypePagedResponse;
 
   /**
    * @description Retrieves configured vendor invoice format section total groups for an existing format.
@@ -1631,7 +1631,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceSectionTotalGroupsModel,
-    );
+    ) as VendorInvoiceSectionTotalGroupsModel;
 
   /**
    * @description Modifies vendor invoice format section total groups for an existing format.
@@ -1718,7 +1718,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AccountPagedResponse,
-    );
+    ) as AccountPagedResponse;
 
   /**
    * @description Retrieves a paged list of item line projects.
@@ -1766,7 +1766,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceItemProjectPagedResponse,
-    );
+    ) as VendorInvoiceItemProjectPagedResponse;
 
   /**
    * @description Retrieves a paged list of item line tasks.
@@ -1809,7 +1809,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceTaskPagedResponse,
-    );
+    ) as VendorInvoiceTaskPagedResponse;
 
   /**
    * @description Retrieves a paged list of items.
@@ -1862,7 +1862,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves a paged list of units of measure for an item.
@@ -1903,7 +1903,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       UnitOfMeasurePagedResponse,
-    );
+    ) as UnitOfMeasurePagedResponse;
 
   /**
    * @description Retrieves a paged list of accounts associated with the given LE and organization key whose account code or description contains the given name
@@ -1962,7 +1962,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AccountPagedResponse,
-    );
+    ) as AccountPagedResponse;
 
   /**
    * @description Retrieves a paged list of labor line projects.
@@ -2016,7 +2016,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceLaborProjectPagedResponse,
-    );
+    ) as VendorInvoiceLaborProjectPagedResponse;
 
   /**
    * @description Retrieves a paged list of labor line tasks.
@@ -2059,7 +2059,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceTaskPagedResponse,
-    );
+    ) as VendorInvoiceTaskPagedResponse;
 
   /**
    * @description Retrieves a paged list of legal entities.
@@ -2101,7 +2101,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves account payable defaults for a legal entity.
@@ -2121,7 +2121,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       LegalEntityAPDefaultsModel,
-    );
+    ) as LegalEntityAPDefaultsModel;
 
   /**
    * @description Retrieves a paged list of fiscal periods tied to the legal entity.
@@ -2170,7 +2170,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FiscalPeriodPagedResponse,
-    );
+    ) as FiscalPeriodPagedResponse;
 
   /**
    * @description Retrieves a paged list of organizations tied to the legal entity.
@@ -2228,7 +2228,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 
   /**
    * @description Retrieves balances for posted vendor invoices on a vendor invoice.
@@ -2248,7 +2248,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoiceBalancesModel,
-    );
+    ) as VendorInvoiceBalancesModel;
 
   /**
    * @description Retrieves a paged list of project types.
@@ -2303,7 +2303,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ProjectTypeExpenseTypePagedResponse,
-    );
+    ) as ProjectTypeExpenseTypePagedResponse;
 
   /**
    * @description Retrieves details of a vendor invoice in report format.
@@ -2323,7 +2323,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ReportGenerationServiceResponse,
-    );
+    ) as ReportGenerationServiceResponse;
 
   /**
    * @description Retrieves a paged list of status history for a given vendor invoice.
@@ -2364,7 +2364,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentStatusHistoryPagedResponse,
-    );
+    ) as FinancialDocumentStatusHistoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of vendors.
@@ -2412,7 +2412,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VIVendorModelPagedResponse,
-    );
+    ) as VIVendorModelPagedResponse;
 
   /**
    * @description Posts a vendor invoice to the general ledger.
@@ -2479,7 +2479,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorInvoicePagedResponse,
-    );
+    ) as VendorInvoicePagedResponse;
 
   /**
    * @description Submits a vendor invoice for approval.
@@ -2530,7 +2530,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a vendor invoice for posting to the general ledger.
@@ -2550,7 +2550,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a vendor invoice for submit.
@@ -2582,7 +2582,7 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Voids a posted vendor invoice.

@@ -60,7 +60,7 @@ export class ProjectStatuses<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       ProjectStatusPagedResponse,
-    );
+    ) as ProjectStatusPagedResponse;
 
   /**
    * @description Creates a new project status.
@@ -82,7 +82,7 @@ export class ProjectStatuses<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of project status.
@@ -102,7 +102,7 @@ export class ProjectStatuses<SecurityDataType = unknown> extends HttpClient<Secu
         ...params,
       },
       ProjectStatusModel,
-    );
+    ) as ProjectStatusModel;
 
   /**
    * @description Updates an existing project status given its key.

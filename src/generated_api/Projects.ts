@@ -136,7 +136,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CostStructPoolRateModel,
-    );
+    ) as CostStructPoolRateModel;
 
   /**
    * @description Update a project's cost rates.
@@ -174,7 +174,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CostStructPoolRateModel,
-    );
+    ) as CostStructPoolRateModel;
 
   /**
    * @description Update a task's cost rates.
@@ -217,7 +217,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectFeeModel,
-    );
+    ) as ProjectFeeModel;
 
   /**
    * @description Creates a new fee for a specified project.
@@ -255,7 +255,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectFeeModel,
-    );
+    ) as ProjectFeeModel;
 
   /**
    * @description Updates a fee for a specified project and fee method
@@ -309,7 +309,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Create an attachment on an existing note.
@@ -331,7 +331,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an attachment for a Project Note.
@@ -351,7 +351,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an existing attachment on a note.
@@ -387,7 +387,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Create an attachment on an existing note comment.
@@ -415,7 +415,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an attachment for a Project Note Comment.
@@ -441,7 +441,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an existing attachment on a note comment.
@@ -483,7 +483,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectNoteCommentPagedResponse,
-    );
+    ) as ProjectNoteCommentPagedResponse;
 
   /**
    * @description Create a comment on an existing note.
@@ -510,7 +510,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a comment for a Project Note.
@@ -530,7 +530,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectNoteCommentModel,
-    );
+    ) as ProjectNoteCommentModel;
 
   /**
    * @description Update an existing comment on a note.
@@ -590,7 +590,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectNotePagedResponse,
-    );
+    ) as ProjectNotePagedResponse;
 
   /**
    * @description Creates a new note for a specified project.
@@ -611,7 +611,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a note for a specified project
@@ -631,7 +631,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectNoteModel,
-    );
+    ) as ProjectNoteModel;
 
   /**
    * @description Retrieves a note for a specified project
@@ -706,7 +706,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectNotePagedResponse,
-    );
+    ) as ProjectNotePagedResponse;
 
   /**
    * @description Retrieves a list of pre-billed labor items for a specified project
@@ -726,7 +726,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PrebilledLaborPagedResponse,
-    );
+    ) as PrebilledLaborPagedResponse;
 
   /**
    * @description Creates a new pre-billed labor item for a project.
@@ -748,7 +748,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Update an existing pre-billed labor item for a project.
@@ -807,7 +807,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PrebilledLaborModel,
-    );
+    ) as PrebilledLaborModel;
 
   /**
    * @description Creates project snapshots in bulk for a project and its tasks.
@@ -845,7 +845,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectExpenseTypeModel,
-    );
+    ) as ProjectExpenseTypeModel;
 
   /**
    * @description Updates an existing project expense type.
@@ -948,7 +948,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FixedPriceItemPagedResponse,
-    );
+    ) as FixedPriceItemPagedResponse;
 
   /**
    * @description Adds a fixed price item to a project.
@@ -970,7 +970,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a project item for a given project key and item key.
@@ -990,7 +990,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ItemModel,
-    );
+    ) as ItemModel;
 
   /**
    * @description Updates a project item (non-rate data).
@@ -1123,7 +1123,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes an association between a project and a pay code
@@ -1180,7 +1180,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanSetPagedResponse,
-    );
+    ) as PlanSetPagedResponse;
 
   /**
    * @description Adds a plan set to a project.
@@ -1202,7 +1202,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a list of predecessors for the given taskId.
@@ -1244,7 +1244,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TaskDependencyModelPagedResponse,
-    );
+    ) as TaskDependencyModelPagedResponse;
 
   /**
    * @description Adds a predecessor to a task.
@@ -1310,7 +1310,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AssignedLaborCategoryModelPagedResponse,
-    );
+    ) as AssignedLaborCategoryModelPagedResponse;
 
   /**
    * @description Assigns a labor category to a project.
@@ -1332,7 +1332,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Creates a project
@@ -1354,7 +1354,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Add a project expense budget item.
@@ -1376,7 +1376,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpenseBudgetCreateModel,
-    );
+    ) as ExpenseBudgetCreateModel;
 
   /**
    * @description Add a project expense plan.
@@ -1398,7 +1398,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ExpensePlanCreateModel,
-    );
+    ) as ExpensePlanCreateModel;
 
   /**
    * @description Retrieves project invoice setup details
@@ -1418,7 +1418,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectInvoiceModel,
-    );
+    ) as ProjectInvoiceModel;
 
   /**
    * @description Updates an existing project invoice setup.
@@ -1496,7 +1496,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AssignedLaborCategoryRateModelPagedResponse,
-    );
+    ) as AssignedLaborCategoryRateModelPagedResponse;
 
   /**
    * @description Updates an existing custom rate on a project's labor category assignment.
@@ -1582,7 +1582,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Add a project-level budget snapshot.
@@ -1604,7 +1604,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of tasks for a given project key and optional billingTypeCode. If billingTypeCode is specified, the tasks that are returned will be based on the billingTypeCode matching the billing type specified on either the task, or the billing type specified on the project, if the task has no specified billing type override.
@@ -1646,7 +1646,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TaskSummaryPagedResponse,
-    );
+    ) as TaskSummaryPagedResponse;
 
   /**
    * @description Adds a new task to a project's task hierarchy
@@ -1668,7 +1668,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Add a task-level budget snapshot.
@@ -1695,7 +1695,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a project by its id.
@@ -1715,7 +1715,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectModel,
-    );
+    ) as ProjectModel;
 
   /**
    * @description Updates an existing project. Project leads are restricted to updating a subset of fields and all other edits are ignored.
@@ -1791,7 +1791,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ScheduledExpenseItemBaseModel,
-    );
+    ) as ScheduledExpenseItemBaseModel;
 
   /**
    * @description Update a project expense budget item.
@@ -1872,7 +1872,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ScheduledExpenseItemModel,
-    );
+    ) as ScheduledExpenseItemModel;
 
   /**
    * @description Update a project expense plan.
@@ -1935,7 +1935,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       FixedPriceItemModel,
-    );
+    ) as FixedPriceItemModel;
 
   /**
    * @description Updates an existing fixed price item.
@@ -2054,7 +2054,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlannedTimeModel,
-    );
+    ) as PlannedTimeModel;
 
   /**
    * @description Update a project plan
@@ -2151,7 +2151,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectAssignmentModel,
-    );
+    ) as ProjectAssignmentModel;
 
   /**
    * @description Update a project assignment
@@ -2210,7 +2210,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       BudgetSnapshotModel,
-    );
+    ) as BudgetSnapshotModel;
 
   /**
    * @description Update a project-level budget snapshot.
@@ -2269,7 +2269,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TaskModel,
-    );
+    ) as TaskModel;
 
   /**
    * @description Updates an existing project task.  Note that if the task has predecessor " + "dependencies, the revised begin and end dates may be modified to account for the dependency unless the " + "'makeFixedDateAndRemovePredecessors' flag is set to true. The duration will be computed based on the " + "difference between the revised begin and end dates."
@@ -2323,7 +2323,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       BudgetSnapshotModel,
-    );
+    ) as BudgetSnapshotModel;
 
   /**
    * @description Update a task-level budget snapshot.
@@ -2423,7 +2423,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description This route has been deprecated in favor of /rest/projects/account-categories. Retrieves a list of project account categories.
@@ -2444,7 +2444,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description Retrieves a list of project account.
@@ -2464,7 +2464,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CategoryAccountModel,
-    );
+    ) as CategoryAccountModel;
 
   /**
    * @description Update a project's account setup.
@@ -2523,7 +2523,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate billing managers.
@@ -2544,7 +2544,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary billing manager.
@@ -2564,7 +2564,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary billing manager.
@@ -2585,7 +2585,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary billing manager.
@@ -2642,7 +2642,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate billing viewers.
@@ -2663,7 +2663,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary billing viewer.
@@ -2683,7 +2683,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary billing viewer.
@@ -2704,7 +2704,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary billing viewer.
@@ -2740,7 +2740,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectApproverGroupModel,
-    );
+    ) as ProjectApproverGroupModel;
 
   /**
    * @description Update a project's alternate customer administrators.
@@ -2761,7 +2761,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieve a project's primary customer administrator.
@@ -2781,7 +2781,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectCustomerAdminModel,
-    );
+    ) as ProjectCustomerAdminModel;
 
   /**
    * @description Update a project's primary customer administrator.
@@ -2802,7 +2802,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's alternate document viewers.
@@ -2843,7 +2843,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate document viewers.
@@ -2864,7 +2864,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary document viewer.
@@ -2884,7 +2884,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary document viewer.
@@ -2905,7 +2905,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary document viewer.
@@ -2962,7 +2962,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate leads.
@@ -2983,7 +2983,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary lead.
@@ -3003,7 +3003,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary lead.
@@ -3024,7 +3024,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary lead.
@@ -3081,7 +3081,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate managers.
@@ -3102,7 +3102,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary manager.
@@ -3122,7 +3122,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary manager.
@@ -3143,7 +3143,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary manager.
@@ -3179,7 +3179,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectApproverGroupModel,
-    );
+    ) as ProjectApproverGroupModel;
 
   /**
    * @description Update a project's alternate project approvers.
@@ -3200,7 +3200,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary project approver.
@@ -3220,7 +3220,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectApproverAdminModel,
-    );
+    ) as ProjectApproverAdminModel;
 
   /**
    * @description Update a project's primary project approvers.
@@ -3241,7 +3241,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's alternate purchase order viewers.
@@ -3282,7 +3282,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate purchase order viewers.
@@ -3307,7 +3307,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary purchase order viewer.
@@ -3327,7 +3327,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary purchase order viewer.
@@ -3348,7 +3348,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary purchase order viewer.
@@ -3405,7 +3405,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate purchase requisition viewers.
@@ -3430,7 +3430,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary purchase requisition viewer.
@@ -3450,7 +3450,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary purchase requisition viewer.
@@ -3471,7 +3471,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary purchase requisition viewer.
@@ -3528,7 +3528,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate resource assigners.
@@ -3553,7 +3553,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary resource assigner.
@@ -3573,7 +3573,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary resource assigner.
@@ -3594,7 +3594,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary resource assigner.
@@ -3651,7 +3651,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate resource planners.
@@ -3676,7 +3676,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary resource planner.
@@ -3696,7 +3696,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary resource planner.
@@ -3717,7 +3717,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary resource planner.
@@ -3774,7 +3774,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate resource requestors.
@@ -3799,7 +3799,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary resource requestor.
@@ -3819,7 +3819,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary resource requestor.
@@ -3840,7 +3840,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary resource requestor.
@@ -3897,7 +3897,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModelPagedResponse,
-    );
+    ) as PersonNameModelPagedResponse;
 
   /**
    * @description Update a project's alternate viewers.
@@ -3918,7 +3918,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Retrieves a project's primary viewer.
@@ -3938,7 +3938,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PersonNameModel,
-    );
+    ) as PersonNameModel;
 
   /**
    * @description Update a project's primary viewer.
@@ -3959,7 +3959,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       any,
-    );
+    ) as any;
 
   /**
    * @description Removes a project's primary viewer.
@@ -3995,7 +3995,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectAlertPrefsModel,
-    );
+    ) as ProjectAlertPrefsModel;
 
   /**
    * @description Updates the performance alert preferences associated with a project. Select NONE, DEFAULT, or CUSTOM. If DEFAULT is selected, the project uses the project manager's alert preferences instead of saving it's own preferences.
@@ -4053,7 +4053,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectAlertsPagedResponse,
-    );
+    ) as ProjectAlertsPagedResponse;
 
   /**
    * @description Retrieves a paged list of all available accounts receivable approval groups.
@@ -4093,7 +4093,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ApprovalGroupPagedResponse,
-    );
+    ) as ApprovalGroupPagedResponse;
 
   /**
    * @description Retrieves default assignment values given a project, person, date
@@ -4113,7 +4113,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AssignmentDefaultsModel,
-    );
+    ) as AssignmentDefaultsModel;
 
   /**
    * @description Retrieves available contributor projects a lead project can add to its invoice group, filterable by project code and/or project org code. The list is affected by user role access restrictions and the value of the unanet.financials.use_financial_orgs property. Note that projects already assigned to another invoice group are not included.
@@ -4157,7 +4157,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectDisplayNamePagedResponse,
-    );
+    ) as ProjectDisplayNamePagedResponse;
 
   /**
    * @description Retrieves available lead projects a contributor project can assign to its invoice group, filterable by project code and/or project org code. The currently assigned lead project will always be returned. The list is affected by user role access restrictions and the value of the unanet.financials.use_financial_orgs property.
@@ -4201,7 +4201,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectDisplayNamePagedResponse,
-    );
+    ) as ProjectDisplayNamePagedResponse;
 
   /**
    * @description Retrieves a paged list of budget history for a given project.
@@ -4242,7 +4242,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectBudgetHistoryPagedResponse,
-    );
+    ) as ProjectBudgetHistoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of budget snapshots for a given project key matching the given search criteria.
@@ -4286,7 +4286,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       BudgetSnapshotPagedResponse,
-    );
+    ) as BudgetSnapshotPagedResponse;
 
   /**
    * @description Retrieves a paged list of expense budgets for a given project key matching the given search criteria.
@@ -4330,7 +4330,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectExpenseBudgetPagedResponse,
-    );
+    ) as ProjectExpenseBudgetPagedResponse;
 
   /**
    * @description Retrieves a paged list of expense plans for a given project key matching the given search criteria.
@@ -4374,7 +4374,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ScheduledExpenseItemPagedResponse,
-    );
+    ) as ScheduledExpenseItemPagedResponse;
 
   /**
    * @description Retrieves a paged list of expense types for a given project key
@@ -4415,7 +4415,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectExpenseTypePagedResponse,
-    );
+    ) as ProjectExpenseTypePagedResponse;
 
   /**
    * @description Retrieves units of measure and rates for a project item
@@ -4435,7 +4435,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       UOMRateCollectionModel,
-    );
+    ) as UOMRateCollectionModel;
 
   /**
    * @description Retrieves a paged list of items for a given project key, sorted by 'code'.
@@ -4476,7 +4476,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ItemPagedResponse,
-    );
+    ) as ItemPagedResponse;
 
   /**
    * @description Retrieves a paged list of locations for a given project key
@@ -4517,7 +4517,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       LocationPagedResponse,
-    );
+    ) as LocationPagedResponse;
 
   /**
    * @description Updates the locations associated with a project. The list will be overridden with the supplied list of location keys.
@@ -4576,7 +4576,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Updates the organization assignments associated with a project. For non-administrators, only organizations user has access to are updateable.
@@ -4636,7 +4636,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanSetAuditPagedResponse,
-    );
+    ) as PlanSetAuditPagedResponse;
 
   /**
    * @description Retrieves project alerts for a specific project for the requesting Project Manager, Lead or Approver user.
@@ -4677,7 +4677,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectAlertsPagedResponse,
-    );
+    ) as ProjectAlertsPagedResponse;
 
   /**
    * @description Retrieves a paged list of assignments for a given project key
@@ -4721,7 +4721,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectAssignmentPagedResponse,
-    );
+    ) as ProjectAssignmentPagedResponse;
 
   /**
    * @description Retrieves a list of project pay codes for a given project key
@@ -4762,7 +4762,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PayCodePagedResponse,
-    );
+    ) as PayCodePagedResponse;
 
   /**
    * @description Updates the pay codes associated with a project. The list will be overridden with the supplied list of pay code keys.
@@ -4800,7 +4800,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description Retrieves a list of task accounts.
@@ -4820,7 +4820,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CategoryAccountModel,
-    );
+    ) as CategoryAccountModel;
 
   /**
    * @description Update a task's account setup.
@@ -4880,7 +4880,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TaskBudgetHistoryPagedResponse,
-    );
+    ) as TaskBudgetHistoryPagedResponse;
 
   /**
    * @description Retrieves a list of valid contact addresses a lead or standalone project can assign to it's bill to/ship to/remit to fields,
@@ -4900,7 +4900,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectInvoiceContactAddressModel,
-    );
+    ) as ProjectInvoiceContactAddressModel;
 
   /**
    * @description Retrieves valid contacts a lead or standalone project can assign to it's bill to/ship to/remit to fields,
@@ -4920,7 +4920,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectInvoiceContactModel,
-    );
+    ) as ProjectInvoiceContactModel;
 
   /**
    * @description Locks a project plan set.
@@ -4997,7 +4997,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectSummaryPagedResponse,
-    );
+    ) as ProjectSummaryPagedResponse;
 
   /**
    * @description Search for a project plan.
@@ -5040,7 +5040,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       ProjectPlanPagedResponse,
-    );
+    ) as ProjectPlanPagedResponse;
 
   /**
    * @description Retrieves a paged list of tasks optionally filtered by the search criteria.
@@ -5083,7 +5083,7 @@ export class Projects<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       TaskSummaryPagedResponse,
-    );
+    ) as TaskSummaryPagedResponse;
 
   /**
    * @description Updates/replaces a unit of measure's rates for a project item (or resets the rates if 'custom' flag is set to false).

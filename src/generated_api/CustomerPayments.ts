@@ -73,7 +73,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Adds an attachment to a customer payment.
@@ -95,7 +95,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve the paid documents of a customer payment.
@@ -136,7 +136,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       PaidCustomerDocumentPagedResponse,
-    );
+    ) as PaidCustomerDocumentPagedResponse;
 
   /**
    * @description Add a paid document to a customer payment.
@@ -176,7 +176,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of details for a customer payment.
@@ -217,7 +217,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CustomerPaymentDetailPagedResponse,
-    );
+    ) as CustomerPaymentDetailPagedResponse;
 
   /**
    * @description Creates an expense line item for a customer payment
@@ -239,7 +239,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a customer payment summary by its id.
@@ -259,7 +259,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CustomerPaymentModel,
-    );
+    ) as CustomerPaymentModel;
 
   /**
    * @description Updates a customer payment by its id.
@@ -313,7 +313,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an attachment for on given customer payment.
@@ -349,7 +349,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CustomerPaymentDetailModel,
-    );
+    ) as CustomerPaymentDetailModel;
 
   /**
    * @description Updates a customer payment detail line by its id.
@@ -403,7 +403,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       PaidCustomerDocumentModel,
-    );
+    ) as PaidCustomerDocumentModel;
 
   /**
    * @description Remove a paid document from a customer payment. Type is INVOICE or PAYMENT.
@@ -465,7 +465,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       PayableCustomerDocumentPagedResponse,
-    );
+    ) as PayableCustomerDocumentPagedResponse;
 
   /**
    * @description Posts a customer payment to the general ledger.
@@ -510,7 +510,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CustomerPaymentPagedResponse,
-    );
+    ) as CustomerPaymentPagedResponse;
 
   /**
    * @description Submits a customer payment.
@@ -577,7 +577,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a customer payment for posting to the general ledger.
@@ -597,7 +597,7 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a customer payment for submit.
@@ -617,5 +617,5 @@ export class CustomerPayments<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 }

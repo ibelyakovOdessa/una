@@ -60,5 +60,5 @@ export class InvoiceNumberFormats<SecurityDataType = unknown> extends HttpClient
         ...params,
       },
       InvoiceNumberFormatPagedResponse,
-    );
+    ) as InvoiceNumberFormatPagedResponse;
 }

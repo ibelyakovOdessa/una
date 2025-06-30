@@ -52,7 +52,7 @@ export class SocioeconomicStatuses<SecurityDataType = unknown> extends HttpClien
         ...params,
       },
       SocioeconomicStatusPagedResponse,
-    );
+    ) as SocioeconomicStatusPagedResponse;
 
   /**
    * @description Retrieves a socioeconomic status by key.
@@ -72,5 +72,5 @@ export class SocioeconomicStatuses<SecurityDataType = unknown> extends HttpClien
         ...params,
       },
       SocioeconomicStatusModel,
-    );
+    ) as SocioeconomicStatusModel;
 }

@@ -52,5 +52,5 @@ export class FleetProviders<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FleetProviderPagedResponse,
-    );
+    ) as FleetProviderPagedResponse;
 }

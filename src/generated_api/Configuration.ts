@@ -58,7 +58,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PropertyTemplatePagedResponse,
-    );
+    ) as PropertyTemplatePagedResponse;
 
   /**
    * @description Create a system property template
@@ -80,7 +80,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Returns a system property template by key
@@ -150,7 +150,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       BillingTypeModel,
-    );
+    ) as BillingTypeModel;
 
   /**
    * @description Retrieves a list of Billing Types
@@ -190,7 +190,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       BillingTypePagedResponse,
-    );
+    ) as BillingTypePagedResponse;
 
   /**
    * @description Retrieves a Logo by the type specified
@@ -216,7 +216,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ImageAttachmentModel,
-    );
+    ) as ImageAttachmentModel;
 
   /**
    * @description Gets the multi-currency settings of the instance: enabled/not enabled, instance currency
@@ -236,7 +236,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       MulticurrencySetupModel,
-    );
+    ) as MulticurrencySetupModel;
 
   /**
    * @description Updates the multi-currency settings of the instance.
@@ -316,7 +316,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       string,
-    );
+    ) as string;
 
   /**
    * @description Retrieves a list of licensed products and their current state.
@@ -336,7 +336,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       LicensedProductModel,
-    );
+    ) as LicensedProductModel;
 
   /**
    * @description Retrieves the login logo associated with the specified customer.
@@ -360,7 +360,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ImageAttachmentModel,
-    );
+    ) as ImageAttachmentModel;
 
   /**
    * @description Retrieves the portal logos associated with the specified customer.
@@ -384,7 +384,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ImageAttachmentModel,
-    );
+    ) as ImageAttachmentModel;
 
   /**
    * @description View the history of a property template
@@ -404,7 +404,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PropertyTemplateHistoryPagedResponse,
-    );
+    ) as PropertyTemplateHistoryPagedResponse;
 
   /**
    * @description Retrieves list of all person roles.
@@ -424,7 +424,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       KeyNameCodeModel,
-    );
+    ) as KeyNameCodeModel;
 
   /**
    * @description Search the history of legal entity changes for a property template
@@ -446,7 +446,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PropertyTemplateOrgHistoryPagedResponse,
-    );
+    ) as PropertyTemplateOrgHistoryPagedResponse;
 
   /**
    * @description View the history of legal entity changes for a property template
@@ -466,7 +466,7 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       PropertyTemplateOrgHistoryPagedResponse,
-    );
+    ) as PropertyTemplateOrgHistoryPagedResponse;
 
   /**
    * @description Retrieves system information
@@ -501,5 +501,5 @@ export class Configuration<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       UdfMetadataListModel,
-    );
+    ) as UdfMetadataListModel;
 }

@@ -44,7 +44,7 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of exchange rate types filtered by optional query parameters
@@ -86,7 +86,7 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExchangeRateTypePagedResponse,
-    );
+    ) as ExchangeRateTypePagedResponse;
 
   /**
    * @description Create a new exchange rate type
@@ -108,7 +108,7 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an exchange rate given its ID
@@ -128,7 +128,7 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExchangeRateModel,
-    );
+    ) as ExchangeRateModel;
 
   /**
    * @description Update an existing exchange rate
@@ -182,7 +182,7 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExchangeRateTypeModel,
-    );
+    ) as ExchangeRateTypeModel;
 
   /**
    * @description Update an existing exchange rate type
@@ -241,7 +241,7 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       number,
-    );
+    ) as number;
 
   /**
    * @description Retrieves a paged list of exchange rates filtered by optional search criteria.
@@ -284,5 +284,5 @@ export class ExchangeRates<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ExchangeRatePagedResponse,
-    );
+    ) as ExchangeRatePagedResponse;
 }

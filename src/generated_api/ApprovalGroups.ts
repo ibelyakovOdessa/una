@@ -63,7 +63,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Replaces the approvers associated with an approval group with the provided list. The priority ordering of the approvers will be based on the order of the provided list.
@@ -405,7 +405,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ApprovalGroupPagedResponse,
-    );
+    ) as ApprovalGroupPagedResponse;
 
   /**
    * @description Creates a new approval group.
@@ -427,7 +427,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an approval group by id.
@@ -447,7 +447,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ApprovalGroupModel,
-    );
+    ) as ApprovalGroupModel;
 
   /**
    * @description Updates an approval group's modifiable details.
@@ -522,7 +522,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ApprovalGroupSubmittingProjectPagedResponse,
-    );
+    ) as ApprovalGroupSubmittingProjectPagedResponse;
 
   /**
    * @description Retrieves a paged list of expense report submitters.
@@ -563,7 +563,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Retrieves a paged list of expense request submitters.
@@ -604,7 +604,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Retrieves a paged list of leave request submitters.
@@ -645,7 +645,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Retrieves a paged list of purchase order submitters.
@@ -686,7 +686,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Retrieves a paged list of purchase request submitters.
@@ -727,7 +727,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Retrieves a paged list of time/expense submitters.
@@ -768,7 +768,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Retrieves a paged list of vendor invoice submitters.
@@ -809,7 +809,7 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PersonBasePagedResponse,
-    );
+    ) as PersonBasePagedResponse;
 
   /**
    * @description Removes an approver from an approval group.
@@ -868,5 +868,5 @@ export class ApprovalGroups<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       ApprovalGroupPagedResponse,
-    );
+    ) as ApprovalGroupPagedResponse;
 }

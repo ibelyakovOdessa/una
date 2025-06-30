@@ -52,7 +52,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorPaymentDetailPagedResponse,
-    );
+    ) as VendorPaymentDetailPagedResponse;
 
   /**
    * @description Creates an expense line item for a vendor payment
@@ -74,7 +74,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a vendor payment by id.
@@ -94,7 +94,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorPaymentDetailModel,
-    );
+    ) as VendorPaymentDetailModel;
 
   /**
    * @description Updates a vendor payment detail line by its id.
@@ -169,7 +169,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Adds attachment to a vendor payment.
@@ -191,7 +191,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve the paid documents of a vendor payment.
@@ -232,7 +232,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PaidVendorDocumentPagedResponse,
-    );
+    ) as PaidVendorDocumentPagedResponse;
 
   /**
    * @description Add a paid document to a vendor payment.
@@ -272,7 +272,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a vendor payment.
@@ -292,7 +292,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorPaymentModel,
-    );
+    ) as VendorPaymentModel;
 
   /**
    * @description Updates a vendor payment by its id.
@@ -346,7 +346,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an attachment for on given vendor payment.
@@ -382,7 +382,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PaidVendorDocumentModel,
-    );
+    ) as PaidVendorDocumentModel;
 
   /**
    * @description Update a paid document for a vendor payment
@@ -462,7 +462,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PayableVendorDocumentPagedResponse,
-    );
+    ) as PayableVendorDocumentPagedResponse;
 
   /**
    * @description Posts a vendor payment to the general ledger.
@@ -507,7 +507,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorPaymentPagedResponse,
-    );
+    ) as VendorPaymentPagedResponse;
 
   /**
    * @description Submits a vendor payment.
@@ -551,7 +551,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a vendor payment for posting to the general ledger.
@@ -571,7 +571,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a vendor payment for submit.
@@ -591,7 +591,7 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Voids a posted vendor payment.

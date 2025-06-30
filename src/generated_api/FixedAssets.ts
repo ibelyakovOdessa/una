@@ -95,7 +95,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Uploads an attachment to an fixed asset.
@@ -117,7 +117,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of fixed asset classes filtered by optional query parameters.
@@ -158,7 +158,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetClassPagedResponse,
-    );
+    ) as FixedAssetClassPagedResponse;
 
   /**
    * @description Creates a new fixed asset class.
@@ -180,7 +180,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of fixed assets filtered by optional query parameters.
@@ -222,7 +222,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetPagedResponse,
-    );
+    ) as FixedAssetPagedResponse;
 
   /**
    * @description Creates a new fixed asset.
@@ -257,7 +257,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of filter sets saved by the authenticated user.
@@ -297,7 +297,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetFilterPagedResponse,
-    );
+    ) as FixedAssetFilterPagedResponse;
 
   /**
    * @description Saves a filter set for later use.
@@ -327,7 +327,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of fixed asset locations for the given fixedAssetId.
@@ -368,7 +368,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetLocationPagedResponse,
-    );
+    ) as FixedAssetLocationPagedResponse;
 
   /**
    * @description Creates a new fixed asset location associated with fixedAssetId.
@@ -390,7 +390,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of fixed asset statuses filtered by optional query parameters.
@@ -431,7 +431,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetStatusPagedResponse,
-    );
+    ) as FixedAssetStatusPagedResponse;
 
   /**
    * @description Creates a new fixed asset status.
@@ -453,7 +453,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an attachment for a given fixed asset.
@@ -473,7 +473,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Deletes a fixed asset attachment and its associations.
@@ -509,7 +509,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetClassModel,
-    );
+    ) as FixedAssetClassModel;
 
   /**
    * @description Updates a fixed asset class.
@@ -563,7 +563,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetModel,
-    );
+    ) as FixedAssetModel;
 
   /**
    * @description Updates a fixed asset.
@@ -651,7 +651,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetSearchModel,
-    );
+    ) as FixedAssetSearchModel;
 
   /**
    * @description Updates a saved filter set by id.
@@ -726,6 +726,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
          * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
          */
         lastModified?: string;
+        headers?: Record<string, object[]>;
         metadata?: Record<string, object[]>;
         mediaType?: {
           type?: string;
@@ -734,14 +735,14 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
           wildcardType?: boolean;
           wildcardSubtype?: boolean;
         };
+        /** @format int32 */
+        status?: number;
         statusInfo?: {
           family?: DeleteFixedAssetListCriteriaFamilyEnum;
           /** @format int32 */
           statusCode?: number;
           reasonPhrase?: string;
         };
-        /** @format int32 */
-        status?: number;
         stringHeaders?: Record<string, string[]>;
         entity?: object;
         /** @uniqueItems true */
@@ -783,7 +784,6 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
           title?: string;
           params?: Record<string, string>;
         }[];
-        headers?: Record<string, object[]>;
       },
       ErrorResponse
     >(
@@ -795,7 +795,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       string,
-    );
+    ) as string;
 
   /**
    * @description Updates an existing fixed asset location.
@@ -854,7 +854,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetStatusModel,
-    );
+    ) as FixedAssetStatusModel;
 
   /**
    * @description Updates a fixed asset status.
@@ -908,7 +908,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description Retrieves details of a fixed asset class account setup.
@@ -928,7 +928,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CategoryAccountModel,
-    );
+    ) as CategoryAccountModel;
 
   /**
    * @description Update a fixed asset class account setup.
@@ -986,7 +986,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetAlertPagedResponse,
-    );
+    ) as FixedAssetAlertPagedResponse;
 
   /**
    * @description Retrieves a list of import field definitions.
@@ -1006,7 +1006,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       ImportDefinitionModel,
-    );
+    ) as ImportDefinitionModel;
 
   /**
    * @description Retrieves a list of fixed asset journal entries.
@@ -1048,7 +1048,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetJournalEntryPagedResponse,
-    );
+    ) as FixedAssetJournalEntryPagedResponse;
 
   /**
    * @description Retrieves a paged list of legal entities available to the tokened user for fixed assets, filtered by an optional active flag
@@ -1090,7 +1090,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 
   /**
    * @description Retrieves fixed asset balances for a legal entity for 12 rolling fiscal periods (i.e. period containing current date and up to 11 prior fiscal periods).
@@ -1110,7 +1110,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetBalancePeriodModel,
-    );
+    ) as FixedAssetBalancePeriodModel;
 
   /**
    * @description Retrieves a paged list of fiscal periods tied to the legal entity.
@@ -1159,7 +1159,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FiscalPeriodPagedResponse,
-    );
+    ) as FiscalPeriodPagedResponse;
 
   /**
    * @description Retrieves a paged list of organizations tied to the legal entity.
@@ -1200,7 +1200,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       OrganizationPagedResponse,
-    );
+    ) as OrganizationPagedResponse;
 
   /**
    * @description Retrieves a paged list of people who have posted for fixed assets.
@@ -1241,7 +1241,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       PersonSummaryPagedResponse,
-    );
+    ) as PersonSummaryPagedResponse;
 
   /**
    * @description Retrieves a paged list of fixed asset depreciation schedules for the given fixedAssetId.
@@ -1282,7 +1282,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetSchedulePagedResponse,
-    );
+    ) as FixedAssetSchedulePagedResponse;
 
   /**
    * @description Imports fixed assets file, using an HTTP multipart form post, in order to create new or update and delete existing fixed assets. * Form post must include a **file** form key/value specifying the file being uploaded* Feedback will be provided through a server push technology Server Send Events (SSE) - https://en.wikipedia.org/wiki/Server-sent_events * The import request consists of two stages: * File upload stage * Imported data processing stage * Client can request that in-progress feedback be sent by including a **enableProgressFeedback** query string parameter with the request. * If **enableProgressFeedback** = false, then all feedback information will be returned in a single SSE feedback event at the completion of the import. * During the file upload process, there will be no progress feedback. Clients can track the progress of the file upload on their end. * If the file upload fails, an HTTP 500 response is returned. * The first progress feedback will begin upon completion of the file upload. * Set query param '**dryrun**=true' in order to test the validity of an import file without performing any of the add, update or delete operations. Example request via curl: ``` curl --request POST 'http://localhost/unanet/rest/fixed-assets/import?enableProgressFeedback=true' --header 'Accept: text/event-stream' --header 'Authorization: Bearer xxx' --form 'file=@"fa_import.csv"' ``` ### Import File Contents The following fields are supported: ``` *fixed_asset_number, legal_entity, owner, serial_number, name, description, class, status, acquisition_date, acquisition_value, disposal_date, disposal_value, disposal_type, placed_in_service_date, useful_life, salvage_value, depreciation_start_date, prior_depreciation_balance, depreciation_method, depreciation_averaging_method, location, location_begin_date, asset_org, expense_org, user01, user02, user03, user04, user05, user06, user07, user08, user09, user10, user11, user12, user13, user14, user15, user16, user17, user18, user19, user20, delete ``` * The first non-comment row of an import file can include an optional header definition row that starts with an asterix '*' * If no header row is included in an import file, then the expected rows default to the above header definition. Comment lines are allowed provided they begin with '#'. * Fixed Asset rows are uniquely defined by 'fixed_asset_number'. If no 'fixed_asset_number' field is defined, or the row is empty, the import assumes this is a new fixed asset and will assign a 'fixed_asset_number' to the newly created fixed asset. * If an import file provides a header definition row, the fields supplied by the import file can be in any order desired provided that the field order of the rows in the file all match the order of the fields in the header definition row. * Leading and trailing whitespace is allowed on fields and trimmed during import processing. * To clear (set to null) the value of a field during update, include '!BLANK!' as the field value. This is only supported for optional fields. * The minimum set of fields that are required for creating a new fixed asset is: **legal_entity, name, class, status, acquisition_value, placed_in_service_date, useful_life**. NOTE: **placed_in_service_date** is optional if **acquisition_date** is defined. * A 'delete' column is supported to allow rows to be included that instruct the import to remove the specified entity as uniquely referenced by the 'fixed_asset_number' field value. If a 'delete' column is defined, it must be the last column in the row. To delete a specific fixed asset, include a row containing a 'fixed_asset_number' field value and '!DELETE!' as the 'delete' field column value. * To see which fields can be blank or are required for additions and update, see the results of the **GET /import/definition** request. * For additional descriptions of supported fields, see the FixedAssetCreateModel model.
@@ -1322,7 +1322,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       ImportProgressModel | ImportErrorModel,
-    );
+    ) as ImportProgressModel | ImportErrorModel;
 
   /**
    * @description Posts fixed asset depreciation and disposal.
@@ -1344,7 +1344,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetPostResponseModel,
-    );
+    ) as FixedAssetPostResponseModel;
 
   /**
    * @description Retrieves a paged list of fixed assets filtered by search criteria.
@@ -1387,7 +1387,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetPagedResponse,
-    );
+    ) as FixedAssetPagedResponse;
 
   /**
    * @description Retrieves a paged list of fixed asset posting documents.
@@ -1430,7 +1430,7 @@ export class FixedAssets<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       FixedAssetPostDocumentPagedResponse,
-    );
+    ) as FixedAssetPostDocumentPagedResponse;
 
   /**
    * @description Unposts a fixed asset depreciation and disposal post.

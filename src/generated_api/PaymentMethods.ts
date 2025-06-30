@@ -54,5 +54,5 @@ export class PaymentMethods<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       PaymentMethodPagedResponse,
-    );
+    ) as PaymentMethodPagedResponse;
 }

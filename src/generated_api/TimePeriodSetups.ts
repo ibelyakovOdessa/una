@@ -59,7 +59,7 @@ export class TimePeriodSetups<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       TimePeriodSetupPagedResponse,
-    );
+    ) as TimePeriodSetupPagedResponse;
 
   /**
    * @description Creates a time period definition.
@@ -81,7 +81,7 @@ export class TimePeriodSetups<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a time period definition.
@@ -101,7 +101,7 @@ export class TimePeriodSetups<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       TimePeriodSetupModel,
-    );
+    ) as TimePeriodSetupModel;
 
   /**
    * @description Retrieves a paged list of time periods for a time period setup, filtered by search criteria.
@@ -145,5 +145,5 @@ export class TimePeriodSetups<SecurityDataType = unknown> extends HttpClient<Sec
         ...params,
       },
       TimePeriodPagedResponse,
-    );
+    ) as TimePeriodPagedResponse;
 }

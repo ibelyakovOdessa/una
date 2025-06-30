@@ -54,5 +54,5 @@ export class Currencies<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       CurrencyCodePagedResponse,
-    );
+    ) as CurrencyCodePagedResponse;
 }

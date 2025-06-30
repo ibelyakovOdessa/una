@@ -88,7 +88,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Add an attachment for a person.
@@ -110,7 +110,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of available alternate people filtered by optional search criteria.
@@ -154,7 +154,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonSummaryPagedResponse,
-    );
+    ) as PersonSummaryPagedResponse;
 
   /**
    * @description Retrieves a paged list of people filtered by optional 'name' and 'active' flag parameters.
@@ -196,7 +196,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonPagedResponse,
-    );
+    ) as PersonPagedResponse;
 
   /**
    * @description Creates a new person.
@@ -218,7 +218,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve list of accrual plans for a given person
@@ -278,7 +278,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonAccrualPlanPagedResponse,
-    );
+    ) as PersonAccrualPlanPagedResponse;
 
   /**
    * @description Creates an accrual plan for a person.
@@ -300,7 +300,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a list of all SCA benefit package values for a person.
@@ -341,7 +341,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonBenefitsValuePagedResponse,
-    );
+    ) as PersonBenefitsValuePagedResponse;
 
   /**
    * @description Creates an SCA benefit value for a person.
@@ -363,7 +363,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a list of all rates for a person.
@@ -383,7 +383,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonRateModel,
-    );
+    ) as PersonRateModel;
 
   /**
    * @description Adds rate and classification information for a person. This information is time bound by a begin and an end date.
@@ -414,7 +414,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve list of skills for a person given its key
@@ -455,7 +455,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonSkillPagedResponse,
-    );
+    ) as PersonSkillPagedResponse;
 
   /**
    * @description Associates a skill for a person.
@@ -493,7 +493,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonModel,
-    );
+    ) as PersonModel;
 
   /**
    * @description Updates an existing person matching id. 'id' parameter must match the 'person' model 'key' field.
@@ -547,7 +547,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonAccrualPlanModel,
-    );
+    ) as PersonAccrualPlanModel;
 
   /**
    * @description Updates a person's accrual plan.
@@ -606,7 +606,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Removes an attachment for a person.
@@ -642,7 +642,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonBenefitsValueModel,
-    );
+    ) as PersonBenefitsValueModel;
 
   /**
    * @description Updates a person's SCA benefit package.
@@ -756,7 +756,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       AlternatePagedResponse,
-    );
+    ) as AlternatePagedResponse;
 
   /**
    * @description Update alternate approvers for a person given its key
@@ -794,7 +794,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       GetCurrentClassificationEnum,
-    );
+    ) as GetCurrentClassificationEnum;
 
   /**
    * @description Retrieves a list of all approval groups the person is an approver for.
@@ -814,7 +814,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       KeyNameModel,
-    );
+    ) as KeyNameModel;
 
   /**
    * @description Retrieves a list of all approval groups the person is an expense report submitter for.
@@ -834,7 +834,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       KeyNameModel,
-    );
+    ) as KeyNameModel;
 
   /**
    * @description Retrieves a list of all approval groups the person is an expense request submitter for.
@@ -854,7 +854,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       KeyNameModel,
-    );
+    ) as KeyNameModel;
 
   /**
    * @description Retrieves a list of all approval groups the person is a leave submitter for.
@@ -874,7 +874,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       KeyNameModel,
-    );
+    ) as KeyNameModel;
 
   /**
    * @description Retrieves a list of all approval groups the person is a time submitter for.
@@ -894,7 +894,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       KeyNameModel,
-    );
+    ) as KeyNameModel;
 
   /**
    * @description Retrieves a paged list of assignments that match the given search criteria
@@ -937,7 +937,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       ProjectAssignmentPagedResponse,
-    );
+    ) as ProjectAssignmentPagedResponse;
 
   /**
    * @description Retrieves a person's payroll information details.
@@ -957,7 +957,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonPayrollModel,
-    );
+    ) as PersonPayrollModel;
 
   /**
    * @description Updates a person's payroll information details.
@@ -1019,7 +1019,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       ProjectAssignmentPagedResponse,
-    );
+    ) as ProjectAssignmentPagedResponse;
 
   /**
    * @description Retrieves a rate by id for a person.
@@ -1039,7 +1039,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonRateModel,
-    );
+    ) as PersonRateModel;
 
   /**
    * @description Updates a rate on a person.
@@ -1110,7 +1110,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonTimeDataPagedResponse,
-    );
+    ) as PersonTimeDataPagedResponse;
 
   /**
    * @description Retrieves the timesheet user's Leave Balance
@@ -1131,7 +1131,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       LeaveBalancePagedResponseModel,
-    );
+    ) as LeaveBalancePagedResponseModel;
 
   /**
    * @description Retrieves a paged list of people filtered by optional search criteria.
@@ -1174,7 +1174,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonPagedResponse,
-    );
+    ) as PersonPagedResponse;
 
   /**
    * @description Retrieves a paged list of people belonging to an organization in which the caller has org access, based on the provided org access criteria. Results are additionally filtered by optional 'name' search criteria.
@@ -1217,7 +1217,7 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonSummaryPagedResponse,
-    );
+    ) as PersonSummaryPagedResponse;
 
   /**
    * @description Retrieves a paged list of people summaries filtered by optional search criteria.
@@ -1259,5 +1259,5 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
         ...params,
       },
       PersonSummaryPagedResponse,
-    );
+    ) as PersonSummaryPagedResponse;
 }

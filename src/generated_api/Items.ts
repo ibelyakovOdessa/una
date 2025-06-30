@@ -67,7 +67,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       InventoryItemPagedResponse,
-    );
+    ) as InventoryItemPagedResponse;
 
   /**
    * @description Creates a new inventory item for an item.
@@ -89,7 +89,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description This route has been deprecated in favor of /rest/items/{id}/uoms. Retrieves unit of measure rates for an item.
@@ -110,7 +110,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       ItemUOMRateSetModel,
-    );
+    ) as ItemUOMRateSetModel;
 
   /**
    * @description This route has been deprecated in favor of /rest/items/{id}/uoms and /rest/items/{id}/uoms/{uomId}. Creates a new unit of measure rate for an item.
@@ -149,7 +149,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       UOMRateCollectionModel,
-    );
+    ) as UOMRateCollectionModel;
 
   /**
    * @description Adds a unit of measure and rates to an item. Bill rate and cost rate are in the instance currency.
@@ -210,7 +210,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       ItemPagedResponse,
-    );
+    ) as ItemPagedResponse;
 
   /**
    * @description Creates a new item.
@@ -232,7 +232,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves an item by id.
@@ -252,7 +252,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       ItemModel,
-    );
+    ) as ItemModel;
 
   /**
    * @description Updates an item
@@ -306,7 +306,7 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       InventoryItemModel,
-    );
+    ) as InventoryItemModel;
 
   /**
    * @description Updates an inventory item for an item.
@@ -435,5 +435,5 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
         ...params,
       },
       InventoryItemPagedResponse,
-    );
+    ) as InventoryItemPagedResponse;
 }

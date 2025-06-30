@@ -58,7 +58,7 @@ export class CustomLinks<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CustomLinkPagedResponse,
-    );
+    ) as CustomLinkPagedResponse;
 
   /**
    * @description Retrieves details of a custom link
@@ -78,5 +78,5 @@ export class CustomLinks<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       CustomLinkModel,
-    );
+    ) as CustomLinkModel;
 }

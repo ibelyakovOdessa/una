@@ -59,7 +59,7 @@ export class OrganizationTypes<SecurityDataType = unknown> extends HttpClient<Se
         ...params,
       },
       OrganizationTypePagedResponse,
-    );
+    ) as OrganizationTypePagedResponse;
 
   /**
    * @description Creates a new organization type.
@@ -81,7 +81,7 @@ export class OrganizationTypes<SecurityDataType = unknown> extends HttpClient<Se
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of an organization type.
@@ -101,7 +101,7 @@ export class OrganizationTypes<SecurityDataType = unknown> extends HttpClient<Se
         ...params,
       },
       OrganizationTypeModel,
-    );
+    ) as OrganizationTypeModel;
 
   /**
    * @description Updates an existing organization type.

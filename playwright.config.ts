@@ -23,4 +23,5 @@ const config: PlaywrightTestConfig = {
             use: { browserName: 'firefox' },
         },
     ],
+    tsconfig: 'tsconfig.json',
 };

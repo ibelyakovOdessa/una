@@ -59,7 +59,7 @@ export class EmployeeTypes<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       EmployeeTypePagedResponse,
-    );
+    ) as EmployeeTypePagedResponse;
 
   /**
    * @description Create a new employee
@@ -81,7 +81,7 @@ export class EmployeeTypes<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of an employee type
@@ -101,7 +101,7 @@ export class EmployeeTypes<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       EmployeeTypeModel,
-    );
+    ) as EmployeeTypeModel;
 
   /**
    * @description Update an existing employee type

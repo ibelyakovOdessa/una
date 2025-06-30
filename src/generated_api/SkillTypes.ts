@@ -53,7 +53,7 @@ export class SkillTypes<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       SkillTypePagedResponse,
-    );
+    ) as SkillTypePagedResponse;
 
   /**
    * @description Creates a new Skill Type
@@ -91,7 +91,7 @@ export class SkillTypes<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       SkillTypeModel,
-    );
+    ) as SkillTypeModel;
 
   /**
    * @description Update the attributes of a skill type.

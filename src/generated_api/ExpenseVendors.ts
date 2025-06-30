@@ -58,5 +58,5 @@ export class ExpenseVendors<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       VendorPagedResponse,
-    );
+    ) as VendorPagedResponse;
 }

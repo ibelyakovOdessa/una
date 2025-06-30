@@ -59,5 +59,5 @@ export class Accounts<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AccountPagedResponse,
-    );
+    ) as AccountPagedResponse;
 }

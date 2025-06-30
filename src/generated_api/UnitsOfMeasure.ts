@@ -60,7 +60,7 @@ export class UnitsOfMeasure<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       UnitOfMeasurePagedResponse,
-    );
+    ) as UnitOfMeasurePagedResponse;
 
   /**
    * @description Creates a new Unit of Measure (UOM).
@@ -82,7 +82,7 @@ export class UnitsOfMeasure<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a UOM by id.
@@ -102,7 +102,7 @@ export class UnitsOfMeasure<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       UnitOfMeasureModel,
-    );
+    ) as UnitOfMeasureModel;
 
   /**
    * @description Updates a Unit of Measure (UOM) by its id.

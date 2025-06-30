@@ -59,7 +59,7 @@ export class CostStructures<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CostStructureLaborKeysPagedResponse,
-    );
+    ) as CostStructureLaborKeysPagedResponse;
 
   /**
    * @description Assigns a labor cost element to the specified cost structure.
@@ -118,7 +118,7 @@ export class CostStructures<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CostStructurePagedResponse,
-    );
+    ) as CostStructurePagedResponse;
 
   /**
    * @description Retrieve a cost structure labor element by key.
@@ -138,5 +138,5 @@ export class CostStructures<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CostStructureLaborModel,
-    );
+    ) as CostStructureLaborModel;
 }

@@ -68,7 +68,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Uploads an attachment to an wage determination.
@@ -90,7 +90,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Adds a location to a wage determination to limit which locations are available for charging.
@@ -163,7 +163,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       WageDeterminationOccupationPagedResponse,
-    );
+    ) as WageDeterminationOccupationPagedResponse;
 
   /**
    * @description Adds an occupation to a wage determination to limit which locations are available for charging.
@@ -202,7 +202,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of an SCA wage determination.
@@ -222,7 +222,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       WageDeterminationModel,
-    );
+    ) as WageDeterminationModel;
 
   /**
    * @description Updates an existing SCA wage determination given its key. The wage determination name and active flag are updateable fields, but code is not.
@@ -276,7 +276,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Deletes an wage determination attachment and its associations.
@@ -312,7 +312,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       WageDeterminationOccupationModel,
-    );
+    ) as WageDeterminationOccupationModel;
 
   /**
    * @description Update an occupation associated to a wage determination.
@@ -391,7 +391,7 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       LocationPagedResponse,
-    );
+    ) as LocationPagedResponse;
 
   /**
    * @description Updates the locations associated with a wage determination. The list will be overridden with the supplied list of location keys.
@@ -452,5 +452,5 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
         ...params,
       },
       WageDeterminationPagedResponse,
-    );
+    ) as WageDeterminationPagedResponse;
 }

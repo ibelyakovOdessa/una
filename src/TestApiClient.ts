@@ -5,17 +5,19 @@ import { ApiService } from "./ApiService";
 import { Authentication } from "./generated_api/Authentication";
 import dotenv from 'dotenv'
 import { UserTokenModel } from "./generated_api/data-contracts";
+import { injectable } from "tsyringe";
 
 dotenv.config();
 
+@injectable()
 export class TestApiClient {
     private api: ApiService;
 
-    constructor(token?: string) {
-        this.api = new ApiService(token)
+    constructor() {
+        this.api = new ApiService();
     }
 
-    static async loginBy(username: string) {
+    async loginBy(username: string) {
         const authSerivce = new Authentication()
      
         const response = await authSerivce.login({
@@ -31,14 +33,16 @@ export class TestApiClient {
 
         // expect(response).toBe(UserTokenModel)
 
-        // const body = await response.json()
+        // const body = await response
         if (!response.token) {
             throw new Error("Authenthication error");
         }
-        return new TestApiClient(response.token); // initialize test api client
+        this.api = new ApiService(response.token)
+        // return new TestApiClient(response.token); // initialize test api client
     }
 
     getApi(): ApiService {
       return this.api;
     }
+
   }

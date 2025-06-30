@@ -83,7 +83,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       AssignablePlannedTimePagedResponse,
-    );
+    ) as AssignablePlannedTimePagedResponse;
 
   /**
    * @description Creates a new planned time record.
@@ -105,7 +105,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of filter sets saved by the authenticated user.
@@ -145,7 +145,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanningMatrixFilterPagedResponse,
-    );
+    ) as PlanningMatrixFilterPagedResponse;
 
   /**
    * @description Saves a filter set for later use.
@@ -175,7 +175,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of shared filter sets saved by the authenticated user.
@@ -215,7 +215,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanningMatrixFilterPagedResponse,
-    );
+    ) as PlanningMatrixFilterPagedResponse;
 
   /**
    * @description Saves a shared filter set for later use.
@@ -237,7 +237,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a planned time record.
@@ -257,7 +257,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlannedTimeModel,
-    );
+    ) as PlannedTimeModel;
 
   /**
    * @description Updates an existing planned time record.
@@ -311,7 +311,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanningMatrixSearchCriteriaReadModel,
-    );
+    ) as PlanningMatrixSearchCriteriaReadModel;
 
   /**
    * @description Updates a saved filter set by id.
@@ -386,6 +386,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
          * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
          */
         lastModified?: string;
+        headers?: Record<string, object[]>;
         metadata?: Record<string, object[]>;
         mediaType?: {
           type?: string;
@@ -394,14 +395,14 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
           wildcardType?: boolean;
           wildcardSubtype?: boolean;
         };
+        /** @format int32 */
+        status?: number;
         statusInfo?: {
           family?: DeleteMatrixListCriteriaFamilyEnum;
           /** @format int32 */
           statusCode?: number;
           reasonPhrase?: string;
         };
-        /** @format int32 */
-        status?: number;
         stringHeaders?: Record<string, string[]>;
         entity?: object;
         /** @uniqueItems true */
@@ -443,7 +444,6 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
           title?: string;
           params?: Record<string, string>;
         }[];
-        headers?: Record<string, object[]>;
       },
       ErrorResponse
     >(
@@ -455,7 +455,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       string,
-    );
+    ) as string;
 
   /**
    * @description Retrieves a saved shared filter set by id.
@@ -475,7 +475,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanningMatrixSearchCriteriaReadModel,
-    );
+    ) as PlanningMatrixSearchCriteriaReadModel;
 
   /**
    * @description Updates a saved shared filter set by id.
@@ -541,6 +541,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
          * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
          */
         lastModified?: string;
+        headers?: Record<string, object[]>;
         metadata?: Record<string, object[]>;
         mediaType?: {
           type?: string;
@@ -549,14 +550,14 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
           wildcardType?: boolean;
           wildcardSubtype?: boolean;
         };
+        /** @format int32 */
+        status?: number;
         statusInfo?: {
           family?: DeleteMatrixSharedCriteriaFamilyEnum;
           /** @format int32 */
           statusCode?: number;
           reasonPhrase?: string;
         };
-        /** @format int32 */
-        status?: number;
         stringHeaders?: Record<string, string[]>;
         entity?: object;
         /** @uniqueItems true */
@@ -598,7 +599,6 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
           title?: string;
           params?: Record<string, string>;
         }[];
-        headers?: Record<string, object[]>;
       },
       ErrorResponse
     >(
@@ -610,7 +610,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       string,
-    );
+    ) as string;
 
   /**
    * @description Retrieves list of available person orgs for planning, optionally filterable by org code (using a double-ended wildcard search) and project key. If project key is provided, and unanet.financials.use_financial_orgs is true, and the project has an owning org, the list of available person orgs will be further limited to those users whose person org's legal entity is the same as the legal entity of the project's owning org. An exception to this is that person orgs that are not marked as financial orgs will not be filtered out. Additionally, if unanet.multi_entity.enabled is true and the project has supporting orgs defined, person orgs from the supporting orgs will also appear (resource planners will need to have person org access to the support orgs).
@@ -657,7 +657,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves list of available project orgs for planning, optionally filterable by org code using a double-ended wildcard search
@@ -698,7 +698,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves list of available project owning orgs for planning, optionally filterable by org code using a double-ended wildcard search
@@ -739,7 +739,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       KeyNameCodeModelPagedResponse,
-    );
+    ) as KeyNameCodeModelPagedResponse;
 
   /**
    * @description Retrieves default plan values given a project, person, date
@@ -759,7 +759,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanDefaultsModel,
-    );
+    ) as PlanDefaultsModel;
 
   /**
    * @description Retrieves planned time allocation percentages for people within the given period(s).
@@ -781,7 +781,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       SchedulingPersonAllocationModel,
-    );
+    ) as SchedulingPersonAllocationModel;
 
   /**
    * @description Retrieves booked planned time, leave requests, and holidays for a given person and period.
@@ -803,7 +803,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanningPersonBookedModel,
-    );
+    ) as PlanningPersonBookedModel;
 
   /**
    * @description Retrieves planned time matrix data for project and people within the given period(s).
@@ -825,7 +825,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlanningMatrixModel,
-    );
+    ) as PlanningMatrixModel;
 
   /**
    * @description Search for a list of people based on resource plan criteria
@@ -868,7 +868,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       SchedulingPersonSummaryPagedResponse,
-    );
+    ) as SchedulingPersonSummaryPagedResponse;
 
   /**
    * @description Retrieves a paged list of planned time filtered by optional search criteria.
@@ -911,7 +911,7 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       PlannedTimePagedResponse,
-    );
+    ) as PlannedTimePagedResponse;
 
   /**
    * @description Search for a list of eligible projects based on resource plan criteria
@@ -954,5 +954,5 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
         ...params,
       },
       SchedulingProjectSummaryPagedResponse,
-    );
+    ) as SchedulingProjectSummaryPagedResponse;
 }

@@ -47,7 +47,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of expense details for a given journal entry.
@@ -88,7 +88,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       JournalEntryExpenseDetailPagedResponse,
-    );
+    ) as JournalEntryExpenseDetailPagedResponse;
 
   /**
    * @description Creates a journal entry expense detail for provided journal entry ID.
@@ -110,7 +110,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of journal entry items for a given journal entry.
@@ -151,7 +151,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       JournalEntryItemDetailPagedResponse,
-    );
+    ) as JournalEntryItemDetailPagedResponse;
 
   /**
    * @description Creates a journal entry item detail for provided journal entry ID.
@@ -173,7 +173,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a journal entry.
@@ -193,7 +193,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       JournalEntrySummaryModel,
-    );
+    ) as JournalEntrySummaryModel;
 
   /**
    * @description Delete a new journal entry.
@@ -292,7 +292,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       JournalEntryPagedResponse,
-    );
+    ) as JournalEntryPagedResponse;
 
   /**
    * @description Submits a journal entry for posting.
@@ -336,7 +336,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Validates a journal entry for submission.
@@ -356,7 +356,7 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       FinancialDocumentValidationModel,
-    );
+    ) as FinancialDocumentValidationModel;
 
   /**
    * @description Voids a posted journal entry.

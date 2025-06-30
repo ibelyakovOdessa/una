@@ -58,5 +58,5 @@ export class ChangeReasons<SecurityDataType = unknown> extends HttpClient<Securi
         ...params,
       },
       ChangeReasonPagedResponse,
-    );
+    ) as ChangeReasonPagedResponse;
 }

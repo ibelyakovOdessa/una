@@ -32,5 +32,5 @@ export class Attachments<SecurityDataType = unknown> extends HttpClient<Security
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 }

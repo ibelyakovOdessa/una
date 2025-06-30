@@ -55,7 +55,7 @@ export class Authentication<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       UserTokenModel,
-    );
+    ) as UserTokenModel;
 
   /**
    * @description Retrieves an authentication token based on the provided OAuth 2.0 access token.
@@ -83,7 +83,7 @@ export class Authentication<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       UserTokenModel,
-    );
+    ) as UserTokenModel;
 
   /**
    * @description Resets a user's password after verifying request.
@@ -119,5 +119,5 @@ export class Authentication<SecurityDataType = unknown> extends HttpClient<Secur
         ...params,
       },
       UserTokenModel,
-    );
+    ) as UserTokenModel;
 }

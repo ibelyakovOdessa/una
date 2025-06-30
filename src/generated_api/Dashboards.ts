@@ -52,5 +52,5 @@ export class Dashboards<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       DashboardTypePagedResponse,
-    );
+    ) as DashboardTypePagedResponse;
 }

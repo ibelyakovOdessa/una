@@ -64,7 +64,7 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ProjectTypePagedResponse,
-    );
+    ) as ProjectTypePagedResponse;
 
   /**
    * @description Creates a new project type.
@@ -86,7 +86,7 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves details of a project type.
@@ -106,7 +106,7 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ProjectTypeModel,
-    );
+    ) as ProjectTypeModel;
 
   /**
    * @description Updates an existing project type.
@@ -160,7 +160,7 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       AccountCategoryModel,
-    );
+    ) as AccountCategoryModel;
 
   /**
    * @description Retrieves a list of project type accounts.
@@ -180,7 +180,7 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       CategoryAccountModel,
-    );
+    ) as CategoryAccountModel;
 
   /**
    * @description Update a project type's account setup.
@@ -239,5 +239,5 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
         ...params,
       },
       ExpenseTypeAccountPagedResponse,
-    );
+    ) as ExpenseTypeAccountPagedResponse;
 }

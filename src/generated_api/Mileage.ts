@@ -38,7 +38,7 @@ export class Mileage<SecurityDataType = unknown> extends HttpClient<SecurityData
         ...params,
       },
       MileageRateSetModel,
-    );
+    ) as MileageRateSetModel;
 
   /**
    * @description Retrieves a list of mileage rate sets filtered by optional criteria.
@@ -80,7 +80,7 @@ export class Mileage<SecurityDataType = unknown> extends HttpClient<SecurityData
         ...params,
       },
       MileageRateSetPagedResponse,
-    );
+    ) as MileageRateSetPagedResponse;
 
   /**
    * @description Retrieves a list of mileage rates for a given rate set.
@@ -121,5 +121,5 @@ export class Mileage<SecurityDataType = unknown> extends HttpClient<SecurityData
         ...params,
       },
       MileageRatePagedResponse,
-    );
+    ) as MileageRatePagedResponse;
 }

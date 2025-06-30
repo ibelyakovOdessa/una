@@ -64,7 +64,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve adjustments for a given timesheet and project. * Optional parameter __type__ allows requesting only specific adjustment variants.
@@ -97,7 +97,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       AdjustmentsModel,
-    );
+    ) as AdjustmentsModel;
 
   /**
    * @description Retrieves attachment details for a timesheet
@@ -138,7 +138,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       AttachmentPagedResponseModel,
-    );
+    ) as AttachmentPagedResponseModel;
 
   /**
    * @description Completes a timesheet. * If __bulkApprove__ is __true__ an INUSE, SUBMITTED or APPROVING timesheet will be completed using the bulk approval work flow. * If __bulkApprove__ is __false__, only an INUSE timesheets will be completed and the process will skip the approval workflows. Completed timesheets will automatically move to LOCKED status if time auto-lock is enabled.
@@ -200,7 +200,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimesheetPagedResponse,
-    );
+    ) as TimesheetPagedResponse;
 
   /**
    * @description Adds a new timesheet.
@@ -235,7 +235,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       CreatedResponseModel,
-    );
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieve time rows from the previous timesheet for autofill
@@ -255,7 +255,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeRowPagedResponse,
-    );
+    ) as TimeRowPagedResponse;
 
   /**
    * @description Create an autofill record that has been removed from a timesheet
@@ -277,7 +277,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeRowPagedResponse,
-    );
+    ) as TimeRowPagedResponse;
 
   /**
    * @description Retrieves specified attachment for a timesheet
@@ -297,7 +297,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       AttachmentModel,
-    );
+    ) as AttachmentModel;
 
   /**
    * @description Delete an attachment associated with a give timesheet
@@ -333,7 +333,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimesheetModel,
-    );
+    ) as TimesheetModel;
 
   /**
    * @description Updates details of an existing timesheet.
@@ -355,7 +355,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimesheetUpdateResponseModel,
-    );
+    ) as TimesheetUpdateResponseModel;
 
   /**
    * @description Removes a timesheet and its associated records.
@@ -412,7 +412,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       ItemEntryHistoryPagedResponse,
-    );
+    ) as ItemEntryHistoryPagedResponse;
 
   /**
    * @description Retrieve a paged list of labor categories associated with a timesheet project.
@@ -454,7 +454,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       LaborCategoryPagedResponse,
-    );
+    ) as LaborCategoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of labor categories associated with a timesheet task.
@@ -496,7 +496,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       LaborCategoryPagedResponse,
-    );
+    ) as LaborCategoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of locations associated with a timesheet project.
@@ -538,7 +538,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       LocationPagedResponse,
-    );
+    ) as LocationPagedResponse;
 
   /**
    * @description Retrieves a paged list of locations associated with a timesheet task.
@@ -580,7 +580,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       LocationPagedResponse,
-    );
+    ) as LocationPagedResponse;
 
   /**
    * @description Retrieves details of an timesheet for offline use.
@@ -600,7 +600,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       OfflineTimesheetModel,
-    );
+    ) as OfflineTimesheetModel;
 
   /**
    * @description Retrieve a paged list of project types associated with a timesheet.
@@ -641,7 +641,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       ProjectTypePagedResponse,
-    );
+    ) as ProjectTypePagedResponse;
 
   /**
    * @description Retrieve a paged list of projects associated with a timesheet.
@@ -682,7 +682,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimesheetProjectPagedResponse,
-    );
+    ) as TimesheetProjectPagedResponse;
 
   /**
    * @description Retrieves status history list for a given timesheet.
@@ -723,7 +723,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeStatusHistoryPagedResponse,
-    );
+    ) as TimeStatusHistoryPagedResponse;
 
   /**
    * @description Retrieve a paged list of audit history entries associated with a timesheet timeslip.
@@ -770,7 +770,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeslipHistoryPagedResponse,
-    );
+    ) as TimeslipHistoryPagedResponse;
 
   /**
    * @description Retrieves a paged list of timesheets filtered by optional search criteria. * Search for active timesheets, by setting __active__ flag to _true_. * Search for historical timesheets (not active), by setting __active__ flag to _false_, * Omit the __active__ flag and alternatively specify a list of timesheet __statuses__ or __adjustmentStatus__ to include in list. * If search criteria include both __statuses__ and __adjustmentStatuses__, the result is an OR of the two criteria. For example, if criteria include a status of _EXTRACTED_ and adjustmentStatus of _SUBMITTED_, then search will look for timesheets that include either a status of _EXTRACTED_ or an adjustmentStatus of _SUBMITTED_. * Regardless of the above criteria settings, one can optionally specify the list of __personKeys__ by which to filter timesheets. * __beginDateStart__ and __beginDateEnd__ can be used to filter timesheets by their beginDate. Alternatively, __workDate__ can be used to match any timesheet where workDate is within the timesheet's designated time period. If both __beginDateStart__ and __workDate__ are not specified, search will be limited to the last 30 days. If both the __active__ flag is specified and either __statuses__ or __adjustmentStatuses__ contains entries, an HTTP 400 (BAD REQUEST) will be returned.
@@ -813,7 +813,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimesheetPagedResponse,
-    );
+    ) as TimesheetPagedResponse;
 
   /**
    * @description Submits a timesheet for approval.
@@ -851,7 +851,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeRowPagedResponse,
-    );
+    ) as TimeRowPagedResponse;
 
   /**
    * @description Retrieves potential defaults for timeslip fields when a new record would be created. Fields that return null may still be required for insertion but no default could be derived.
@@ -873,7 +873,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeslipPropertyModel,
-    );
+    ) as TimeslipPropertyModel;
 
   /**
    * @description Updates a collection of timeslip, item entries, and TITOs with adjustment reasons.
@@ -937,5 +937,5 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
         ...params,
       },
       TimeValidationModel,
-    );
+    ) as TimeValidationModel;
 }
