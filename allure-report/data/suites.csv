@@ -1,5 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","463","create and retrieve payment term","","Tue Jul 08 15:15:12 EEST 2025","passed","Tue Jul 08 15:15:13 EEST 2025","","first.spec.ts","",""
-"","490","Creation of receiving document","","Tue Jul 08 15:15:13 EEST 2025","failed","Tue Jul 08 15:15:13 EEST 2025","","first.spec.ts","",""
-"","723","create and retrieve receiving document with date 2024-12-12T00:00:00.000+02:00","","Tue Jul 08 15:15:16 EEST 2025","failed","Tue Jul 08 15:15:16 EEST 2025","","first.spec.ts","",""
-"","636","create and retrieve receiving document with date 2026-12-12T00:00:00.000+02:00","","Tue Jul 08 15:15:19 EEST 2025","failed","Tue Jul 08 15:15:19 EEST 2025","","first.spec.ts","",""

@@ -5,3 +5,4 @@ package-lock.json
 .vscode
 dist
 allure-results
+allure-report
