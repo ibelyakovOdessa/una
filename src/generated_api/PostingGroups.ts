@@ -131,11 +131,11 @@ export class PostingGroups<SecurityDataType = unknown> extends HttpClient<Securi
    * @description Delete a custom posting group
    *
    * @tags Posting Groups
-   * @name Delete25
+   * @name Delete26
    * @summary Delete posting group
    * @request DELETE:/rest/posting-groups/{id}
    * @secure */
-  delete25 = (id: number, params: RequestParams = {}) =>
+  delete26 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/posting-groups/${id}`,
       method: "DELETE",

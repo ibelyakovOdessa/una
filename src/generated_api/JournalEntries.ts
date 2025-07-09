@@ -199,11 +199,11 @@ export class JournalEntries<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Delete a new journal entry.
    *
    * @tags Journal Entries
-   * @name Delete15
+   * @name Delete16
    * @summary Delete journal entry
    * @request DELETE:/rest/journal-entries/{id}
    * @secure */
-  delete15 = (id: number, params: RequestParams = {}) =>
+  delete16 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/journal-entries/${id}`,
       method: "DELETE",

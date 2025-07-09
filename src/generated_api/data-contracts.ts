@@ -134,6 +134,31 @@ export interface AccountSourceSupplierModel {
   supplier: AccountSourceSupplierModelSupplierEnum | null;
 }
 
+/** Model representing an accrual schedule. */
+export interface AccrualScheduleModel {
+  /**
+   * Unique key for the accrual schedule.
+   * @format int64
+   */
+  key?: number | null;
+  /** Match a date field whose begin date is <= rangeEnd and end date is >= rangeStart */
+  workDateRange?: DateRangeModel | null;
+  /** Whether or not accrual hours may exceed the allowed cap amount. */
+  exceedAllowed?: boolean | null;
+  /** Accrual Hours */
+  accrualHours?: number | null;
+  /** Maximum allowed hours */
+  capHours?: number | null;
+  /** The CAP Type */
+  capType?: AccrualScheduleModelCapTypeEnum | null;
+  /** Maximum allowed hours for Accrual */
+  accrualCapHours?: number | null;
+  /** Accrual Cap Type */
+  accrualCapType?: AccrualScheduleModelAccrualCapTypeEnum | null;
+  /** Hours exceeded */
+  exceedHours?: number | null;
+}
+
 export interface AddressModel {
   streetLine1?: string;
   streetLine2?: string;
@@ -830,7 +855,19 @@ export interface AssignedLaborCategoryUpdateModel {
   customRates?: LaborCategoryRateModel[] | null;
 }
 
+export interface AssigningMatrixCell {
+  quantity?: number | null;
+  editable?: boolean | null;
+  uneditableReason?: string | null;
+  range?: DateRange | null;
+  schedule?: AssignmentMatrixData | null;
+}
+
 export interface AssigningMatrixCellModel {
+  cell?: AssigningMatrixCell | null;
+  canViewCostRate?: boolean | null;
+  canViewBillRate?: boolean | null;
+  hasCostingLicense?: boolean | null;
   quantity: number | null;
   editable?: boolean | null;
   uneditableReason?: string | null;
@@ -1052,6 +1089,60 @@ export interface AssignmentDefaultsModel {
   personOrg: KeyNameCodeModel | null;
   /** Is a cost structure labor item keys in the system */
   costStructureLabor?: CostStructureLaborKeysModel | null;
+}
+
+export interface AssignmentMatrixData {
+  /** @format int64 */
+  key?: number | null;
+  project?: KeyNameCodeData | null;
+  task?: KeyNameData | null;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  beginDate?: string | null;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  endDate?: string | null;
+  /** @format int32 */
+  taskSequence?: number | null;
+  billRate?: number | null;
+  billRateCurrency?: CurrencyCodeDisplayData | null;
+  billRateSource?: AssignmentMatrixDataBillRateSourceEnum | null;
+  projectOrganization?: KeyNameData | null;
+  icCostRate?: number | null;
+  costRate?: number | null;
+  costRateCurrency?: CurrencyCodeDisplayData | null;
+  costRateSource?: AssignmentMatrixDataCostRateSourceEnum | null;
+  personOrganization?: KeyNameData | null;
+  budgetHours?: number | null;
+  etcHours?: number | null;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  estimatedDateOfCompletion?: string | null;
+  exceedBudget?: boolean | null;
+  useWbsDates?: boolean | null;
+  costStructureLaborElement?: KeyCodeData | null;
+  icCostStructureLaborElement?: KeyCodeData | null;
+  laborCategory?: KeyNameData | null;
+  location?: KeyNameData | null;
+  person?: KeyNameData | null;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  lastUpdated?: string | null;
+  personBusinessWeek?: BusinessWeek | null;
+  /** @format int64 */
+  projectControllerICKey?: number | null;
 }
 
 /** Assignment Notifications */
@@ -1729,6 +1820,18 @@ export interface BudgetSnapshotSearchModel {
   taskKeys?: number[] | null;
   /** Match a date field whose begin date is <= rangeEnd and end date is >= rangeStart */
   dateRange?: DateRangeModel | null;
+}
+
+export interface BusinessWeek {
+  /** @format int64 */
+  key?: number | null;
+  name?: string | null;
+  hours?: number | null;
+  allDays?: boolean | null;
+  hourIncrement?: number | null;
+  /** @format int64 */
+  businessDays?: number | null;
+  businessHours?: number | null;
 }
 
 /** Model representing the details of a business week. */
@@ -2534,6 +2637,33 @@ export interface ContactSummaryModel {
   title?: string | null;
 }
 
+export interface ContractAlertPreferencesModel {
+  emailAlert?: boolean | null;
+  showContractManager?: boolean | null;
+  fullySpentAlert?: boolean | null;
+  fullySpentExceededAlert?: boolean | null;
+  allocationAlert1?: boolean;
+  allocationAlert2?: boolean;
+  /**
+   * @format int32
+   * @min 1
+   * @max 100
+   */
+  allocationPct1?: number;
+  /**
+   * @format int32
+   * @min 1
+   * @max 100
+   */
+  allocationPct2?: number;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  lastUpdatedTimestamp?: string | null;
+}
+
 /** Model representing the details of a base contract clause. */
 export interface ContractClauseBaseModel {
   /**
@@ -2837,6 +2967,66 @@ export interface ContractCreateModel {
   fundingRequired?: boolean | null;
 }
 
+/** A list of items. */
+export interface ContractFundingAlertModel {
+  read?: boolean | null;
+  /**
+   * @format int64
+   * @min 1
+   * @example 1
+   */
+  alertKey: number | null;
+  /**
+   * @format int64
+   * @min 1
+   * @example 1
+   */
+  personKey: number | null;
+  alertType?: ContractFundingAlertModelAlertTypeEnum | null;
+  threshold?: number | null;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  created?: string | null;
+  /** Model representing the key, name and code of a resource model. */
+  contract?: KeyNameCodeModel | null;
+  /** Model representing the key and code of a resource model. */
+  allocation?: KeyCodeModel | null;
+  /** Model representing the key and name of a resource model. */
+  fundingLevel?: KeyNameModel | null;
+}
+
+export interface ContractFundingAlertPagedResponse {
+  /** A list of items. */
+  items?: ContractFundingAlertModel[] | null;
+  /**
+   * The requested page offset.
+   * @format int32
+   */
+  page?: number | null;
+  /**
+   * The number of rows returned in items.
+   * @format int32
+   */
+  pageSize?: number | null;
+  /**
+   * The total number of pages available.
+   * @format int32
+   */
+  pageCount?: number | null;
+  /**
+   * The total number of items available in result set.
+   * @format int32
+   */
+  resultCount?: number | null;
+}
+
+export interface ContractFundingAlertUpdateModel {
+  read?: boolean | null;
+}
+
 export interface ContractFundingAllocationCreateModel {
   /**
    * @format int64
@@ -2954,7 +3144,7 @@ export interface ContractFundingAllocationModel {
    * @min 1
    * @example 1
    */
-  parentKey: number | null;
+  parentKey?: number | null;
   contractModification?: boolean | null;
   /**
    * @format double(13, 4)
@@ -4340,6 +4530,15 @@ export interface CreatedResponseModel {
   key: number | null;
 }
 
+export interface CurrencyCodeDisplayData {
+  /** @format int64 */
+  key?: number | null;
+  name?: string | null;
+  code?: string | null;
+  /** @format int32 */
+  decimals?: number | null;
+}
+
 /** Model representing the key, name, ISO code and decimals of an ISO currency. */
 export interface CurrencyCodeDisplayModel {
   /**
@@ -5282,6 +5481,21 @@ export interface DataLakeCriteriaPagedResponse {
    * @format int32
    */
   resultCount?: number | null;
+}
+
+export interface DateRange {
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  beginDate?: string | null;
+  /**
+   * date-time notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01T00:00:00 to 2099-12-31T23:59:59
+   * @format date-time
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
+   */
+  endDate?: string | null;
 }
 
 /** Match a date field whose begin date is <= rangeEnd and end date is >= rangeStart */
@@ -8291,6 +8505,8 @@ export type ExpenseWizardModel = (
 export interface FeatureFlagModel {
   /** Name of the feature flag */
   name?: string | null;
+  /** Value of string flags */
+  value?: string | null;
   /** Indicates whether or not the feature flag is on */
   active?: boolean | null;
 }
@@ -10032,6 +10248,8 @@ export interface FundingAllocationFundedProject {
    * @example 1
    */
   allocationKey: number | null;
+  /** Model representing the key, name and code of a resource model. */
+  project?: KeyNameCodeModel | null;
   /**
    * @format double(13, 4)
    * @example 123.45
@@ -10045,8 +10263,6 @@ export interface FundingAllocationFundedProject {
   expenseFundingOption?: FundingAllocationFundedProjectExpenseFundingOptionEnum | null;
   itemFundingOption?: FundingAllocationFundedProjectItemFundingOptionEnum | null;
   laborFundingOption?: FundingAllocationFundedProjectLaborFundingOptionEnum | null;
-  /** Model representing the key, name and code of a resource model. */
-  project?: KeyNameCodeModel | null;
   tasks?: FundingAllocationFundedTask[] | null;
   expenseTypes?: FundingAllocationKeyNameCode[] | null;
   items?: FundingAllocationKeyName[] | null;
@@ -10060,6 +10276,8 @@ export interface FundingAllocationFundedTask {
    * @example 1
    */
   allocationKey: number | null;
+  /** Model representing the key and name of a resource model. */
+  task?: KeyNameModel | null;
   /**
    * @format double(13, 4)
    * @example 123.45
@@ -10070,8 +10288,6 @@ export interface FundingAllocationFundedTask {
    * @example 123.45
    */
   fundedValueAvailable?: number | null;
-  /** Model representing the key and name of a resource model. */
-  task?: KeyNameModel | null;
 }
 
 export interface FundingAllocationKeyName {
@@ -11934,7 +12150,7 @@ export interface ItemCreateModel {
   /**
    * Item code
    * @minLength 0
-   * @maxLength 25
+   * @maxLength 50
    * @pattern ^\(.*\S.*\)$
    */
   code: string | null;
@@ -12292,7 +12508,7 @@ export interface ItemModel {
   /**
    * Item code
    * @minLength 0
-   * @maxLength 25
+   * @maxLength 50
    * @pattern ^\(.*\S.*\)$
    */
   code: string | null;
@@ -13237,6 +13453,12 @@ export interface JournalEntryVoidModel {
   description?: string | null;
 }
 
+export interface KeyCodeData {
+  /** @format int64 */
+  key?: number | null;
+  code?: string | null;
+}
+
 /** Model representing the key and code of a resource model. */
 export interface KeyCodeModel {
   /**
@@ -13262,6 +13484,13 @@ export interface KeyModel {
    * @example 1
    */
   key: number | null;
+}
+
+export interface KeyNameCodeData {
+  /** @format int64 */
+  key?: number | null;
+  name?: string | null;
+  code?: string | null;
 }
 
 /** Model representing the key, name and code of a resource model. */
@@ -13323,6 +13552,12 @@ export interface KeyNameCodeProjectTypeKeyModel {
   projectTypeKey?: number | null;
   /** Item code */
   code?: string | null;
+}
+
+export interface KeyNameData {
+  /** @format int64 */
+  key?: number | null;
+  name?: string | null;
 }
 
 /** Model representing the key, name and description of a resource model. */
@@ -14518,6 +14753,8 @@ export interface MeTimesheetSearchModel {
   lastUpdatedRange?: InstantRangeModel | null;
   /** Search for punch clock timesheets. */
   punchClockTimesheet?: boolean | null;
+  /** Field on which to apply sort. Defaults to beginDate */
+  sortBy?: MeTimesheetSearchModelSortByEnum | null;
   /** Order to apply for begin date sort. Defaults to ASC */
   sortOrder?: MeTimesheetSearchModelSortOrderEnum | null;
   /**
@@ -16469,6 +16706,18 @@ export interface POItemLineCreateModel {
    */
   rate?: number | null;
   controlQuantity?: boolean | null;
+  /**
+   * full-date notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01 to 2099-12-31
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  promisedDate?: string | null;
+  /**
+   * @minLength 1
+   * @maxLength 25
+   * @pattern ^\(.*\S.*\)$
+   */
+  detailType?: string | null;
 }
 
 /** Model for creating a purchase order item line on a Mod PO from an existing consolidated/approved PO item line on an original PO. */
@@ -16527,6 +16776,18 @@ export interface POItemLineFromApprovedCreateModel {
    * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
    */
   requiredByDate?: string | null;
+  /**
+   * full-date notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01 to 2099-12-31
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  promisedDate?: string | null;
+  /**
+   * @minLength 1
+   * @maxLength 25
+   * @pattern ^\(.*\S.*\)$
+   */
+  detailType?: string | null;
 }
 
 export interface POItemLineModel {
@@ -16578,6 +16839,10 @@ export interface POItemLineModel {
    */
   prDescriptorKey?: number | null;
   viOverage: PoItemLineModelViOverageEnum | null;
+  /**
+   * @format double(9, 6)
+   * @example 123.45
+   */
   quantity?: number | null;
   /**
    * full-date notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01 to 2099-12-31
@@ -16593,6 +16858,18 @@ export interface POItemLineModel {
   rate?: number | null;
   /** Not updateable if modifying an approved/consolidated line */
   controlQuantity?: boolean | null;
+  /**
+   * full-date notation as defined by RFC 3339, section 5.6 with valid range from 1900-01-01 to 2099-12-31
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  promisedDate?: string | null;
+  /**
+   * @minLength 1
+   * @maxLength 25
+   * @pattern ^\(.*\S.*\)$
+   */
+  detailType?: string | null;
 }
 
 export interface POItemLinePagedResponse {
@@ -16775,7 +17052,7 @@ export interface POLaborLineFromApprovedCreateModel {
    * @format double(13, 2)
    * @example 123.45
    */
-  hours?: number | null;
+  hours: number | null;
 }
 
 export interface POLaborLineModel {
@@ -18482,14 +18759,14 @@ export interface PerDiemRateModel {
    * Month and day upon which this season starts. Since the value does not possess a year, the leap day of February 29th is always considered valid.
    * @format month-day
    * @pattern ^\d{2}-\d{2}$
-   * @example "06-30"
+   * @example "07-02"
    */
   seasonStartDate: string | null;
   /**
    * Month and day after which this season ends. Since the value does not possess a year, the leap day of February 29th is always considered valid.
    * @format month-day
    * @pattern ^\d{2}-\d{2}$
-   * @example "06-30"
+   * @example "07-02"
    */
   seasonEndDate: string | null;
   /**
@@ -18550,6 +18827,21 @@ export interface PerDiemRegionPagedResponse {
   resultCount?: number | null;
 }
 
+export interface PersonAccrualAdjustmentModel {
+  /**
+   * Adjustment to the accruedHour total
+   * @format double(5, 9)
+   * @example 123.45
+   */
+  hours: number | null;
+  /**
+   * Comments regarding adjustment
+   * @minLength 0
+   * @maxLength 2000
+   */
+  comment?: string | null;
+}
+
 /** Model for creating a new accrual plan for a person. */
 export interface PersonAccrualPlanCreateModel {
   /**
@@ -18585,12 +18877,53 @@ export interface PersonAccrualPlanCreateModel {
    * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
    */
   accrualEndDate: string | null;
-  /** Optional inital plan balance.  Mutually exclusive of a transfer accrual plan 'transferPlanKey'. */
+  /** Optional initial plan balance.  Mutually exclusive of a transfer accrual plan 'transferPlanKey'. */
   hours?: number | null;
   /** @format int64 */
   transferFromPlanKey?: number | null;
   /** @format int64 */
   transferfromPlanKey?: number | null;
+}
+
+/** Model representing an accrual plan for a person. */
+export interface PersonAccrualPlanListModel {
+  /**
+   * Person accrual plan Id
+   * @format int64
+   * @min 1
+   * @example 1
+   */
+  key?: number | null;
+  /** Model representing the key and name of a resource model. */
+  accrualPlan?: KeyNameModel | null;
+  /** Model representing the key and name of a resource model. */
+  project?: KeyNameModel | null;
+  /** Model representing the key and name of a resource model. */
+  task?: KeyNameModel | null;
+  /**
+   * Person accrual plan begin date
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  accrualBeginDate: string | null;
+  /**
+   * Person accrual plan end date
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  accrualEndDate: string | null;
+  /**
+   * Leave of abscence begin date
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  loaBeginDate?: string | null;
+  /**
+   * Leave of abscence end date
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  loaEndDate?: string | null;
 }
 
 /** Model representing an accrual plan for a person. */
@@ -18632,11 +18965,19 @@ export interface PersonAccrualPlanModel {
    * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
    */
   loaEndDate?: string | null;
+  /** Current time off balance accrued hours minus leave of absence */
+  remainingHours?: number | null;
+  /** The rate method for the accrual */
+  rateMethod?: PersonAccrualPlanModelRateMethodEnum | null;
+  /** Accrual period type for the plan */
+  accrualPeriod?: PersonAccrualPlanModelAccrualPeriodEnum | null;
+  /** Accrual schedules for the plan */
+  accrualSchedules?: AccrualScheduleModel[] | null;
 }
 
 export interface PersonAccrualPlanPagedResponse {
   /** A list of items. */
-  items?: PersonAccrualPlanModel[] | null;
+  items?: PersonAccrualPlanListModel[] | null;
   /**
    * The requested page offset.
    * @format int32
@@ -19047,6 +19388,11 @@ export interface PersonCreateModel {
    * @default "NOT_REQUIRED"
    */
   titoRequired?: PersonCreateModelTitoRequiredEnum | null;
+  /**
+   * Tito button preference, controls when "Time in" and "Time out" are displayed on the timesheet.
+   * @default "ALWAYS_REQUIRED"
+   */
+  titoButtonSetting?: PersonCreateModelTitoButtonSettingEnum | null;
   /** Receive assignment notification e-mails? */
   assignmentEmail?: boolean | null;
   /**
@@ -19272,6 +19618,8 @@ export interface PersonModel {
    * @default "NOT_REQUIRED"
    */
   titoRequired?: PersonModelTitoRequiredEnum | null;
+  /** The user's preference for Time in / time out button placement on the timesheet */
+  titoButtonSetting?: PersonModelTitoButtonSettingEnum | null;
   /** Does person receive assignment notification e-mails? */
   assignmentEmail?: boolean | null;
   /** Model representing the key and name of a resource model. */
@@ -22330,6 +22678,13 @@ export interface ProjectCreateModel {
    * @example 1
    */
   defaultIntercompanyCostStructLaborKey?: number | null;
+  /**
+   * Default Expense Cost Structure ODC key for Borrowed Resources
+   * @format int64
+   * @min 1
+   * @example 1
+   */
+  defaultIntercompanyCostStructOdcKey?: number | null;
   /** When true, expense billing markup is applied to the intercompany transfer cost. When false, expense billing markup is applied to the incurred cost. */
   intercompanyApplyBillingMarkup?: boolean | null;
   /** Does this project use advanced costing? */
@@ -23313,6 +23668,8 @@ export interface ProjectModel {
   intercompanyApplyBillingMarkup?: boolean | null;
   /** Model representing the key and name of a resource model. */
   defaultIntercompanyCostStructLabor?: KeyNameModel | null;
+  /** Model representing the key and name of a resource model. */
+  defaultIntercompanyCostStructOdc?: KeyNameModel | null;
   /** Model representing a list of all UDFs associated with a particular entity. */
   udfs?: UdfValueListModel | null;
   /** Does this project use advanced costing? */
@@ -24551,6 +24908,13 @@ export interface ProjectUpdateModel {
    * @example 1
    */
   defaultIntercompanyCostStructLaborKey?: number | null;
+  /**
+   * Default Expense Cost Structure ODC key for Borrowed Resources
+   * @format int64
+   * @min 1
+   * @example 1
+   */
+  defaultIntercompanyCostStructOdcKey?: number | null;
   /** When true, expense billing markup is applied to the intercompany transfer cost. When false, expense billing markup is applied to the incurred cost. */
   intercompanyApplyBillingMarkup?: boolean | null;
   /** Does this project use advanced costing? */
@@ -25068,14 +25432,14 @@ export interface PurchaseOrderCreateModel {
   /**
    * Comments that are applicable inside the organization.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   internalComments?: string | null;
   /**
    * Comments that will be printed on the Purchase Order forms.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   externalComments?: string | null;
@@ -25622,14 +25986,14 @@ export interface PurchaseOrderModCreateModel {
   /**
    * Comments that are applicable inside the organization.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   internalComments?: string | null;
   /**
    * Comments that will be printed on the Purchase Order forms.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   externalComments?: string | null;
@@ -25762,14 +26126,14 @@ export interface PurchaseOrderModModel {
   /**
    * Comments that are applicable inside the organization.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   internalComments?: string | null;
   /**
    * Comments that will be printed on the Purchase Order forms.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   externalComments?: string | null;
@@ -25950,14 +26314,14 @@ export interface PurchaseOrderModel {
   /**
    * Comments that are applicable inside the organization.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   internalComments?: string | null;
   /**
    * Comments that will be printed on the Purchase Order forms.
    * @minLength 0
-   * @maxLength 2000
+   * @maxLength 10000
    * @pattern ^\(.*\S.*\)$
    */
   externalComments?: string | null;
@@ -26978,6 +27342,12 @@ export interface ReceivingDocumentCreateModel {
    * @pattern ^\(.*\S.*\)$
    */
   documentNumber?: string | null;
+  /**
+   * Document Date
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  documentDate?: string | null;
 }
 
 export interface ReceivingDocumentItemCreateModel {
@@ -27147,6 +27517,12 @@ export interface ReceivingDocumentModel {
    * @pattern ^[1-2]\d{3}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}
    */
   retractedTimestamp?: string | null;
+  /**
+   * Document Date
+   * @format date
+   * @pattern ^[1-2]\d{3}-\d{2}-\d{2}$
+   */
+  documentDate: string | null;
 }
 
 export interface ReceivingDocumentPagedResponse {
@@ -27209,6 +27585,8 @@ export interface ReceivingDocumentSearchModel {
   owningOrgKeys?: number[] | null;
   /** Match a date field whose begin date is <= rangeEnd and end date is >= rangeStart */
   receiptDateRange?: DateRangeModel | null;
+  /** Match a date field whose begin date is <= rangeEnd and end date is >= rangeStart */
+  documentDateRange?: DateRangeModel | null;
   /** A list of Receiving document statuses */
   statuses?: ReceivingDocumentSearchModelStatusesEnum[] | null;
   /**
@@ -29671,6 +30049,13 @@ export interface TimeDisapproveModel {
   timeslips?: DisapprovedTimeslipModel[] | null;
 }
 
+/** Model representing the details for extracting a timesheet. */
+export interface TimeExtractModel {
+  adjustmentOption: TimeExtractModelAdjustmentOptionEnum | null;
+  includePreviouslyExtractAdjustments?: boolean | null;
+  suppressIntermediateAdjustments?: boolean | null;
+}
+
 /** Model representing a timesheet time period instance. A time period is uniquely identified by the timePeriodKey and beginDate fields. */
 export interface TimePeriodModel {
   /**
@@ -30770,6 +31155,8 @@ export interface TimesheetSearchModel {
   lastUpdatedRange?: InstantRangeModel | null;
   /** Search for punch clock timesheets. */
   punchClockTimesheet?: boolean | null;
+  /** Field on which to apply sort. Defaults to beginDate */
+  sortBy?: TimesheetSearchModelSortByEnum | null;
   /** Order to apply for begin date sort. Defaults to ASC */
   sortOrder?: TimesheetSearchModelSortOrderEnum | null;
   personKeys?: number[] | null;
@@ -31554,7 +31941,7 @@ export interface UdfValueCreateModel {
   /**
    * Value of UDF.
    * @minLength 1
-   * @maxLength 128
+   * @maxLength 2000
    */
   value?: string | null;
 }
@@ -31591,7 +31978,7 @@ export interface UdfValueModel {
   /**
    * Value of UDF.
    * @minLength 1
-   * @maxLength 128
+   * @maxLength 2000
    */
   value?: string | null;
   /** Model representing a particular UDF Metadata description that could be associated with one or more UDFs. */
@@ -34796,7 +35183,7 @@ export interface WageDeterminationContractSearchModel {
    */
   wageDeterminationKeys?: number[] | null;
   /** Wage determination number */
-  wageDeterminationNumber: string | null;
+  wageDeterminationNumber?: string | null;
 }
 
 /** Model for creating an SCA Wage Determination. */
@@ -35146,6 +35533,21 @@ export enum AccountSourceSupplierModelSupplierEnum {
   NOT_APPLICABLE = "NOT_APPLICABLE",
 }
 
+/** The CAP Type */
+export enum AccrualScheduleModelCapTypeEnum {
+  NONE = "NONE",
+  HIRE_DATE = "HIRE_DATE",
+  CALENDAR = "CALENDAR",
+  PERIOD = "PERIOD",
+}
+
+/** Accrual Cap Type */
+export enum AccrualScheduleModelAccrualCapTypeEnum {
+  NONE = "NONE",
+  CALENDAR = "CALENDAR",
+  PERIOD = "PERIOD",
+}
+
 /** percent of budget or estimated total. */
 export enum AlertPrefsModelHoursAlertDenomEnum {
   BUDGET = "BUDGET",
@@ -35286,6 +35688,18 @@ export enum AssignmentDefaultsModelBillRateSourceEnum {
   OVERRIDE = "OVERRIDE",
 }
 
+export enum AssignmentMatrixDataBillRateSourceEnum {
+  PERSON = "PERSON",
+  LABOR_CATEGORY = "LABOR_CATEGORY",
+  OVERRIDE = "OVERRIDE",
+}
+
+export enum AssignmentMatrixDataCostRateSourceEnum {
+  PERSON = "PERSON",
+  LABOR_CATEGORY = "LABOR_CATEGORY",
+  OVERRIDE = "OVERRIDE",
+}
+
 export enum AuditDataSearchModelCategoriesEnum {
   ACCOUNTS = "ACCOUNTS",
   ACCRUAL_PLANS = "ACCRUAL_PLANS",
@@ -35321,6 +35735,7 @@ export enum AuditDataSearchModelCategoriesEnum {
   FIXED_ASSETS = "FIXED_ASSETS",
   GENERAL_LEDGER = "GENERAL_LEDGER",
   HOLIDAYS = "HOLIDAYS",
+  IMPORT_EXPORT_ACCESS = "IMPORT_EXPORT_ACCESS",
   IMPORTED_CREDIT_CARD = "IMPORTED_CREDIT_CARD",
   IMPORTED_EXPENSES = "IMPORTED_EXPENSES",
   INVENTORY = "INVENTORY",
@@ -35342,6 +35757,7 @@ export enum AuditDataSearchModelCategoriesEnum {
   PER_DIEMS = "PER_DIEMS",
   PERSON_BENEFITS = "PERSON_BENEFITS",
   PLAN_SETS = "PLAN_SETS",
+  POSTING_OPTIONS = "POSTING_OPTIONS",
   PROJECTS = "PROJECTS",
   PROJECT_NOTE_STATUSES = "PROJECT_NOTE_STATUSES",
   PROJECT_NOTE_TYPES = "PROJECT_NOTE_TYPES",
@@ -35532,6 +35948,13 @@ export enum ContractCreateModelSecurityClearanceEnum {
   TOP_SECRET = "TOP_SECRET",
   SECRET = "SECRET",
   CONFIDENTIAL = "CONFIDENTIAL",
+}
+
+export enum ContractFundingAlertModelAlertTypeEnum {
+  ALLOCATIONPCT1 = "ALLOCATION_PCT1",
+  ALLOCATIONPCT2 = "ALLOCATION_PCT2",
+  FULLY_SPENT = "FULLY_SPENT",
+  FULLY_SPENT_EXCEEDED = "FULLY_SPENT_EXCEEDED",
 }
 
 export enum ContractFundingAllocationModelCalculationMethodEnum {
@@ -36100,6 +36523,7 @@ export enum ErrorInstanceCodeEnum {
   VALIDATION_CONFLICTING_SEARCH_PARAMETERS = "VALIDATION_CONFLICTING_SEARCH_PARAMETERS",
   VALIDATION_INVALID_VERIFICATION_CODE = "VALIDATION_INVALID_VERIFICATION_CODE",
   VALIDATION_INVALID_MONETARY_AMOUNT = "VALIDATION_INVALID_MONETARY_AMOUNT",
+  VALIDATION_DATE_NOT_IN_OPEN_FISCAL_PERIOD = "VALIDATION_DATE_NOT_IN_OPEN_FISCAL_PERIOD",
   INVALID_CONFIGURATION = "INVALID_CONFIGURATION",
   CONSTRAINT_VIOLATION = "CONSTRAINT_VIOLATION",
   PAYLOAD_TOO_LARGE = "PAYLOAD_TOO_LARGE",
@@ -36126,6 +36550,7 @@ export enum ErrorInstanceCodeEnum {
   FORBIDDEN_NOT_PROJECT_MANAGER = "FORBIDDEN_NOT_PROJECT_MANAGER",
   FORBIDDEN_CANNOT_ASSIGN_TO_PROJECT = "FORBIDDEN_CANNOT_ASSIGN_TO_PROJECT",
   FORBIDDEN_NOT_HR_ADMIN = "FORBIDDEN_NOT_HR_ADMIN",
+  NOTHING_TO_EXTRACT = "NOTHING_TO_EXTRACT",
   NOT_FOUND = "NOT_FOUND",
   DUPLICATE = "DUPLICATE",
   CONFLICT = "CONFLICT",
@@ -36241,6 +36666,7 @@ export enum ErrorInstanceCodeEnum {
   INVOICE_CANNOT_SUBMIT_DUE_TO_APPROVALS = "INVOICE_CANNOT_SUBMIT_DUE_TO_APPROVALS",
   INVOICE_STATUS_NOT_ALLOW_COMPLETE = "INVOICE_STATUS_NOT_ALLOW_COMPLETE",
   INVOICE_CANNOT_POST_COMPLETION = "INVOICE_CANNOT_POST_COMPLETION",
+  INVOICE_FUNDING_ALLOCATION = "INVOICE_FUNDING_ALLOCATION",
   INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_WORK_DATE = "INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_WORK_DATE",
   INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_COMMENTS = "INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_COMMENTS",
   INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_SHOW_DATE = "INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_SHOW_DATE",
@@ -37514,6 +37940,7 @@ export enum ImportErrorModelErrorCodeEnum {
   VALIDATION_CONFLICTING_SEARCH_PARAMETERS = "VALIDATION_CONFLICTING_SEARCH_PARAMETERS",
   VALIDATION_INVALID_VERIFICATION_CODE = "VALIDATION_INVALID_VERIFICATION_CODE",
   VALIDATION_INVALID_MONETARY_AMOUNT = "VALIDATION_INVALID_MONETARY_AMOUNT",
+  VALIDATION_DATE_NOT_IN_OPEN_FISCAL_PERIOD = "VALIDATION_DATE_NOT_IN_OPEN_FISCAL_PERIOD",
   INVALID_CONFIGURATION = "INVALID_CONFIGURATION",
   CONSTRAINT_VIOLATION = "CONSTRAINT_VIOLATION",
   PAYLOAD_TOO_LARGE = "PAYLOAD_TOO_LARGE",
@@ -37540,6 +37967,7 @@ export enum ImportErrorModelErrorCodeEnum {
   FORBIDDEN_NOT_PROJECT_MANAGER = "FORBIDDEN_NOT_PROJECT_MANAGER",
   FORBIDDEN_CANNOT_ASSIGN_TO_PROJECT = "FORBIDDEN_CANNOT_ASSIGN_TO_PROJECT",
   FORBIDDEN_NOT_HR_ADMIN = "FORBIDDEN_NOT_HR_ADMIN",
+  NOTHING_TO_EXTRACT = "NOTHING_TO_EXTRACT",
   NOT_FOUND = "NOT_FOUND",
   DUPLICATE = "DUPLICATE",
   CONFLICT = "CONFLICT",
@@ -37655,6 +38083,7 @@ export enum ImportErrorModelErrorCodeEnum {
   INVOICE_CANNOT_SUBMIT_DUE_TO_APPROVALS = "INVOICE_CANNOT_SUBMIT_DUE_TO_APPROVALS",
   INVOICE_STATUS_NOT_ALLOW_COMPLETE = "INVOICE_STATUS_NOT_ALLOW_COMPLETE",
   INVOICE_CANNOT_POST_COMPLETION = "INVOICE_CANNOT_POST_COMPLETION",
+  INVOICE_FUNDING_ALLOCATION = "INVOICE_FUNDING_ALLOCATION",
   INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_WORK_DATE = "INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_WORK_DATE",
   INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_COMMENTS = "INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_COMMENTS",
   INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_SHOW_DATE = "INVOICE_FORMAT_OPTIONS_SECTION_VALIDATE_SHOW_DATE",
@@ -38293,6 +38722,14 @@ export enum MeTimesheetSearchModelAdjustmentStatusesEnum {
   LOCKED = "LOCKED",
 }
 
+/** Field on which to apply sort. Defaults to beginDate */
+export enum MeTimesheetSearchModelSortByEnum {
+  BEGIN_DATE = "BEGIN_DATE",
+  HOURS = "HOURS",
+  STATUS = "STATUS",
+  CONTROLLER = "CONTROLLER",
+}
+
 /** Order to apply for begin date sort. Defaults to ASC */
 export enum MeTimesheetSearchModelSortOrderEnum {
   ASC = "ASC",
@@ -38717,6 +39154,21 @@ export enum PaymentMethodModelArPaymentTypeEnum {
   OTHER = "OTHER",
 }
 
+/** The rate method for the accrual */
+export enum PersonAccrualPlanModelRateMethodEnum {
+  PERIOD = "PERIOD",
+  HOURS = "HOURS",
+}
+
+/** Accrual period type for the plan */
+export enum PersonAccrualPlanModelAccrualPeriodEnum {
+  WEEKLY = "WEEKLY",
+  BIWEEKLY = "BIWEEKLY",
+  SEMI_MONTHLY = "SEMI_MONTHLY",
+  MONTHLY = "MONTHLY",
+  YEARLY = "YEARLY",
+}
+
 /**
  * Time in / time out requirement.
  * @default "NOT_REQUIRED"
@@ -38728,6 +39180,16 @@ export enum PersonCreateModelTitoRequiredEnum {
 }
 
 /**
+ * Tito button preference, controls when "Time in" and "Time out" are displayed on the timesheet.
+ * @default "ALWAYS_REQUIRED"
+ */
+export enum PersonCreateModelTitoButtonSettingEnum {
+  ALWAYS_REQUIRED = "ALWAYS_REQUIRED",
+  NEVER_REQUIRED = "NEVER_REQUIRED",
+  WHEN_REQUIRED = "WHEN_REQUIRED",
+}
+
+/**
  * Time in / time out requirement
  * @default "NOT_REQUIRED"
  */
@@ -38735,6 +39197,13 @@ export enum PersonModelTitoRequiredEnum {
   NOT_REQUIRED = "NOT_REQUIRED",
   PROJECT = "PROJECT",
   DAILY = "DAILY",
+}
+
+/** The user's preference for Time in / time out button placement on the timesheet */
+export enum PersonModelTitoButtonSettingEnum {
+  ALWAYS_REQUIRED = "ALWAYS_REQUIRED",
+  NEVER_REQUIRED = "NEVER_REQUIRED",
+  WHEN_REQUIRED = "WHEN_REQUIRED",
 }
 
 /**
@@ -40375,6 +40844,12 @@ export enum TaxInvoiceSectionFormatModelCol4FieldEnum {
   ITEM_NAME = "ITEM_NAME",
 }
 
+export enum TimeExtractModelAdjustmentOptionEnum {
+  NONE = "NONE",
+  INCLUDE = "INCLUDE",
+  ONLY = "ONLY",
+}
+
 /**
  * This field is used to specify which type of time period.  Current built-in values include:
  * * Weekly -- note that you can have multiple time periods of the same type if you like.  For example, you may have several weekly time periods defined either for the purposes of distributing system load or perhaps to allow for differing business rules (e.g. you don't want one group of users to have the End User Adjustment capability).  You may also choose to have multiple weekly time periods, for example, if one groups week begins on Sunday and another groups week begins on Monday.
@@ -40544,6 +41019,14 @@ export enum TimesheetSearchModelAdjustmentStatusesEnum {
   COMPLETED = "COMPLETED",
   EXTRACTED = "EXTRACTED",
   LOCKED = "LOCKED",
+}
+
+/** Field on which to apply sort. Defaults to beginDate */
+export enum TimesheetSearchModelSortByEnum {
+  BEGIN_DATE = "BEGIN_DATE",
+  HOURS = "HOURS",
+  STATUS = "STATUS",
+  CONTROLLER = "CONTROLLER",
 }
 
 /** Order to apply for begin date sort. Defaults to ASC */
@@ -41334,6 +41817,17 @@ export enum MyLeaveRequestsParamsStatusEnum {
 }
 
 /**
+ * Field on which to apply sort. Defaults to beginDate
+ * @default "BEGIN_DATE"
+ */
+export enum MyLeaveRequestsParamsSortByEnum {
+  BEGIN_DATE = "BEGIN_DATE",
+  HOURS = "HOURS",
+  STATUS = "STATUS",
+  COMMENTS = "COMMENTS",
+}
+
+/**
  * Order to apply for begin date sort. Defaults to ASC
  * @default "ASC"
  */
@@ -41343,7 +41837,18 @@ export enum MyLeaveRequestsParamsSortOrderEnum {
 }
 
 /**
- * Order to apply for begin date sort. Defaults to ASC
+ * Field on which to apply sort. Defaults to beginDate
+ * @default "BEGIN_DATE"
+ */
+export enum MeTimeParamsSortByEnum {
+  BEGIN_DATE = "BEGIN_DATE",
+  HOURS = "HOURS",
+  STATUS = "STATUS",
+  CONTROLLER = "CONTROLLER",
+}
+
+/**
+ * Order to apply for given sort. Defaults to ASC
  * @default "ASC"
  */
 export enum MeTimeParamsSortOrderEnum {
@@ -41741,6 +42246,26 @@ export enum Adjustments1ParamsTypeEnum {
   COMPLETED_UNEXTRACTED = "COMPLETED_UNEXTRACTED",
   NONE = "NONE",
   ALL = "ALL",
+}
+
+/**
+ * Field on which to apply sort. Defaults to beginDate
+ * @default "BEGIN_DATE"
+ */
+export enum Get38ParamsSortByEnum {
+  BEGIN_DATE = "BEGIN_DATE",
+  HOURS = "HOURS",
+  STATUS = "STATUS",
+  CONTROLLER = "CONTROLLER",
+}
+
+/**
+ * Order to apply for given sort. Defaults to ASC
+ * @default "ASC"
+ */
+export enum Get38ParamsSortOrderEnum {
+  ASC = "ASC",
+  DESC = "DESC",
 }
 
 /** @default "PERSON" */

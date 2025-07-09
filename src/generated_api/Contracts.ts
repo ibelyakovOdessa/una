@@ -14,10 +14,13 @@ import {
   ClauseAgencyCreateModel,
   ClauseAgencyModel,
   ClauseAgencyPagedResponse,
+  ContractAlertPreferencesModel,
   ContractClauseCreateModel,
   ContractClauseModel,
   ContractClausePagedResponse,
   ContractCreateModel,
+  ContractFundingAlertPagedResponse,
+  ContractFundingAlertUpdateModel,
   ContractFundingAllocationCreateModel,
   ContractFundingAllocationModel,
   ContractFundingLevelModel,
@@ -621,6 +624,7 @@ export class Contracts<SecurityDataType = unknown> extends HttpClient<SecurityDa
       method: "POST",
       body: data,
       secure: true,
+      type: ContentType.Json,
       ...params,
     });
 
@@ -904,6 +908,94 @@ export class Contracts<SecurityDataType = unknown> extends HttpClient<SecurityDa
   delete4 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/contracts/${id}`,
+      method: "DELETE",
+      secure: true,
+      ...params,
+    });
+
+  /**
+   * @description Retrieves alert preference details
+   *
+   * @tags Contracts
+   * @name GetAlertPreferences
+   * @summary Retrieves alert preferences
+   * @request GET:/rest/contracts/alert-preferences
+   * @secure */
+  getAlertPreferences = (params: RequestParams = {}) =>
+    this.request<ContractAlertPreferencesModel, ErrorResponse>(
+      {
+        path: `/rest/contracts/alert-preferences`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      ContractAlertPreferencesModel,
+    ) as ContractAlertPreferencesModel;
+
+  /**
+   * @description Update alert preferences
+   *
+   * @tags Contracts
+   * @name UpdateAlertPreferences
+   * @summary Update alert preferences
+   * @request PUT:/rest/contracts/alert-preferences
+   * @secure */
+  updateAlertPreferences = (data: ContractAlertPreferencesModel, params: RequestParams = {}) =>
+    this.request<void, ErrorResponse>({
+      path: `/rest/contracts/alert-preferences`,
+      method: "PUT",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      ...params,
+    });
+
+  /**
+   * @description Deletes alert preference details for the user
+   *
+   * @tags Contracts
+   * @name DeleteAlertPreferences
+   * @summary Delete alert preferences
+   * @request DELETE:/rest/contracts/alert-preferences
+   * @secure */
+  deleteAlertPreferences = (params: RequestParams = {}) =>
+    this.request<void, ErrorResponse>({
+      path: `/rest/contracts/alert-preferences`,
+      method: "DELETE",
+      secure: true,
+      ...params,
+    });
+
+  /**
+   * @description Updates the read status of a contract funding alert for the authenticated user.
+   *
+   * @tags Contracts
+   * @name UpdateContractAlert
+   * @summary Update the read status of an alert
+   * @request PUT:/rest/contracts/alerts/{id}
+   * @secure */
+  updateContractAlert = (id: number, data: ContractFundingAlertUpdateModel, params: RequestParams = {}) =>
+    this.request<void, ErrorResponse>({
+      path: `/rest/contracts/alerts/${id}`,
+      method: "PUT",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      ...params,
+    });
+
+  /**
+   * @description Deletes a contract funding alert for the authenticated user.
+   *
+   * @tags Contracts
+   * @name DeleteContractAlert
+   * @summary Delete an alert
+   * @request DELETE:/rest/contracts/alerts/{id}
+   * @secure */
+  deleteContractAlert = (id: number, params: RequestParams = {}) =>
+    this.request<void, ErrorResponse>({
+      path: `/rest/contracts/alerts/${id}`,
       method: "DELETE",
       secure: true,
       ...params,
@@ -1411,6 +1503,46 @@ export class Contracts<SecurityDataType = unknown> extends HttpClient<SecurityDa
       },
       OrganizationListPagedResponse,
     ) as OrganizationListPagedResponse;
+
+  /**
+   * @description Retrieves a paged list of contract funding alerts for the authenticated user.
+   *
+   * @tags Contracts
+   * @name GetContractAlerts
+   * @summary Retrieves alerts
+   * @request GET:/rest/contracts/alerts
+   * @secure */
+  getContractAlerts = (
+    query?: {
+      /**
+       * The page offset to return from total pages available.
+       * @format int32
+       * @min 0
+       * @default 1
+       */
+      page?: number;
+      /**
+       * The maximum number of rows to return per page. Actual page size may be less when there are fewer rows available to return for the page.
+       * @format int32
+       * @min 1
+       * @max 2000
+       * @default 50
+       */
+      pageSize?: number;
+    },
+    params: RequestParams = {},
+  ) =>
+    this.request<ContractFundingAlertPagedResponse, ErrorResponse>(
+      {
+        path: `/rest/contracts/alerts`,
+        method: "GET",
+        query: query,
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      ContractFundingAlertPagedResponse,
+    ) as ContractFundingAlertPagedResponse;
 
   /**
    * @description Retrieves a paged list of contract provisions

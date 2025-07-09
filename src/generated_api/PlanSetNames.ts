@@ -124,11 +124,11 @@ export class PlanSetNames<SecurityDataType = unknown> extends HttpClient<Securit
    * @description Delete an existing plan set name
    *
    * @tags Plan Set Names
-   * @name Delete24
+   * @name Delete25
    * @summary Delete plan set name
    * @request DELETE:/rest/plan-set-names/{id}
    * @secure */
-  delete24 = (id: number, params: RequestParams = {}) =>
+  delete25 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/plan-set-names/${id}`,
       method: "DELETE",

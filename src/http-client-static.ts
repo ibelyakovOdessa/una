@@ -1,5 +1,6 @@
 /* eslint-disable */
 /* tslint:disable */
+// @ts-nocheck
 /*
  * ---------------------------------------------------------------
  * ## THIS FILE WAS GENERATED VIA SWAGGER-TYPESCRIPT-API        ##
@@ -8,13 +9,17 @@
  * ## SOURCE: https://github.com/acacode/swagger-typescript-api ##
  * ---------------------------------------------------------------
  */
+import { plainToInstance } from "class-transformer";
 import { url } from "inspector";
 import pino from "pino";
+import { ErrorResponse } from "./data-contracts";
 
-const logger = pino(pino.transport({
-  target: 'pino-pretty',
-  options: { colorize: true }
-}));
+import pinoPretty from 'pino-pretty';
+
+
+const stream = pinoPretty({ colorize: true });
+const logger = pino(stream); 
+
 
 export type QueryParamsType = Record<string | number, any>;
 export type ResponseFormat = keyof Omit<Body, "body" | "bodyUsed">;
@@ -62,7 +67,8 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = "https://autoaur254.int.unanet.io/platform";
+  private static requestNum = 0
+  public baseUrl: string = "https://autoaur257.int.unanet.io/platform";
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
   private abortControllers = new Map<CancelToken, AbortController>();
@@ -177,6 +183,7 @@ export class HttpClient<SecurityDataType = unknown> {
     cancelToken,
     ...params
   }: FullRequestParams): Promise<HttpResponse<T, E>> => {
+    HttpClient.requestNum++;
     const secureParams =
       ((typeof secure === "boolean" ? secure : this.baseApiParams.secure) &&
         this.securityWorker &&
@@ -188,7 +195,7 @@ export class HttpClient<SecurityDataType = unknown> {
     const responseFormat = format || requestParams.format;
     
     const url = `${baseUrl || this.baseUrl || ""}${path}${queryString ? `?${queryString}` : ""}`
-    logger.info('Request: ' + params.method + " " + url)
+    logger.info(`[${HttpClient.requestNum}] Request: ` + params.method + " " + url)
     if (body) {
       logger.info('Payload: \n' + JSON.stringify(body, null, 2))
     }
@@ -227,10 +234,14 @@ export class HttpClient<SecurityDataType = unknown> {
       }
 
       if (!response.ok) {
-        logger.info(`Response: ${data.status} \n` + JSON.stringify(data, null, 2))
+        logger.info(`[${HttpClient.requestNum}] Response: ${data.status} \n` + JSON.stringify(data, null, 2))
+        return data.error as ErrorResponse
+      } else {
+        logger.info(`[${HttpClient.requestNum}] Response: ${data.status}`)
+        return data.data as T
       }
       
-      return data;
+      // return data;
     });
   };
 }

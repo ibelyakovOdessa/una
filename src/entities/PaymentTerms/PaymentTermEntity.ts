@@ -1,7 +1,8 @@
 import { PaymentTermCreateModel, PaymentTermModel } from "../../generated_api/data-contracts";
-import { Entity } from "../Entity";
+import { BaseEntity } from "../BaseEntity";
+import { DtoConvertible } from "../DtoConvertible";
 
-export class PaymentTermEntity implements Entity<PaymentTermCreateModel, PaymentTermModel> {
+export class PaymentTermEntity extends BaseEntity implements DtoConvertible<PaymentTermCreateModel, PaymentTermModel> {
     
     constructor(
         public key: number | null = null,
@@ -13,23 +14,26 @@ export class PaymentTermEntity implements Entity<PaymentTermCreateModel, Payment
         public discountDays: number | null = null,
         public discountPercent: number | null = null,
         public payWhenPaid: boolean | null = null
-    ) {}
+    ) {
+        super();
+    }
     
     
     
-    toDto(): PaymentTermCreateModel {
+    toRequestModel(): PaymentTermCreateModel {
         return {
             code: this.code,
             description: this.description,
             days: this.days,
             defaultSelected: this.defaultSelected,
+            discountPercent: this.discountPercent,
             active: this.active,
             discountDays: this.discountDays,
             payWhenPaid: this.payWhenPaid
         }
     }
 
-    static fromDto(dto: PaymentTermModel): PaymentTermEntity {
+    static fromResponseModel(dto: PaymentTermModel): PaymentTermEntity {
         return new PaymentTermEntity(
             dto.key ?? null,
             dto.code ?? null,

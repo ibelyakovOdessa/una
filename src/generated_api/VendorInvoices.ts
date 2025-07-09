@@ -909,11 +909,11 @@ export class VendorInvoices<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Deletes a vendor invoice.
    *
    * @tags Vendor Invoices
-   * @name Delete38
+   * @name Delete39
    * @summary Deletes vendor invoice
    * @request DELETE:/rest/vendor-invoices/{id}
    * @secure */
-  delete38 = (id: number, params: RequestParams = {}) =>
+  delete39 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/vendor-invoices/${id}`,
       method: "DELETE",

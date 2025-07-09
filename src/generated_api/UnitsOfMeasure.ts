@@ -126,11 +126,11 @@ export class UnitsOfMeasure<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Deletes an existing UOM by its id.
    *
    * @tags Units of Measure
-   * @name Delete37
+   * @name Delete38
    * @summary Delete a Unit of Measure (UOM)
    * @request DELETE:/rest/uoms/{id}
    * @secure */
-  delete37 = (id: number, params: RequestParams = {}) =>
+  delete38 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/uoms/${id}`,
       method: "DELETE",

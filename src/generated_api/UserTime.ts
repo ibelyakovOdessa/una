@@ -18,6 +18,7 @@ import {
   AttachmentPagedResponseModel,
   CreatedResponseModel,
   ErrorResponse,
+  MeTimeParamsSortByEnum,
   MeTimeParamsSortOrderEnum,
   MeTimesheetSearchModel,
   TimeStatusHistoryPagedResponse,
@@ -69,7 +70,12 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
        */
       ownerKey?: number;
       /**
-       * Order to apply for begin date sort. Defaults to ASC
+       * Field on which to apply sort. Defaults to beginDate
+       * @default "BEGIN_DATE"
+       */
+      sortBy?: MeTimeParamsSortByEnum;
+      /**
+       * Order to apply for given sort. Defaults to ASC
        * @default "ASC"
        */
       sortOrder?: MeTimeParamsSortOrderEnum;
@@ -354,7 +360,7 @@ export class UserTime<SecurityDataType = unknown> extends HttpClient<SecurityDat
     ) as TimeStatusHistoryPagedResponse;
 
   /**
-   * @description Retrieves a paged list of timesheets, filtered by the search criteria, owned by the authenticated user, or optionally owned by a user for which they are a time alternate. * Search for active timesheets, by setting __active__ flag to _true_. * Search for historical timesheets (not active), by setting __active__ flag to _false_, * Omit the __active__ flag and alternatively specify a list of timesheet __statuses__ or __adjustmentStatus__ to include in list. * Search for timesheets owned by users for which the authenticated user is a time alternate by providing a value for __ownerKey__. * If search criteria include both __statuses__ and __adjustmentStatuses__, the result is an OR of the two criteria. For example, if criteria include a status of _EXTRACTED_ and adjustmentStatus of _SUBMITTED_, then search will look for timesheets that include either a status of _EXTRACTED_ or an adjustmentStatus of _SUBMITTED_. * Regardless of the above criteria settings, __beginDateStart__ and __beginDateEnd__ can be used to filter timesheets by their beginDate. If beginDateStart is not specified, search will be limited to the last 30 days.Alternatively, __workDate__ can be used to match any timesheet where workDate is within the timesheet's designated time period. If both __beginDateStart__ and __workDate__ are not specified, search will be limited to the last 30 days. If both the __active__ flag is specified and either __statuses__ or __adjustmentStatuses__ contains entries, an HTTP 400 (BAD REQUEST) will be returned.
+   * @description Retrieves a paged list of timesheets, filtered by the search criteria, owned by the authenticated user, or optionally owned by a user for which they are a time alternate. * Search for active timesheets, by setting __active__ flag to _true_ * Search for historical timesheets (not active), by setting __active__ flag to _false_, * Omit the __active__ flag and alternatively specify a list of timesheet __statuses__ or __adjustmentStatus__ to include in list. * Search for timesheets owned by users for which the authenticated user is a time alternate by providing a value for __ownerKey__. * If search criteria include both __statuses__ and __adjustmentStatuses__, the result is an OR of the two criteria. For example, if criteria include a status of _EXTRACTED_ and adjustmentStatus of _SUBMITTED_, then search will look for timesheets that include either a status of _EXTRACTED_ or an adjustmentStatus of _SUBMITTED_. * Regardless of the above criteria settings, __beginDateStart__ and __beginDateEnd__ can be used to filter timesheets by their beginDate. If beginDateStart is not specified, search will be limited to the last 30 days. Alternatively, __workDate__ can be used to match any timesheet where workDate is within the timesheet's designated time period. If both __beginDateStart__ and __workDate__ are not specified, search will be limited to the last 30 days. If both the __active__ flag is specified and either __statuses__ or __adjustmentStatuses__ contains entries, an HTTP 400 (BAD REQUEST) will be returned.")
    *
    * @tags User Time
    * @name Search9

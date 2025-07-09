@@ -129,11 +129,11 @@ export class Occupations<SecurityDataType = unknown> extends HttpClient<Security
    * @description Deletes an existing occupation given its key.
    *
    * @tags Occupations
-   * @name Delete18
+   * @name Delete19
    * @summary Delete an occupation
    * @request DELETE:/rest/occupations/{id}
    * @secure */
-  delete18 = (id: number, params: RequestParams = {}) =>
+  delete19 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/occupations/${id}`,
       method: "DELETE",

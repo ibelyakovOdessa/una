@@ -3,3 +3,5 @@ test-results
 .env
 package-lock.json
 .vscode
+dist
+allure-results

@@ -1,0 +1,68 @@
+[15:15:16.090] INFO (14388): [1] Request: POST https://autoaur257.int.unanet.io/platform/rest/login
+[15:15:16.095] INFO (14388): Payload: 
+{
+  "username": "platformadmin",
+  "password": "test"
+}
+[15:15:16.231] INFO (14388): [1] Response: 200
+[15:15:16.234] INFO (14388): [2] Request: POST https://autoaur257.int.unanet.io/platform/rest/receiving-documents/purchase-orders?page=1&pageSize=2000
+[15:15:16.234] INFO (14388): Payload: 
+{}
+[15:15:16.497] INFO (14388): [2] Response: 200
+{
+  key: null,
+  purchaseOrder: { key: 23, code: '0000000023' },
+  legalEntity: { key: 66, name: 'BT Legal Entity', code: 'BTCO' },
+  owningOrg: { key: 66, name: 'BT Legal Entity', code: 'BTCO' },
+  vendorOrg: { key: 69, name: 'BTCO Vendor 1', code: 'BTVENDCO1' },
+  currency: { key: 119, name: 'US Dollar', code: 'USD', decimals: 2 },
+  documentNumber: '0000000023',
+  status: 'INUSE',
+  deletable: true,
+  retractable: false,
+  createdBy: null,
+  createdTimestamp: null,
+  lastModifiedBy: null,
+  lastModifiedTimestamp: null,
+  completedBy: null,
+  completedTimestamp: null,
+  retractedBy: null,
+  retractedTimestamp: null,
+  documentDate: DateTime { ts: 2025-07-08T15:15:16.498+03:00, zone: Europe/Kiev, locale: en-US }
+}
+[15:15:16.502] INFO (14388): [3] Request: POST https://autoaur257.int.unanet.io/platform/rest/receiving-documents/purchase-orders?page=1&pageSize=2000
+[15:15:16.502] INFO (14388): Payload: 
+{}
+[15:15:16.689] INFO (14388): [3] Response: 200
+[15:15:16.690] INFO (14388): [4] Request: POST https://autoaur257.int.unanet.io/platform/rest/receiving-documents
+[15:15:16.691] INFO (14388): Payload: 
+{
+  "purchaseOrderKey": 23,
+  "documentNumber": "0000000023",
+  "documentDate": "2025-07-08"
+}
+[15:15:16.725] INFO (14388): [4] Response: 400 
+{
+  "data": null,
+  "error": {
+    "id": "2bd35d8a-43d1-48b1-91b0-037367ada1cc",
+    "errors": [
+      {
+        "code": "VALIDATION_FIELD_ALREADY_EXISTS",
+        "description": "Document number already exists for receiving document.",
+        "context": {
+          "documentNumber": "0000000023"
+        }
+      }
+    ],
+    "code": "REQUEST_VALIDATION",
+    "description": "Document number already exists for receiving document.",
+    "messages": [
+      {
+        "message": "Document number already exists for receiving document.",
+        "attribute": "documentNumber",
+        "invalidValue": "0000000023"
+      }
+    ]
+  }
+}

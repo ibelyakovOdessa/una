@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test | npx pino-pretty",
+    "test": "npx playwright test",
     "build": "tsc"
   },
   "keywords": [],
@@ -12,14 +12,21 @@
   "description": "",
   "dependencies": {
     "@playwright/test": "^1.51.1",
+    "@types/chai": "^5.2.2",
+    "allure-playwright": "^3.3.0",
+    "chai": "^5.2.0",
     "dotenv": "^16.4.7",
     "es6-shim": "^0.35.8",
+    "jest-diff": "^30.0.3",
+    "luxon": "^3.6.1",
     "pino": "^9.6.0",
     "pino-prettier": "^3.0.1-dev",
     "tsyringe": "^4.10.0"
   },
   "devDependencies": {
+    "@types/luxon": "^3.6.2",
     "@types/node": "^22.13.14",
+    "allure-js-commons": "^3.3.0",
     "class-transformer": "^0.5.1",
     "playwright": "^1.51.1",
     "reflect-metadata": "^0.2.2",

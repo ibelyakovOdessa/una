@@ -124,11 +124,11 @@ export class PurchaseOrderFormats<SecurityDataType = unknown> extends HttpClient
    * @description Deletes an existing purchase order format.
    *
    * @tags Purchase Order Formats
-   * @name Delete30
+   * @name Delete31
    * @summary Deletes a purchase order format
    * @request DELETE:/rest/purchase-order-formats/{id}
    * @secure */
-  delete30 = (id: number, params: RequestParams = {}) =>
+  delete31 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/purchase-order-formats/${id}`,
       method: "DELETE",

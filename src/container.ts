@@ -19,6 +19,6 @@ export function factories(): FactoriesFacade {
   return container.resolve(FactoriesFacade);
 }
 
-export function fff(): PaymentTermFactory {
+export function paymentTermFactory(): PaymentTermFactory {
   return container.resolve(PaymentTermFactory);
 }

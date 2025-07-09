@@ -246,11 +246,11 @@ export class WageDeterminations<SecurityDataType = unknown> extends HttpClient<S
    * @description Deletes an existing SCA wage determination given its key.
    *
    * @tags Wage Determinations
-   * @name Delete41
+   * @name Delete42
    * @summary Delete an SCA wage determination
    * @request DELETE:/rest/wage-determinations/{id}
    * @secure */
-  delete41 = (id: number, params: RequestParams = {}) =>
+  delete42 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/wage-determinations/${id}`,
       method: "DELETE",

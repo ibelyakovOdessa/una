@@ -234,11 +234,11 @@ export class Integrations<SecurityDataType = unknown> extends HttpClient<Securit
    * @description Deletes an existing integration given its key. Deleting an integration will purge all associated integration values.
    *
    * @tags Integrations
-   * @name Delete12
+   * @name Delete13
    * @summary Delete an integration
    * @request DELETE:/rest/integrations/{id}
    * @secure */
-  delete12 = (id: number, params: RequestParams = {}) =>
+  delete13 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/integrations/${id}`,
       method: "DELETE",

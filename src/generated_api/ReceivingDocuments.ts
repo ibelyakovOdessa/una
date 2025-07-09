@@ -142,11 +142,11 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
    * @description Delete an existing receiving document item.
    *
    * @tags Receiving Documents
-   * @name Delete32
+   * @name Delete33
    * @summary Delete a receiving document item
    * @request DELETE:/rest/receiving-documents/{id}/items/{itemId}
    * @secure */
-  delete32 = (id: number, itemId: number, params: RequestParams = {}) =>
+  delete33 = (id: number, itemId: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/receiving-documents/${id}/items/${itemId}`,
       method: "DELETE",
@@ -381,11 +381,11 @@ export class ReceivingDocuments<SecurityDataType = unknown> extends HttpClient<S
    * @description Delete an existing receiving document.
    *
    * @tags Receiving Documents
-   * @name Delete33
+   * @name Delete34
    * @summary Delete a receiving document
    * @request DELETE:/rest/receiving-documents/{id}
    * @secure */
-  delete33 = (id: number, params: RequestParams = {}) =>
+  delete34 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/receiving-documents/${id}`,
       method: "DELETE",

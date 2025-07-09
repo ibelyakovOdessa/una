@@ -511,11 +511,11 @@ export class PurchaseRequisitions<SecurityDataType = unknown> extends HttpClient
    * @description Deletes an existing Purchase Requisition given its key.
    *
    * @tags Purchase Requisitions
-   * @name Delete31
+   * @name Delete32
    * @summary Delete a Purchase Requisition
    * @request DELETE:/rest/purchase-requisitions/{id}
    * @secure */
-  delete31 = (id: number, params: RequestParams = {}) =>
+  delete32 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/purchase-requisitions/${id}`,
       method: "DELETE",

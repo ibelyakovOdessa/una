@@ -23,6 +23,7 @@ import {
   LeaveBalancePagedResponseModel,
   LeaveBalanceSearchModel,
   OrgAccessPersonSearchModel,
+  PersonAccrualAdjustmentModel,
   PersonAccrualPlanCreateModel,
   PersonAccrualPlanModel,
   PersonAccrualPlanPagedResponse,
@@ -111,6 +112,29 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
       },
       CreatedResponseModel,
     ) as CreatedResponseModel;
+
+  /**
+   * @description Updates a person's accrued hours for a given plan
+   *
+   * @tags People
+   * @name AdjustAccruedHours
+   * @summary Updates accrued hours
+   * @request PUT:/rest/people/{id}/accrual-plans/{personAccrualPlanId}/adjust
+   * @secure */
+  adjustAccruedHours = (
+    id: number,
+    personAccrualPlanId: number,
+    data: PersonAccrualAdjustmentModel,
+    params: RequestParams = {},
+  ) =>
+    this.request<void, ErrorResponse>({
+      path: `/rest/people/${id}/accrual-plans/${personAccrualPlanId}/adjust`,
+      method: "PUT",
+      body: data,
+      secure: true,
+      type: ContentType.Json,
+      ...params,
+    });
 
   /**
    * @description Retrieves a paged list of available alternate people filtered by optional search criteria.
@@ -517,11 +541,11 @@ export class People<SecurityDataType = unknown> extends HttpClient<SecurityDataT
    * @description Removes a person record.
    *
    * @tags People
-   * @name Delete22
+   * @name Delete23
    * @summary Deletes a person
    * @request DELETE:/rest/people/{id}
    * @secure */
-  delete22 = (id: number, params: RequestParams = {}) =>
+  delete23 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/people/${id}`,
       method: "DELETE",

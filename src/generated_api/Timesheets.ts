@@ -18,12 +18,15 @@ import {
   AttachmentPagedResponseModel,
   CreatedResponseModel,
   ErrorResponse,
+  Get38ParamsSortByEnum,
+  Get38ParamsSortOrderEnum,
   ItemEntryHistoryPagedResponse,
   LaborCategoryPagedResponse,
   LocationPagedResponse,
   OfflineTimesheetModel,
   ProjectTypePagedResponse,
   TimeCompleteModel,
+  TimeExtractModel,
   TimeRowCreateModel,
   TimeRowPagedResponse,
   TimeStatusHistoryPagedResponse,
@@ -185,6 +188,16 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
       pageSize?: number;
       /** @format int64 */
       personKey?: number;
+      /**
+       * Field on which to apply sort. Defaults to beginDate
+       * @default "BEGIN_DATE"
+       */
+      sortBy?: Get38ParamsSortByEnum;
+      /**
+       * Order to apply for given sort. Defaults to ASC
+       * @default "ASC"
+       */
+      sortOrder?: Get38ParamsSortOrderEnum;
       /** @default true */
       active?: boolean;
     },
@@ -372,6 +385,28 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
       secure: true,
       ...params,
     });
+
+  /**
+   * @description The time slips and item entries which are extracted for the timesheet can be controlled as follows: * __adjustmentOption__ * __NONE__ - Only original time entries are to be included and marked extracted. Adjustment time entries are left unchanged. * __INCLUDE__ - Original time entries and adjustments are to be included and marked as extracted. * __ONLY__ - Original time entries and adjustments are to be included and marked as extracted. * __includePreviouslyExtractAdjustments__ - Only applicable when adjustment option is other than _NONE_. When true previously extracted adjustments are include, when false they are ignored. * __includePreviouslyExtractAdjustments__ - Only applicable when adjustment option is other than _NONE_. When true only the initial unextracted reversing adjustment and the last establishing adjustment in the history of adjustments are include. When false the entire history of adjustments is included. Timesheet must be in either COMPLETED, LOCKED, or EXTRACTED status to be extracted. Timesheet will be diluted prior to attempting the extract if necessary. Upon successful completion the batch key associated with the extracted time slips/item entries will be returned.
+   *
+   * @tags Timesheets
+   * @name Extract1
+   * @summary Extracts a timesheet
+   * @request POST:/rest/time/{id}/extract
+   * @secure */
+  extract1 = (id: number, data: TimeExtractModel, params: RequestParams = {}) =>
+    this.request<CreatedResponseModel, ErrorResponse>(
+      {
+        path: `/rest/time/${id}/extract`,
+        method: "POST",
+        body: data,
+        secure: true,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      },
+      CreatedResponseModel,
+    ) as CreatedResponseModel;
 
   /**
    * @description Retrieves a paged list of item audit entries associated with a timesheet.
@@ -773,7 +808,7 @@ export class Timesheets<SecurityDataType = unknown> extends HttpClient<SecurityD
     ) as TimeslipHistoryPagedResponse;
 
   /**
-   * @description Retrieves a paged list of timesheets filtered by optional search criteria. * Search for active timesheets, by setting __active__ flag to _true_. * Search for historical timesheets (not active), by setting __active__ flag to _false_, * Omit the __active__ flag and alternatively specify a list of timesheet __statuses__ or __adjustmentStatus__ to include in list. * If search criteria include both __statuses__ and __adjustmentStatuses__, the result is an OR of the two criteria. For example, if criteria include a status of _EXTRACTED_ and adjustmentStatus of _SUBMITTED_, then search will look for timesheets that include either a status of _EXTRACTED_ or an adjustmentStatus of _SUBMITTED_. * Regardless of the above criteria settings, one can optionally specify the list of __personKeys__ by which to filter timesheets. * __beginDateStart__ and __beginDateEnd__ can be used to filter timesheets by their beginDate. Alternatively, __workDate__ can be used to match any timesheet where workDate is within the timesheet's designated time period. If both __beginDateStart__ and __workDate__ are not specified, search will be limited to the last 30 days. If both the __active__ flag is specified and either __statuses__ or __adjustmentStatuses__ contains entries, an HTTP 400 (BAD REQUEST) will be returned.
+   * @description Retrieves a paged list of timesheets filtered by optional search criteria. * Search for active timesheets, by setting __active__ flag to _true_. * Search for historical timesheets (not active), by setting __active__ flag to _false_. * Omit the __active__ flag and alternatively specify a list of timesheet __statuses__ or __adjustmentStatus__ to include in list. * If search criteria include both __statuses__ and __adjustmentStatuses__, the result is an OR of the two criteria. For example, if criteria include a status of _EXTRACTED_ and adjustmentStatus of _SUBMITTED_, then search will look for timesheets that include either a status of _EXTRACTED_ or an adjustmentStatus of _SUBMITTED_. * Regardless of the above criteria settings, one can optionally specify the list of __personKeys__ by which to filter timesheets. * __beginDateStart__ and __beginDateEnd__ can be used to filter timesheets by their beginDate. Alternatively, __workDate__ can be used to match any timesheet where workDate is within the timesheet's designated time period. If both __beginDateStart__ and __workDate__ are not specified, search will be limited to the last 30 days. If both the __active__ flag is specified and either __statuses__ or __adjustmentStatuses__ contains entries, an HTTP 400 (BAD REQUEST) will be returned.
    *
    * @tags Timesheets
    * @name Search21

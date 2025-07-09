@@ -14,10 +14,11 @@ import { url } from "inspector";
 import pino from "pino";
 import { ErrorResponse } from "./data-contracts";
 
-const logger = pino(pino.transport({
-  target: 'pino-pretty',
-  options: { colorize: true }
-}));
+import pinoPretty from 'pino-pretty';
+
+
+const stream = pinoPretty({ colorize: true });
+const logger = pino(stream); 
 
 
 export type QueryParamsType = Record<string | number, any>;
@@ -67,7 +68,7 @@ export enum ContentType {
 
 export class HttpClient<SecurityDataType = unknown> {
   private static requestNum = 0
-  public baseUrl: string = "https://autoaur254.int.unanet.io/platform";
+  public baseUrl: string = "https://autoaur257.int.unanet.io/platform";
   private securityData: SecurityDataType | null = null;
   private securityWorker?: ApiConfig<SecurityDataType>["securityWorker"];
   private abortControllers = new Map<CancelToken, AbortController>();

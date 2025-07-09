@@ -43,4 +43,20 @@ export class ImportedExpenses<SecurityDataType = unknown> extends HttpClient<Sec
       },
       CreatedResponseModel,
     ) as CreatedResponseModel;
+
+  /**
+   * @description Deletes a new imported credit card expense.
+   *
+   * @tags Imported Expenses
+   * @name Delete12
+   * @summary Deletes an imported credit card expense.
+   * @request DELETE:/rest/imported-expenses/{id}
+   * @secure */
+  delete12 = (id: number, params: RequestParams = {}) =>
+    this.request<void, ErrorResponse>({
+      path: `/rest/imported-expenses/${id}`,
+      method: "DELETE",
+      secure: true,
+      ...params,
+    });
 }

@@ -125,11 +125,11 @@ export class OrganizationTypes<SecurityDataType = unknown> extends HttpClient<Se
    * @description Deletes an existing organization type.
    *
    * @tags Organization Types
-   * @name Delete20
+   * @name Delete21
    * @summary Deletes organization type
    * @request DELETE:/rest/organization-types/{id}
    * @secure */
-  delete20 = (id: number, params: RequestParams = {}) =>
+  delete21 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/organization-types/${id}`,
       method: "DELETE",

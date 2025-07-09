@@ -421,11 +421,11 @@ export class Organizations<SecurityDataType = unknown> extends HttpClient<Securi
    * @description Deletes an organization matching id.
    *
    * @tags Organizations
-   * @name Delete19
+   * @name Delete20
    * @summary Deletes an organization
    * @request DELETE:/rest/organizations/{id}
    * @secure */
-  delete19 = (id: number, params: RequestParams = {}) =>
+  delete20 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/organizations/${id}`,
       method: "DELETE",

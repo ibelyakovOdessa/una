@@ -126,11 +126,11 @@ export class ProjectStatuses<SecurityDataType = unknown> extends HttpClient<Secu
    * @description Deletes an existing project status given its key.
    *
    * @tags Project Statuses
-   * @name Delete27
+   * @name Delete28
    * @summary Delete a project status
    * @request DELETE:/rest/project-statuses/{id}
    * @secure */
-  delete27 = (id: number, params: RequestParams = {}) =>
+  delete28 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/project-statuses/${id}`,
       method: "DELETE",

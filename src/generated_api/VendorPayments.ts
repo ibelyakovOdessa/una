@@ -118,11 +118,11 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Delete the details of a vendor payment by id.
    *
    * @tags Vendor Payments
-   * @name Delete39
+   * @name Delete40
    * @summary Delete details of a vendor payment
    * @request DELETE:/rest/vendor-payments/{id}/details/{detailId}
    * @secure */
-  delete39 = (id: number, detailId: number, params: RequestParams = {}) =>
+  delete40 = (id: number, detailId: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/vendor-payments/${id}/details/${detailId}`,
       method: "DELETE",
@@ -316,11 +316,11 @@ export class VendorPayments<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Deletes a vendor payment.
    *
    * @tags Vendor Payments
-   * @name Delete40
+   * @name Delete41
    * @summary Deletes a vendor payment
    * @request DELETE:/rest/vendor-payments/{id}
    * @secure */
-  delete40 = (id: number, params: RequestParams = {}) =>
+  delete41 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/vendor-payments/${id}`,
       method: "DELETE",

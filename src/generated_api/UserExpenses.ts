@@ -261,11 +261,11 @@ export class UserExpenses<SecurityDataType = unknown> extends HttpClient<Securit
    * @description Removes an expense owned by the authenticated user or a user for which they are an expense alternate.
    *
    * @tags User Expenses
-   * @name Delete16
+   * @name Delete17
    * @summary Deletes an expense
    * @request DELETE:/rest/me/expenses/{id}
    * @secure */
-  delete16 = (id: number, params: RequestParams = {}) =>
+  delete17 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/me/expenses/${id}`,
       method: "DELETE",

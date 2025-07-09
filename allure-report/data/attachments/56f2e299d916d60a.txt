@@ -1,0 +1,78 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: create and retrieve receiving document with date 2026-12-12T00:00:00.000+02:00
+- Location: D:\Users\iurii.belyakov\una_tspl\src\tests\first.spec.ts:60:9
+
+# Error details
+
+```
+Error: Error response:
+{
+  "id": "88e4f397-4994-4ae4-a9a3-8465fc829368",
+  "errors": [
+    {
+      "code": "VALIDATION_FIELD_ALREADY_EXISTS",
+      "description": "Document number already exists for receiving document.",
+      "context": {
+        "documentNumber": "0000000023"
+      }
+    }
+  ],
+  "code": "REQUEST_VALIDATION",
+  "description": "Document number already exists for receiving document.",
+  "messages": [
+    {
+      "message": "Document number already exists for receiving document.",
+      "attribute": "documentNumber",
+      "invalidValue": "0000000023"
+    }
+  ]
+}
+    at D:\Users\iurii.belyakov\una_tspl\src\steps\ReceivingDocuments\receivingDocumentsSteps.ts:28:15
+```
+
+# Test source
+
+```ts
+   1 | import { step } from "allure-js-commons";
+   2 | import { PaymentTermEntity } from "../../entities/PaymentTerms/PaymentTermEntity";
+   3 | import { api, factories } from "../../container";
+   4 | import { FactoryOption } from "../../factories/FactoriesFacade";
+   5 | import { ReceivingDocumentEntity } from "../../entities/ReceivingDocuments/ReceivingDocumentEntity";
+   6 |
+   7 | type Override<T> = Partial<T>;
+   8 |
+   9 | export async function giveMeReceivingDocument(
+  10 |     entityToCreate: ReceivingDocumentEntity,
+  11 |     options: FactoryOption = FactoryOption.PERSIST
+  12 | ): Promise<ReceivingDocumentEntity> {
+  13 |   return await step(`Preparing receiving document entity`, async () => {
+  14 |
+  15 |     const rdToCreate = await factories().receivingDocumentFactory.create(entityToCreate)
+  16 |
+  17 |     if (options === FactoryOption.GENERATE) {
+  18 |         return rdToCreate
+  19 |     }
+  20 |
+  21 |     if (options === FactoryOption.RETRIEVE && entityToCreate.key) {
+  22 |         const requested = await api().getApi().receivingDocuments.getReceivingDocument(entityToCreate.key)
+  23 |         return ReceivingDocumentEntity.fromResponseModel(requested)
+  24 |     } 
+  25 |
+  26 |     const rdKey = await api().getApi().receivingDocuments.create36(entityToCreate.toRequestModel())
+  27 |     if ('errors' in rdKey && rdKey.errors) {
+> 28 |         throw new Error(`Error response:\n${JSON.stringify(rdKey, null, 2)}`);
+     |               ^ Error: Error response:
+  29 |     }
+  30 |     const newRdDto = await api().getApi().receivingDocuments.getReceivingDocument(rdKey.key!)
+  31 |     return ReceivingDocumentEntity.fromResponseModel(newRdDto)
+  32 |
+  33 |   })
+  34 | }
+```

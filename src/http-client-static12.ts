@@ -14,10 +14,11 @@ import { url } from "inspector";
 import pino from "pino";
 import { ErrorResponse } from "./data-contracts";
 
-const logger = pino(pino.transport({
-  target: 'pino-pretty',
-  options: { colorize: true }
-}));
+import pinoPretty from 'pino-pretty';
+
+
+const stream = pinoPretty({ colorize: true });
+const logger = pino(stream); 
 
 
 export type QueryParamsType = Record<string | number, any>;

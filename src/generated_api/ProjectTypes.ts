@@ -130,11 +130,11 @@ export class ProjectTypes<SecurityDataType = unknown> extends HttpClient<Securit
    * @description Deletes an existing project type.
    *
    * @tags Project Types
-   * @name Delete28
+   * @name Delete29
    * @summary Deletes project type
    * @request DELETE:/rest/project-types/{id}
    * @secure */
-  delete28 = (id: number, params: RequestParams = {}) =>
+  delete29 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/project-types/${id}`,
       method: "DELETE",

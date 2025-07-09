@@ -115,11 +115,11 @@ export class SkillTypes<SecurityDataType = unknown> extends HttpClient<SecurityD
    * @description Delete an existing skill type.
    *
    * @tags Skill Types
-   * @name Delete36
+   * @name Delete37
    * @summary Delete an existing skill type
    * @request DELETE:/rest/skill-types/{id}
    * @secure */
-  delete36 = (id: number, params: RequestParams = {}) =>
+  delete37 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/skill-types/${id}`,
       method: "DELETE",

@@ -126,11 +126,11 @@ export class PaymentTerms<SecurityDataType = unknown> extends HttpClient<Securit
    * @description Deletes a payment term.
    *
    * @tags Payment Terms
-   * @name Delete21
+   * @name Delete22
    * @summary Deletes an existing payment term.
    * @request DELETE:/rest/payment-terms/{id}
    * @secure */
-  delete21 = (id: number, params: RequestParams = {}) =>
+  delete22 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/payment-terms/${id}`,
       method: "DELETE",

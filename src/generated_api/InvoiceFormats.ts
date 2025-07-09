@@ -119,11 +119,11 @@ export class InvoiceFormats<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Deletes an existing invoice format given its key.
    *
    * @tags Invoice Formats
-   * @name Delete13
+   * @name Delete14
    * @summary Delete an Invoice Format
    * @request DELETE:/rest/invoice-formats/{id}
    * @secure */
-  delete13 = (id: number, params: RequestParams = {}) =>
+  delete14 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/invoice-formats/${id}`,
       method: "DELETE",

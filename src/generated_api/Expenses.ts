@@ -20,6 +20,7 @@ import {
   ExpenseDetailCreateModel,
   ExpenseDetailModel,
   ExpenseExtractModel,
+  ExpenseMealsCapModel,
   ExpenseModel,
   ExpensePagedResponse,
   ExpenseProjectPagedResponse,
@@ -506,12 +507,16 @@ export class Expenses<SecurityDataType = unknown> extends HttpClient<SecurityDat
    * @request GET:/rest/expenses/{id}/meal-caps
    * @secure */
   getMealsCap = (id: number, params: RequestParams = {}) =>
-    this.request<void, ErrorResponse>({
-      path: `/rest/expenses/${id}/meal-caps`,
-      method: "GET",
-      secure: true,
-      ...params,
-    });
+    this.request<ExpenseMealsCapModel, ErrorResponse>(
+      {
+        path: `/rest/expenses/${id}/meal-caps`,
+        method: "GET",
+        secure: true,
+        format: "json",
+        ...params,
+      },
+      ExpenseMealsCapModel,
+    ) as ExpenseMealsCapModel;
 
   /**
    * @description Retrieves a paged list of payment methods available for an expense

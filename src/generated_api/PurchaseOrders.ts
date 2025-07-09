@@ -659,11 +659,11 @@ export class PurchaseOrders<SecurityDataType = unknown> extends HttpClient<Secur
    * @description Deletes an existing Purchase Order given its key.
    *
    * @tags Purchase Orders
-   * @name Delete29
+   * @name Delete30
    * @summary Delete a Purchase Order
    * @request DELETE:/rest/purchase-orders/{id}
    * @secure */
-  delete29 = (id: number, params: RequestParams = {}) =>
+  delete30 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/purchase-orders/${id}`,
       method: "DELETE",

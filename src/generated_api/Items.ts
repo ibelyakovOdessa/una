@@ -276,11 +276,11 @@ export class Items<SecurityDataType = unknown> extends HttpClient<SecurityDataTy
    * @description Removes an item
    *
    * @tags Items
-   * @name Delete14
+   * @name Delete15
    * @summary Removes an item
    * @request DELETE:/rest/items/{id}
    * @secure */
-  delete14 = (id: number, params: RequestParams = {}) =>
+  delete15 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/items/${id}`,
       method: "DELETE",

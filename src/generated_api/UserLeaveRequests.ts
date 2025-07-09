@@ -18,6 +18,7 @@ import {
   LeaveRequestPagedResponse,
   LeaveRequestSubmitModel,
   LeaveStatusHistoryPagedResponse,
+  MyLeaveRequestsParamsSortByEnum,
   MyLeaveRequestsParamsSortOrderEnum,
   MyLeaveRequestsParamsStatusEnum,
 } from "./data-contracts";
@@ -79,6 +80,11 @@ export class UserLeaveRequests<SecurityDataType = unknown> extends HttpClient<Se
       end?: string;
       /** @uniqueItems true */
       status?: MyLeaveRequestsParamsStatusEnum[];
+      /**
+       * Field on which to apply sort. Defaults to beginDate
+       * @default "BEGIN_DATE"
+       */
+      sortBy?: MyLeaveRequestsParamsSortByEnum;
       /**
        * Order to apply for begin date sort. Defaults to ASC
        * @default "ASC"
@@ -143,11 +149,11 @@ export class UserLeaveRequests<SecurityDataType = unknown> extends HttpClient<Se
    * @description Deletes a leave request in INUSE and DISAPPROVED status for the user referenced in the supplied auth token.
    *
    * @tags User Leave Requests
-   * @name Delete17
+   * @name Delete18
    * @summary Delete a leave request
    * @request DELETE:/rest/me/leave-requests/{id}
    * @secure */
-  delete17 = (id: number, params: RequestParams = {}) =>
+  delete18 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/me/leave-requests/${id}`,
       method: "DELETE",

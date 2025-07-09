@@ -115,11 +115,11 @@ export class SkillLevels<SecurityDataType = unknown> extends HttpClient<Security
    * @description Delete an existing skill level.
    *
    * @tags Skill Levels
-   * @name Delete35
+   * @name Delete36
    * @summary Delete an existing skill level
    * @request DELETE:/rest/skill-levels/{id}
    * @secure */
-  delete35 = (id: number, params: RequestParams = {}) =>
+  delete36 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/skill-levels/${id}`,
       method: "DELETE",

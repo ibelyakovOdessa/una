@@ -281,11 +281,11 @@ export class Planning<SecurityDataType = unknown> extends HttpClient<SecurityDat
    * @description Removes a planned time record.
    *
    * @tags Planning
-   * @name Delete23
+   * @name Delete24
    * @summary Deletes planned time
    * @request DELETE:/rest/planning/time/{id}
    * @secure */
-  delete23 = (id: number, params: RequestParams = {}) =>
+  delete24 = (id: number, params: RequestParams = {}) =>
     this.request<void, ErrorResponse>({
       path: `/rest/planning/time/${id}`,
       method: "DELETE",
